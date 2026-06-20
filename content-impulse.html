@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TET · Ideenimpulse für Evelyn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #010D26;
+      --bg-card:   #071429;
+      --bg-card-2: #0c1e3a;
+      --blue:      #7CA7EB;
+      --blue-dim:  rgba(124,167,235,0.12);
+      --camel:     #CDB08F;
+      --camel-dim: rgba(205,176,143,0.12);
+      --white:     #FFFFFF;
+      --text-dim:  #6b85a8;
+      --border:    rgba(124,167,235,0.14);
+      --green:     #52C984;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--camel);
+      text-decoration: none;
+    }
+    .header-divider { width: 1px; height: 24px; background: var(--border); }
+    .header-title { font-size: 13px; font-weight: 500; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; }
+    .header-meta { margin-left: auto; font-size: 12px; color: var(--text-dim); }
+    .back-btn {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--text-dim);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 6px;
+      transition: color .2s, border-color .2s;
+    }
+    .back-btn:hover { color: var(--white); border-color: var(--blue); }
+
+    main { max-width: 900px; margin: 0 auto; padding: 32px 24px; }
+
+    .page-intro {
+      margin-bottom: 32px;
+    }
+    .page-intro h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--camel);
+      margin-bottom: 8px;
+    }
+    .page-intro p {
+      color: var(--text-dim);
+      line-height: 1.6;
+      max-width: 600px;
+    }
+    .updated-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--green);
+      background: rgba(82,201,132,0.1);
+      border: 1px solid rgba(82,201,132,0.2);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    /* PILLARS */
+    .pillar {
+      margin-bottom: 28px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .pillar-header {
+      background: var(--bg-card);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: background .2s;
+    }
+    .pillar-header:hover { background: var(--bg-card-2); }
+    .pillar-emoji { font-size: 20px; }
+    .pillar-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--camel);
+    }
+    .pillar-desc { font-size: 12px; color: var(--text-dim); margin-left: 2px; }
+    .pillar-count {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--text-dim);
+      background: var(--blue-dim);
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+    .pillar-chevron {
+      font-size: 16px;
+      color: var(--text-dim);
+      margin-left: 8px;
+      transition: transform .3s;
+    }
+    .pillar.open .pillar-chevron { transform: rotate(180deg); }
+
+    .pillar-body { display: none; padding: 8px 16px 16px; }
+    .pillar.open .pillar-body { display: block; }
+
+    /* IDEAS */
+    .idea {
+      background: var(--bg-card-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .idea-header {
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .idea-header:hover { background: rgba(124,167,235,0.05); }
+    .idea-format-badge {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--blue-dim);
+      color: var(--blue);
+      white-space: nowrap;
+    }
+    .idea-format-badge.karussell {
+      background: var(--camel-dim);
+      color: var(--camel);
+    }
+    .idea-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--white);
+      flex: 1;
+    }
+    .idea-chevron {
+      font-size: 14px;
+      color: var(--text-dim);
+      transition: transform .3s;
+    }
+    .idea.open .idea-chevron { transform: rotate(180deg); }
+
+    .idea-body { display: none; padding: 0 16px 16px; border-top: 1px solid var(--border); }
+    .idea.open .idea-body { display: block; padding-top: 14px; }
+
+    .idea-section { margin-bottom: 14px; }
+    .idea-section-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--blue);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .hook-box {
+      background: rgba(205,176,143,0.08);
+      border-left: 3px solid var(--camel);
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.5;
+    }
+    .script-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #b0c4de;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+    .why-box {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.5;
+      background: var(--blue-dim);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    .copy-btn {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-dim);
+      background: none;
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+    }
+    .copy-btn:hover { color: var(--white); border-color: var(--blue); }
+    .copy-btn.copied { color: var(--green); border-color: rgba(82,201,132,0.4); }
+
+    /* Empty state */
+    .empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-dim);
+    }
+    .empty h2 { font-size: 18px; margin-bottom: 8px; color: var(--white); }
+    .empty p { font-size: 13px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">TET</a>
+  <div class="header-divider"></div>
+  <span class="header-title">Ideenimpulse</span>
+  <a href="/" class="back-btn">← Dashboard</a>
+</header>
+
+<main>
+  <div class="page-intro">
+    <h1>Content-Impulse für Evelyn</h1>
+    <p>Vor dem Drehtermin mit Alex: Hier findest du die aktuellen Ideen, Hooks und Skripte nach Content-Säule. Klick eine Idee auf, um Hook und Skript zu sehen — direkt kopierbar für das Briefing.</p>
+  </div>
+
+  <div id="updated-badge" class="updated-badge" style="display:none;">
+    <span>●</span> <span id="updated-text">Aktualisiert</span>
+  </div>
+
+  <div id="pillars-container"></div>
+
+  <div id="empty-state" class="empty" style="display:none;">
+    <h2>Noch keine Daten</h2>
+    <p>Der Scheduled Task <code>escape-theorie-marktanalyse</code> befüllt diese Seite jeden Montag mit neuen Impulsen.</p>
+  </div>
+</main>
+
+<script>
+  async function loadData() {
+    try {
+      const res = await fetch('/content-impulse-data.json?t=' + Date.now());
+      if (!res.ok) throw new Error('not found');
+      const data = await res.json();
+      render(data);
+    } catch (e) {
+      document.getElementById('empty-state').style.display = 'block';
+    }
+  }
+
+  function render(data) {
+    if (!data.pillars || !data.pillars.length) {
+      document.getElementById('empty-state').style.display = 'block';
+      return;
+    }
+
+    if (data.updated) {
+      const badge = document.getElementById('updated-badge');
+      badge.style.display = 'inline-flex';
+      document.getElementById('updated-text').textContent =
+        'KW ' + (data.kw || '—') + ' · Aktualisiert ' + data.updated;
+    }
+
+    const container = document.getElementById('pillars-container');
+    container.innerHTML = '';
+
+    data.pillars.forEach((pillar, pi) => {
+      const el = document.createElement('div');
+      el.className = 'pillar' + (pi === 0 ? ' open' : '');
+      el.innerHTML = `
+        <div class="pillar-header" onclick="togglePillar(this.parentElement)">
+          <span class="pillar-emoji">${pillar.emoji || '●'}</span>
+          <div>
+            <div class="pillar-name">${pillar.name}</div>
+            <div class="pillar-desc">${pillar.description || ''}</div>
+          </div>
+          <span class="pillar-count">${(pillar.ideas || []).length} Ideen</span>
+          <span class="pillar-chevron">▾</span>
+        </div>
+        <div class="pillar-body">
+          ${(pillar.ideas || []).map(idea => renderIdea(idea)).join('')}
+        </div>
+      `;
+      container.appendChild(el);
+    });
+  }
+
+  function renderIdea(idea) {
+    const formatClass = (idea.format || '').toLowerCase() === 'karussell' ? 'karussell' : '';
+    const safeScript = (idea.script || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const safeHook = (idea.hook || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return `
+      <div class="idea" id="idea-${idea.id}">
+        <div class="idea-header" onclick="toggleIdea(this.parentElement)">
+          <span class="idea-format-badge ${formatClass}">${idea.format || 'Reel'}</span>
+          <span class="idea-title">${idea.title || 'Idee'}</span>
+          <span class="idea-chevron">▾</span>
+        </div>
+        <div class="idea-body">
+          <div class="idea-section">
+            <div class="idea-section-label">Hook</div>
+            <div class="hook-box">${safeHook}</div>
+            <button class="copy-btn" onclick="copyText(this, ${JSON.stringify(idea.hook || '')})">Kopieren</button>
+          </div>
+          <div class="idea-section">
+            <div class="idea-section-label">Skript</div>
+            <div class="script-box">${safeScript}</div>
+            <button class="copy-btn" onclick="copyText(this, ${JSON.stringify(idea.script || '')})">Kopieren</button>
+          </div>
+          ${idea.why ? `
+          <div class="idea-section">
+            <div class="idea-section-label">Warum das funktioniert</div>
+            <div class="why-box">${idea.why}</div>
+          </div>` : ''}
+        </div>
+      </div>
+    `;
+  }
+
+  function togglePillar(el) {
+    el.classList.toggle('open');
+  }
+
+  function toggleIdea(el) {
+    el.classList.toggle('open');
+  }
+
+  async function copyText(btn, text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = '✓ Kopiert';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Kopieren';
+        btn.classList.remove('copied');
+      }, 2000);
+    } catch (e) {
+      btn.textContent = 'Fehler';
+    }
+  }
+
+  loadData();
+</script>
+</body>
+</html>

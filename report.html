@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TET · SM Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="/chart.min.js"></script>
+<style>
+:root {
+  --navy: #010D26; --navy2: #071429; --navy3: #0d1e3a;
+  --blue: #7CA7EB; --blue2: rgba(124,167,235,0.12); --blue3: rgba(124,167,235,0.05);
+  --camel: #CDB08F; --white: #fff; --dim: #6b85a8;
+  --border: rgba(124,167,235,0.14);
+  --green: #52C984; --red: #E85555; --yellow: #F5C542;
+  --ig: #E1306C; --tt: #69C9D0; --yt: #FF0000;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;min-height:100vh}
+
+/* ── Layout ── */
+.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+header{background:rgba(1,13,38,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 32px}
+.logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--camel)}
+.header-meta{font-size:12px;color:var(--dim);text-align:right}
+.period-badge{display:inline-block;background:rgba(124,167,235,.12);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:11px;color:var(--blue);margin-top:4px}
+
+main{padding:40px 32px}
+
+/* ── Section titles ── */
+.section-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ── Platform hero row ── */
+.platform-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+.platform-card{background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:28px;position:relative;overflow:hidden}
+.platform-card::before{content:'';position:absolute;top:0;right:0;width:120px;height:120px;border-radius:50%;filter:blur(60px);opacity:.15}
+.platform-card.ig::before{background:var(--ig)}
+.platform-card.tt::before{background:var(--tt)}
+.platform-card.yt::before{background:var(--yt)}
+.platform-label{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+.platform-dot{width:8px;height:8px;border-radius:50%}
+.ig .platform-dot{background:var(--ig)}
+.tt .platform-dot{background:var(--tt)}
+.yt .platform-dot{background:var(--yt)}
+.kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.kpi-item{background:var(--blue3);border:1px solid var(--border);border-radius:12px;padding:14px}
+.kpi-item.wide{grid-column:span 2}
+.kpi-value{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--white);line-height:1}
+.kpi-label{font-size:11px;color:var(--dim);margin-top:4px}
+.kpi-change{font-size:12px;font-weight:600;margin-top:6px}
+.kpi-change.up{color:var(--green)}
+.kpi-change.down{color:var(--red)}
+.kpi-change.neutral{color:var(--dim)}
+
+/* ── Insights strip ── */
+.insights-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.insight-card{background:var(--navy3);border:1px solid var(--border);border-radius:14px;padding:20px}
+.insight-icon{font-size:22px;margin-bottom:10px}
+.insight-title{font-size:13px;font-weight:700;color:var(--camel);margin-bottom:6px}
+.insight-text{font-size:12px;color:var(--dim);line-height:1.6}
+.insight-text strong{color:var(--white)}
+
+/* ── Two-column layout ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+.card{background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:24px}
+.card-title{font-size:13px;font-weight:700;color:var(--camel);text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+
+/* ── Content ranking table ── */
+.rank-table{width:100%;border-collapse:collapse}
+.rank-table th{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);padding:6px 10px;text-align:left;border-bottom:1px solid var(--border)}
+.rank-table td{padding:10px;border-bottom:1px solid rgba(124,167,235,.06);vertical-align:middle}
+.rank-table tr:last-child td{border-bottom:none}
+.rank-table tr:hover td{background:var(--blue3)}
+.rank-num{font-size:18px;font-weight:700;color:var(--blue);opacity:.5;width:28px}
+.rank-text{font-size:12px;color:var(--white);max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-date{font-size:11px;color:var(--dim)}
+.rank-type{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;text-transform:uppercase}
+.rank-type.carousel{background:rgba(124,167,235,.15);color:var(--blue)}
+.rank-type.reel{background:rgba(225,48,108,.15);color:var(--ig)}
+.rank-stat{font-size:13px;font-weight:700;color:var(--white);text-align:right}
+.rank-stat small{font-size:10px;color:var(--dim);font-weight:400;display:block}
+.engagement-bar{width:60px;height:4px;background:rgba(124,167,235,.15);border-radius:2px;margin-top:4px}
+.engagement-fill{height:100%;border-radius:2px;background:var(--blue)}
+.engagement-high .engagement-fill{background:var(--green)}
+
+/* ── Chart ── */
+.chart-wrap{position:relative;height:220px}
+
+/* ── Demographics ── */
+.demo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.demo-card{background:var(--navy2);border:1px solid var(--border);border-radius:16px;padding:20px}
+.demo-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);margin-bottom:14px}
+.demo-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.demo-bar-label{width:90px;color:var(--dim);flex-shrink:0}
+.demo-bar-track{flex:1;height:4px;background:rgba(124,167,235,.12);border-radius:2px}
+.demo-bar-fill{height:100%;border-radius:2px;background:var(--blue)}
+.demo-bar-pct{width:40px;text-align:right;color:var(--white);font-weight:600}
+
+/* ── Next steps ── */
+.next-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px}
+.next-card{background:var(--navy3);border:1px solid var(--border);border-radius:14px;padding:20px}
+.next-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:10px}
+.next-tag.stop{background:rgba(232,85,85,.15);color:var(--red)}
+.next-tag.more{background:rgba(82,201,132,.15);color:var(--green)}
+.next-tag.test{background:rgba(205,176,143,.15);color:var(--camel)}
+.next-tag.focus{background:rgba(124,167,235,.15);color:var(--blue)}
+.next-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:6px}
+.next-text{font-size:12px;color:var(--dim);line-height:1.6}
+
+/* ── Calendar ── */
+.cal-week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-bottom:40px}
+.cal-day{background:var(--navy2);border:1px solid var(--border);border-radius:14px;overflow:hidden;min-height:180px;display:flex;flex-direction:column}
+.cal-day.today{border-color:var(--blue);box-shadow:0 0 0 1px rgba(124,167,235,.3)}
+.cal-day-header{padding:10px 12px;border-bottom:1px solid var(--border);background:var(--navy3)}
+.cal-day-name{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--dim)}
+.cal-day-date{font-size:18px;font-weight:700;color:var(--white);line-height:1.1}
+.cal-day.today .cal-day-date{color:var(--blue)}
+.cal-day-body{padding:10px 12px;flex:1;display:flex;flex-direction:column;gap:6px}
+.cal-item{background:var(--blue3);border:1px solid var(--border);border-radius:8px;padding:7px 9px;font-size:11px;line-height:1.4;cursor:text;outline:none;min-height:36px}
+.cal-item:focus{border-color:rgba(124,167,235,.4);background:rgba(124,167,235,.08)}
+.cal-item[data-type="reel"]{border-color:rgba(225,48,108,.2);background:rgba(225,48,108,.06)}
+.cal-item[data-type="carousel"]{border-color:rgba(124,167,235,.2);background:rgba(124,167,235,.06)}
+.cal-item[data-type="story"]{border-color:rgba(205,176,143,.2);background:rgba(205,176,143,.05);color:var(--camel)}
+.cal-item[data-type="empty"]{border-style:dashed;color:var(--dim);font-style:italic}
+.cal-item[data-type="reel-plan"]{border-color:rgba(205,176,143,.3);background:rgba(205,176,143,.07);border-style:dashed}
+.cal-item[data-type="reel-plan"] .cal-item-tag{background:rgba(205,176,143,.25);color:var(--camel)}
+.cal-item-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;opacity:.7;margin-bottom:3px}
+.cal-legend{display:flex;gap:16px;font-size:11px;color:var(--dim);margin-bottom:20px;flex-wrap:wrap}
+.cal-legend span{display:flex;align-items:center;gap:5px}
+.cal-legend-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+
+/* ── Story Plan ── */
+.story-week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-bottom:40px}
+.story-day{background:var(--navy2);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.story-day-header{padding:8px 12px;border-bottom:1px solid var(--border);background:var(--navy3)}
+.story-slots{padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.story-slot{background:rgba(205,176,143,.05);border:1px dashed rgba(205,176,143,.2);border-radius:8px;padding:7px 9px;font-size:11px;color:var(--camel);cursor:text;outline:none;min-height:32px;line-height:1.4}
+.story-slot:focus{border-color:rgba(205,176,143,.5);background:rgba(205,176,143,.1);border-style:solid}
+.story-slot.filled{border-style:solid;border-color:rgba(205,176,143,.3);background:rgba(205,176,143,.07);color:var(--white)}
+.story-slot-num{font-size:9px;color:rgba(205,176,143,.5);font-weight:700;margin-bottom:2px}
+
+/* ── Footer ── */
+footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--dim)}
+</style>
+</head>
+<body>
+
+<div id="pw-gate" style="display:none;position:fixed;inset:0;background:#010D26;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px">
+  <div style="font-family:'Playfair Display',serif;font-size:28px;color:#fff;letter-spacing:.02em">The Escape Theorie</div>
+  <div style="font-size:13px;color:rgba(255,255,255,.4);margin-top:-16px">SM Command Center · Intern</div>
+  <div style="display:flex;gap:8px;margin-top:8px">
+    <input id="pw-input" type="password" placeholder="Passwort" autofocus
+      style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-size:14px;padding:10px 16px;outline:none;width:220px"
+      onkeydown="if(event.key==='Enter')checkPW()">
+    <button onclick="checkPW()"
+      style="background:#7CA7EB;border:none;border-radius:8px;color:#010D26;font-weight:700;font-size:14px;padding:10px 20px;cursor:pointer">
+      →
+    </button>
+  </div>
+  <div id="pw-err" style="font-size:12px;color:#e1306c;min-height:16px"></div>
+</div>
+
+<script>
+(function(){
+  const PW = 'escape2026';
+  const gate = document.getElementById('pw-gate');
+  if(sessionStorage.getItem('tet_ok')==='1'){gate.style.display='none';}
+  else{gate.style.display='flex';document.querySelectorAll('body > *:not(#pw-gate)').forEach(el=>el.style.visibility='hidden');}
+  window.checkPW=function(){
+    const v=document.getElementById('pw-input').value.trim().toLowerCase().replace(/\s+/g,'');
+    if(v===PW){sessionStorage.setItem('tet_ok','1');gate.style.display='none';document.querySelectorAll('body > *:not(#pw-gate)').forEach(el=>el.style.visibility='');}
+    else{document.getElementById('pw-err').textContent='Falsches Passwort. Bitte erneut versuchen.';}
+  };
+})();
+</script>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="logo">The Escape Theorie</div>
+      <div style="font-size:11px;color:var(--dim);margin-top:2px">SM Command Center · @the_escapetheory</div>
+    </div>
+    <div class="header-meta">
+      <div>Instagram · TikTok · YouTube</div>
+      <div class="period-badge" id="period-label">14. Mai – 12. Juni 2026</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ── Platform KPIs ── -->
+  <div class="section-title">Übersicht Plattformen</div>
+  <div class="platform-row">
+
+    <!-- Instagram -->
+    <div class="platform-card ig">
+      <div class="platform-label"><span class="platform-dot"></span>Instagram</div>
+      <div class="kpi-grid">
+        <div class="kpi-item wide">
+          <div class="kpi-value" id="ig-followers">6.498</div>
+          <div class="kpi-label">Follower</div>
+          <div class="kpi-change up">▲ +0,28% · +18 im Zeitraum</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">81,98K</div>
+          <div class="kpi-label">Impressionen</div>
+          <div class="kpi-change down">▼ –21,72%</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">337</div>
+          <div class="kpi-label">Interaktionen</div>
+          <div class="kpi-change down">▼ –1,46%</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">32</div>
+          <div class="kpi-label">Beiträge</div>
+          <div class="kpi-change up">▲ +6,67%</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">3,60</div>
+          <div class="kpi-label">Ø Engagement-Rate</div>
+          <div class="kpi-change down">▼ –18,25%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TikTok -->
+    <div class="platform-card tt">
+      <div class="platform-label"><span class="platform-dot"></span>TikTok</div>
+      <div class="kpi-grid">
+        <div class="kpi-item wide">
+          <div class="kpi-value">53,2K</div>
+          <div class="kpi-label">Follower</div>
+          <div class="kpi-change down">▼ –0,09% · –73 netto</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">1.181</div>
+          <div class="kpi-label">Videoansichten</div>
+          <div class="kpi-change down">▼ –86,08%</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">2</div>
+          <div class="kpi-label">Beiträge</div>
+          <div class="kpi-change down">▼ –90,91%</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">19</div>
+          <div class="kpi-label">Likes</div>
+          <div class="kpi-change neutral">— Periode</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">114</div>
+          <div class="kpi-label">Ø Reichweite/Post</div>
+          <div class="kpi-change down">▼ –65,52%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YouTube -->
+    <div class="platform-card yt">
+      <div class="platform-label"><span class="platform-dot"></span>YouTube</div>
+      <div class="kpi-grid">
+        <div class="kpi-item wide">
+          <div class="kpi-value">159</div>
+          <div class="kpi-label">Abonnenten</div>
+          <div class="kpi-change up">▲ +1,27% · +2 im Zeitraum</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">264</div>
+          <div class="kpi-label">Videoansichten</div>
+          <div class="kpi-change down">▼ –98,28%</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">0</div>
+          <div class="kpi-label">Neue Videos</div>
+          <div class="kpi-change neutral">— Periode</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">72,5%</div>
+          <div class="kpi-label">Traffic via Shorts</div>
+          <div class="kpi-change neutral">— Hauptquelle</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="font-size:22px">4m 32s</div>
+          <div class="kpi-label">Beste Ø Watchtime</div>
+          <div class="kpi-change up">▲ "Wir escapen mal kurz"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Live-Daten aus Google Sheet (Alex) ── -->
+  <div class="section-title" style="display:flex;align-items:center;justify-content:space-between">
+    <span>Live-Daten · Instagram Tracking (Excel)</span>
+    <button onclick="loadSheet()" style="background:rgba(124,167,235,.15);border:1px solid rgba(124,167,235,.3);color:var(--blue);font-size:12px;font-weight:600;padding:6px 14px;border-radius:8px;cursor:pointer">⟳ Aktualisieren</button>
+  </div>
+  <div id="sheet-status" style="font-size:12px;color:var(--dim);margin-bottom:12px">Lade Daten…</div>
+  <div style="overflow-x:auto;margin-bottom:16px">
+    <table id="sheet-table" style="width:100%;border-collapse:collapse;font-size:13px;display:none">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border)">
+          <th style="text-align:left;padding:8px 12px;color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Datum</th>
+          <th style="text-align:right;padding:8px 12px;color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Follower</th>
+          <th style="text-align:right;padding:8px 12px;color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Δ%</th>
+          <th style="text-align:right;padding:8px 12px;color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Aufrufzahlen</th>
+          <th style="text-align:right;padding:8px 12px;color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Δ%</th>
+          <th style="text-align:right;padding:8px 12px;color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Interaktionen</th>
+          <th style="text-align:right;padding:8px 12px;color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em">Δ%</th>
+        </tr>
+      </thead>
+      <tbody id="sheet-body"></tbody>
+    </table>
+  </div>
+  <canvas id="sheet-chart" height="80" style="display:none;margin-bottom:40px"></canvas>
+
+  <!-- ── Key Insights ── -->
+  <div class="section-title">Insights dieser Periode</div>
+  <div class="insights-row">
+    <div class="insight-card">
+      <div class="insight-icon">🏆</div>
+      <div class="insight-title">Bester Content-Typ: Karussell</div>
+      <div class="insight-text">
+        Der Top-Post ist ein Karussell (<strong>TET Tribe-Öffnung, 1.992 Ansichten, Engagement 3,25</strong>). Die wöchentliche "Was mich als SM-Mentorin interessiert"-Serie performt konstant mit 1.000+ Ansichten und Engagement >3,5. <strong>Karussells schlagen Reels klar bei Reichweite.</strong>
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">🎯</div>
+      <div class="insight-title">Reel-Formel: Erfolgsgeschichten + klare Aussage</div>
+      <div class="insight-text">
+        Die zwei besten Reels sind: <strong>"@mindspiration_ – Erfolgsgeschichte" (Engagement 5,96)</strong> und <strong>"2K Abonnenten"-Benchmark-Reel (5,55)</strong>. Beide haben konkrete Aussagen im Hook. Allgemeine Reels ohne starke These liegen unter 2,5.
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">⚠️</div>
+      <div class="insight-title">TikTok: kritischer Rückgang</div>
+      <div class="insight-text">
+        Nur 2 Posts im Zeitraum bei 53K Followern. Videoansichten –86%, Interaktionen –97%. TikTok-Follower: <strong>68% weiblich, aber 96% aus Asien</strong> (Philippines, Cambodia, Vietnam) – nicht die Zielgruppe DACH. Kanal braucht strategische Entscheidung.
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">💡</div>
+      <div class="insight-title">Instagram-Zielgruppe: Bullseye</div>
+      <div class="insight-text">
+        <strong>74% Deutschland, 53% weiblich, Alter 35–44 stärkste Gruppe.</strong> Genau die Zielgruppe von TET. Österreich 9,4%, Schweiz 7% – DACH ist voll erreicht. Top-Städte: Berlin, Hamburg, München.
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">📉</div>
+      <div class="insight-title">Reichweite fällt – trotz mehr Posts</div>
+      <div class="insight-text">
+        Impressionen –21,72% obwohl Beiträge +6,67%. <strong>Mehr Posting kompensiert nicht sinkende organische Reichweite.</strong> Qualität über Quantität: Die 5 stärksten Posts machen >70% der Gesamtreichweite aus.
+      </div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">🚀</div>
+      <div class="insight-title">YouTube: Shorts als Wachstumshebel</div>
+      <div class="insight-text">
+        <strong>72,5% des YouTube-Traffics kommt über Shorts.</strong> Der Kanal wächst trotz 0 neuer Videos (+1,27% Abonnenten). Das "Wir escapen mal kurz"-Video hat 4m 32s Ø Watchtime – YouTube long-form könnte funktionieren wenn systematisch bespielt.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Content Ranking ── -->
+  <div class="section-title">Content Performance</div>
+  <div class="two-col">
+
+    <div class="card">
+      <div class="card-title">🖼️ Top Karussells · Instagram</div>
+      <table class="rank-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Beitrag</th><th style="text-align:right">Views</th><th style="text-align:right">Engagement</th>
+          </tr>
+        </thead>
+        <tbody id="top-posts-body"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎬 Top Reels · Instagram</div>
+      <table class="rank-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Beitrag</th><th style="text-align:right">Views</th><th style="text-align:right">Engagement</th>
+          </tr>
+        </thead>
+        <tbody id="top-reels-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── Follower Trend ── -->
+  <div class="section-title">Follower-Entwicklung · Instagram</div>
+  <div class="card" style="margin-bottom:40px">
+    <div class="chart-wrap">
+      <canvas id="follower-chart"></canvas>
+    </div>
+  </div>
+
+  <!-- ── Demographics ── -->
+  <div class="section-title">Zielgruppe & Demografie</div>
+  <div class="demo-row">
+    <div class="demo-card">
+      <div class="demo-title">📸 Instagram · Alter</div>
+      <div class="demo-bar-row"><span class="demo-bar-label">35–44</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:42%"></div></div><span class="demo-bar-pct">42%</span></div>
+      <div class="demo-bar-row"><span class="demo-bar-label">25–34</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:32%"></div></div><span class="demo-bar-pct">32%</span></div>
+      <div class="demo-bar-row"><span class="demo-bar-label">45–54</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:17%"></div></div><span class="demo-bar-pct">17%</span></div>
+      <div class="demo-bar-row"><span class="demo-bar-label">55–64</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:6%"></div></div><span class="demo-bar-pct">6%</span></div>
+      <div class="demo-bar-row"><span class="demo-bar-label">18–24</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:2%"></div></div><span class="demo-bar-pct">2%</span></div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-title">🌍 Top Länder · Instagram</div>
+      <div class="demo-bar-row"><span class="demo-bar-label">Deutschland</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:74%"></div></div><span class="demo-bar-pct">74,2%</span></div>
+      <div class="demo-bar-row"><span class="demo-bar-label">Österreich</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:9%"></div></div><span class="demo-bar-pct">9,4%</span></div>
+      <div class="demo-bar-row"><span class="demo-bar-label">Schweiz</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:7%"></div></div><span class="demo-bar-pct">7,0%</span></div>
+      <div class="demo-bar-row"><span class="demo-bar-label">Spanien</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:2%"></div></div><span class="demo-bar-pct">1,7%</span></div>
+      <div style="margin-top:14px;font-size:11px;color:var(--green);font-weight:600">✓ DACH = 91% der Community</div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-title">📊 Geschlecht · Plattform-Vergleich</div>
+      <div style="margin-bottom:12px">
+        <div style="font-size:11px;color:var(--dim);margin-bottom:6px">Instagram</div>
+        <div class="demo-bar-row"><span class="demo-bar-label">Weiblich</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:53%;background:var(--ig)"></div></div><span class="demo-bar-pct">53%</span></div>
+        <div class="demo-bar-row"><span class="demo-bar-label">Männlich</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:25%;background:var(--blue)"></div></div><span class="demo-bar-pct">25%</span></div>
+      </div>
+      <div style="margin-bottom:12px">
+        <div style="font-size:11px;color:var(--dim);margin-bottom:6px">TikTok</div>
+        <div class="demo-bar-row"><span class="demo-bar-label">Weiblich</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:68%;background:var(--tt)"></div></div><span class="demo-bar-pct">68%</span></div>
+        <div class="demo-bar-row"><span class="demo-bar-label">Männlich</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:31%;background:var(--blue)"></div></div><span class="demo-bar-pct">31%</span></div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:var(--dim);margin-bottom:6px">YouTube</div>
+        <div class="demo-bar-row"><span class="demo-bar-label">Männlich</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:81%;background:var(--yt)"></div></div><span class="demo-bar-pct">81%</span></div>
+        <div class="demo-bar-row"><span class="demo-bar-label">Weiblich</span><div class="demo-bar-track"><div class="demo-bar-fill" style="width:18%;background:var(--blue)"></div></div><span class="demo-bar-pct">18%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Feed/Reel Redaktionsplan ── -->
+  <div class="section-title">Redaktionsplan Feed · KW25 (16.–22. Juni 2026)</div>
+  <div class="cal-legend">
+    <span><span class="cal-legend-dot" style="background:rgba(124,167,235,.6)"></span>Karussell</span>
+    <span><span class="cal-legend-dot" style="background:rgba(225,48,108,.6)"></span>Reel ✅ fertig</span>
+    <span><span class="cal-legend-dot" style="background:rgba(205,176,143,.5)"></span>Reel 🎬 noch drehen</span>
+    <span style="color:var(--dim);font-style:italic">— Klicken zum Bearbeiten</span>
+  </div>
+  <div class="cal-week" id="feed-calendar"></div>
+
+  <!-- ── Stories Redaktionsplan ── -->
+  <div class="section-title">Redaktionsplan Stories · KW25 (16.–22. Juni 2026)</div>
+  <div style="margin-bottom:16px;font-size:12px;color:var(--dim)">3–5 Stories/Tag · thematisch abgestimmt auf den Feed · Klicken zum Bearbeiten</div>
+  <div class="story-week" id="story-calendar"></div>
+
+  <!-- ── Business Breakfast ── -->
+  <div class="section-title">Business Breakfast · Nächste Termine & Themen</div>
+  <div style="display:grid;gap:14px;margin-bottom:40px">
+
+    <!-- Termin 1 -->
+    <div style="background:rgba(124,167,235,.07);border:1px solid rgba(124,167,235,.18);border-left:3px solid var(--blue);border-radius:12px;padding:18px 22px;display:grid;grid-template-columns:160px 1fr auto;gap:16px;align-items:start">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--blue);text-transform:uppercase;margin-bottom:4px">Fr 20.06.2026 · 11 Uhr</div>
+        <div style="font-size:11px;color:var(--dim)">in 5 Tagen</div>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px;color:var(--white);margin-bottom:6px">Was deine Zahlen dir wirklich sagen — die 5 KPIs, die Coaches & Berater kennen müssen</div>
+        <div style="font-size:12px;color:var(--dim);line-height:1.5">CAC, LTV, ROAS, Funnel-Conversion, Gewinnmarge. Marktrecherche zeigt: Zahlen-Inhalte mit konkreten KPIs erzielen 5–10× mehr Kommentare. Passt perfekt zur KW25-Content-Welt (Pricing, CAC, ROAS). <span style="color:var(--camel)">→ Pre-Content: Karussell "5 Zahlen, die du kennen musst" + Story-Countdown</span></div>
+      </div>
+      <div style="text-align:right;white-space:nowrap">
+        <span style="background:rgba(74,222,128,.12);color:#4ade80;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px">NÄCHSTER</span>
+      </div>
+    </div>
+
+    <!-- Termin 2 -->
+    <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:18px 22px;display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:start">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--camel);text-transform:uppercase;margin-bottom:4px">Fr 04.07.2026 · 11 Uhr</div>
+        <div style="font-size:11px;color:var(--dim)">in 19 Tagen</div>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px;color:var(--white);margin-bottom:6px">AI-Workflows für Coaches & Berater — was wirklich Zeit spart (und was nur Hype ist)</div>
+        <div style="font-size:12px;color:var(--dim);line-height:1.5">AI-Newsjacking erzielt laut Marktrecherche das 10-fache an Kommentaren (Marco Corallo: "Claude kann dein Instagram lesen" = 57 Kommentare). Praktische AI-Tools für Onlinebusiness ohne Tech-Overwhelm. <span style="color:var(--camel)">→ Pre-Content: Reel-Hook "ChatGPT lügt dich an" + Kommentar-CTA "AI"</span></div>
+      </div>
+    </div>
+
+    <!-- Termin 3 -->
+    <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:18px 22px;display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:start">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--camel);text-transform:uppercase;margin-bottom:4px">Fr 18.07.2026 · 11 Uhr</div>
+        <div style="font-size:11px;color:var(--dim)">in 33 Tagen</div>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px;color:var(--white);margin-bottom:6px">Positionierung ohne Guru-Pose — klar sichtbar werden, ohne sich zu verbiegen</div>
+        <div style="font-size:12px;color:var(--dim);line-height:1.5">Positionierungs-Themen performen bei TET konstant am besten (Top-Karussells). Hormozi-Muster: kurze Lehrsätze + persönlicher POV. Zielgruppe 35–44 J. will Klarheit, keine Performance. <span style="color:var(--camel)">→ Pre-Content: POV-Reel Alex + Karussell "3 Säulen, die dich unterscheiden"</span></div>
+      </div>
+    </div>
+
+    <!-- Termin 4 -->
+    <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:18px 22px;display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:start">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--camel);text-transform:uppercase;margin-bottom:4px">Fr 01.08.2026 · 11 Uhr</div>
+        <div style="font-size:11px;color:var(--dim)">in 47 Tagen</div>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px;color:var(--white);margin-bottom:6px">Vom Solopreneur zum Team — wann der erste Hire Sinn ergibt (und wann er dich ausbremst)</div>
+        <div style="font-size:12px;color:var(--dim);line-height:1.5">Skalierungshebel sind laut eigener Daten (Karussell "Die 3 Skalierungshebel") sehr gut speicherbar. Cardone/Dawson-Muster: konkreter Erfahrungs-Hook "28 Jahre, worauf ich jeden Monat schaue" → 22.738 Likes. Alex eigene Unternehmer-Story. <span style="color:var(--camel)">→ Pre-Content: Reel "Systeme, die ohne dich laufen" + Kundencase</span></div>
+      </div>
+    </div>
+
+    <!-- Termin 5 -->
+    <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:18px 22px;display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:start">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--camel);text-transform:uppercase;margin-bottom:4px">Fr 15.08.2026 · 11 Uhr</div>
+        <div style="font-size:11px;color:var(--dim)">in 61 Tagen</div>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px;color:var(--white);margin-bottom:6px">Preise anheben ohne Kunden zu verlieren — das Framework für Coaches & Berater</div>
+        <div style="font-size:12px;color:var(--dim);line-height:1.5">Pricing ist laut Hormozi ("Two decisions that drive most value: Pricing & People") einer der stärksten Content-Hebel (9.840 Likes). Anchor-Pricing & Premium-Positionierung sind Evergreen in der Zielgruppe. <span style="color:var(--camel)">→ Pre-Content: Karussell Pricing & Anchor + Story "Was würdest du zahlen?"</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Markt-Radar ── -->
+  <div class="section-title" style="display:flex;align-items:center;justify-content:space-between">
+    <span>Markt-Radar · Was gerade funktioniert</span>
+    <a href="marktrecherche.html" target="_blank" style="font-size:12px;font-weight:600;color:var(--blue);text-decoration:none;background:rgba(124,167,235,.1);border:1px solid rgba(124,167,235,.25);padding:5px 12px;border-radius:7px;letter-spacing:.02em">📋 Vollständige Marktrecherche →</a>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:40px">
+
+    <!-- Konkurrenz-Hits -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--blue);text-transform:uppercase;margin-bottom:14px">🔍 Konkurrenz · Top-Performer</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="border-left:3px solid rgba(124,167,235,.4);padding-left:12px">
+          <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Hormozi · 18.3K Likes</div>
+          <div style="font-size:12px;color:var(--dim)">"The person you spend the rest of your life with…" — Persönlicher/vulnerabler POV schlägt Business-Tipps um Faktor 5×</div>
+        </div>
+        <div style="border-left:3px solid rgba(124,167,235,.4);padding-left:12px">
+          <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Marco Corallo · 57K Kommentare</div>
+          <div style="font-size:12px;color:var(--dim)">"Claude kann ab jetzt dein Instagram lesen…" — AI-Newsjacking + Kommentier-CTA = 10× mehr Interaktion</div>
+        </div>
+        <div style="border-left:3px solid rgba(124,167,235,.4);padding-left:12px">
+          <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Digitale Safari · Top-Format</div>
+          <div style="font-size:12px;color:var(--dim)">"Safari Legends" – Kundenstory + konkrete Zahl im Hook. Wiederkehrendes Format = stärkste Content-Säule</div>
+        </div>
+        <div style="border-left:3px solid rgba(124,167,235,.4);padding-left:12px">
+          <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Cardone Ventures · 22.7K Likes</div>
+          <div style="font-size:12px;color:var(--dim)">"I have owned storage units for 28 years…" — Konkrete Zahl + persönliche Erfahrung + Stakkato-Struktur</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Markt-Trends -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--camel);text-transform:uppercase;margin-bottom:14px">📡 Plattform-Trends · KW25</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="border-left:3px solid rgba(205,176,143,.4);padding-left:12px">
+          <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Instagram: Shares > Likes</div>
+          <div style="font-size:12px;color:var(--dim)">Adam Mosseri bestätigt: DM-Weiterleitungen sind jetzt das stärkste Ranking-Signal. "Go raw over polished."</div>
+        </div>
+        <div style="border-left:3px solid rgba(205,176,143,.4);padding-left:12px">
+          <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">TikTok: 70% Completion Rate</div>
+          <div style="font-size:12px;color:var(--dim)">Neue Hürde für virales Potenzial (vorher 50%). Neue Videos zuerst an Follower ausgespielt.</div>
+        </div>
+        <div style="border-left:3px solid rgba(205,176,143,.4);padding-left:12px">
+          <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">Meta: "Interactions" ≠ "Engagement"</div>
+          <div style="font-size:12px;color:var(--dim)">Klicks zählen nicht mehr. Zahlen sinken optisch – Performance bleibt gleich.</div>
+        </div>
+        <div style="border-left:3px solid rgba(205,176,143,.4);padding-left:12px">
+          <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px">AI-Content boomt im DACH-Markt</div>
+          <div style="font-size:12px;color:var(--dim)">Posts über ChatGPT/Claude erzielen 5–10× höhere Kommentarraten als Standard-Business-Content.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ideen-Pool -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:rgba(225,48,108,.8);text-transform:uppercase;margin-bottom:14px">💡 Ideen-Pool · Für TET adaptiert</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="background:rgba(124,167,235,.06);border:1px solid rgba(124,167,235,.15);border-radius:8px;padding:10px">
+          <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:3px">SOFORT TESTEN</div>
+          <div style="font-size:12px;color:var(--text)">"Kommentiere 'SYSTEM' und ich schicke dir…" — Kommentar-CTA für Reichweite + Lead-Magnet kombinieren</div>
+        </div>
+        <div style="background:rgba(124,167,235,.06);border:1px solid rgba(124,167,235,.15);border-radius:8px;padding:10px">
+          <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:3px">FORMAT STEHLEN</div>
+          <div style="font-size:12px;color:var(--text)">"Escape Legends" Reihe: Kundin + konkrete Zahl. "Wie [Name] in 90 Tagen X€ erreicht hat" — wiederkehrend</div>
+        </div>
+        <div style="background:rgba(124,167,235,.06);border:1px solid rgba(124,167,235,.15);border-radius:8px;padding:10px">
+          <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:3px">SHARE-TRIGGER</div>
+          <div style="font-size:12px;color:var(--text)">Jeden Post mit "Teile das mit jemandem, der…" enden lassen. Shares sind jetzt Ranking-Signal #1.</div>
+        </div>
+        <div style="background:rgba(124,167,235,.06);border:1px solid rgba(124,167,235,.15);border-radius:8px;padding:10px">
+          <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:3px">POV-REEL IDEE</div>
+          <div style="font-size:12px;color:var(--text)">"Ich dachte, Erfolg fühlt sich anders an." — Persönlicher Vulnerable-Hook. Hormozi's stärkster Hebel.</div>
+        </div>
+        <div style="background:rgba(124,167,235,.06);border:1px solid rgba(124,167,235,.15);border-radius:8px;padding:10px">
+          <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:3px">NEWSJACKING</div>
+          <div style="font-size:12px;color:var(--text)">"Was der neue Instagram-Algorithmus für dein Business bedeutet" — AI/Plattform-News + Unternehmerperspektive</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Next Steps ── -->
+  <div class="section-title">Strategie & nächste Schritte</div>
+  <div class="next-grid">
+    <div class="next-card">
+      <div class="next-tag more">Mehr davon</div>
+      <div class="next-title">Wöchentliche SM-News-Karussells beibehalten</div>
+      <div class="next-text">Das "Was mich als SM-Mentorin interessiert"-Format liefert <strong>konstant 1.000+ Ansichten und >3,5 Engagement</strong>. 3× im Zeitraum gepostet, jedes Mal top. Rhythmus halten, Qualität hochhalten.</div>
+    </div>
+    <div class="next-card">
+      <div class="next-tag more">Mehr davon</div>
+      <div class="next-title">Erfolgsgeschichten als Reels</div>
+      <div class="next-text">Die zwei Top-Reels (<strong>@mindspiration_ 5,96 Engagement · 2K-Reel 5,55</strong>) zeigen: Transformation + konkreter Outcome = maximale Resonanz. Mindestens 2 Kundengeschichten/Monat als Reel.</div>
+    </div>
+    <div class="next-card">
+      <div class="next-tag test">Testen</div>
+      <div class="next-title">Gespeichert als KPI fokussieren</div>
+      <div class="next-text">Post mit <strong>7× Gespeichert (09.06.)</strong> hatte beste Engagement-Rate 5,91 aller Karussells. "Gespeichert" zeigt echten Mehrwert an – Content mit Tool-/Listen-Charakter stärker einbauen.</div>
+    </div>
+    <div class="next-card">
+      <div class="next-tag stop">Entscheiden</div>
+      <div class="next-title">TikTok: Strategie klären</div>
+      <div class="next-text">53K Follower, aber <strong>96% aus Asien, nur 4% Deutschland</strong>. Kein DACH-Publikum, drastisch weniger Content. Entweder gezielt für DACH neu aufbauen oder Ressourcen auf Instagram + YouTube konzentrieren.</div>
+    </div>
+    <div class="next-card">
+      <div class="next-tag focus">Priorität</div>
+      <div class="next-title">YouTube Shorts als Inbound-Kanal</div>
+      <div class="next-text">72,5% YouTube-Traffic kommt über Shorts – ohne aktives Zutun. <strong>Systematische Shorts-Strategie</strong> könnte den Kanal deutlich schneller wachsen lassen. Bestehende Reels als Shorts repurposen.</div>
+    </div>
+    <div class="next-card">
+      <div class="next-tag test">Testen</div>
+      <div class="next-title">Qualität vor Quantität Instagram</div>
+      <div class="next-text">32 Posts, Reichweite –21,7%. Top 5 Posts = 70%+ der Gesamtreichweite. <strong>Hypothese: 20 starke Posts outperformen 32 durchschnittliche.</strong> Nächste Periode: weniger, dafür mehr Produktion pro Post.</div>
+    </div>
+  </div>
+
+
+  <!-- ── Team ── -->
+  <div style="text-align:center;padding:60px 0 48px;border-top:1px solid var(--border);margin-top:20px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--blue);text-transform:uppercase;margin-bottom:14px">Das Team</div>
+    <h2 style="font-size:22px;font-weight:800;color:var(--white);margin-bottom:32px;line-height:1.4">Hinter jedem Erfolg steht ein starkes Team —<br>Danke an jeden von euch. 🤍</h2>
+    <img src="team.png" alt="TET Team" style="max-width:520px;width:100%;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,.4)">
+  </div>
+
+</main>
+
+<footer class="wrap">
+  <div>The Escape Theorie · SM Command Center</div>
+  <div>Datenquelle: Metricool + Google Sheet · Zeitraum: 14. Mai – 12. Juni 2026</div>
+</footer>
+
+<script>
+// ── Calendar data ──
+const days = [
+  { name: 'Mo', date: '16. Jun', today: false },
+  { name: 'Di', date: '17. Jun', today: false },
+  { name: 'Mi', date: '18. Jun', today: false },
+  { name: 'Do', date: '19. Jun', today: false },
+  { name: 'Fr', date: '20. Jun', today: false },
+  { name: 'Sa', date: '21. Jun', today: false },
+  { name: 'So', date: '22. Jun', today: false },
+];
+
+// Integrated plan: Reels from Asana + produced carousels from pipeline
+// Fixer Wochenrhythmus: Di = SM-News (Anne), Mi = High-Performer-Reel (Sam), Fr = Themen-Reel (Evelyn)
+// Max. 2 Podcast-Reels/Woche (erkennbar am # · hier: Do + Sa)
+// 1 Reel + 2 Karussells pro Tag
+const ASANA_PROJECT = '1205383636722371';
+const asanaLink = id => `https://app.asana.com/0/${ASANA_PROJECT}/${id}/f`;
+
+const feedPlan = [
+  // Mo 16.06 – Thema: Produkt & Preis
+  [
+    { type:'reel',     tag:'✅ Reel · fertig',              asanaId:'1215158818133838', text:'Warum dein Produkt nicht verkauft wird\n(04 AW · Alex W. · eigener Reel)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708448974723', text:'Pricing & Anchor-Pricing – Premium-Positionierung\nVideovorlage A · <a href="https://www.canva.com/d/TxC3z1kiCUa06Sj" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420582912', text:'CAC – Was dich ein Neukunde wirklich kostet\nA-Zahlenfolie · <a href="https://www.canva.com/d/_aQH4TzHFrlTvYB" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+  ],
+  // Di 17.06 – FIX: SM-News Karussell (Anne) + Thema: Community & LTV
+  [
+    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Claudio',   asanaId:'1203553368670457', text:'Social Media hat zwei Aufgaben – und die meisten wissen den Grund nicht\n(bereits aufgenommen · bei Claudio in Bearbeitung)' },
+    { type:'carousel', tag:'📌 Fix · Anne · Karussell',     asanaId:'1215708441334814', text:'SM-News KW25: Was dich als SM-Unternehmerin diese Woche bewegt\n(jede Woche Dienstag · von Anne)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708448974625', text:'LTV – Was dein Kunde wirklich wert ist\nc-Tribe · <a href="https://www.canva.com/d/Ry6BsDajknXAm0p" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+  ],
+  // Mi 18.06 – FIX: High-Performer-Reel (Sam) + Thema: Erfolg & Transformation
+  [
+    { type:'reel',     tag:'📌 Fix · Sam · High-Performer', asanaId:'1215710321829115', text:'High-Performer-Reel: Kundencase KW25\n(jede Woche Mittwoch · Sam erstellt)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708190920630', text:'Funnel-Conversion-Rate verbessern\nC-Texthook · <a href="https://www.canva.com/d/iwVuclCmD9DeUA-" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708190929659', text:'Positionierungs-Framework: 3 Säulen, die unterscheiden\n(Evergreen · gut speicherbar)' },
+  ],
+  // Do 19.06 – Thema: Zahlen & ROI · PODCAST-SLOT 1
+  [
+    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast', asanaId:'1215759320763058', text:'Umsatz ist nicht Gewinn – was deine Zahlen wirklich sagen\n(#58 Reel 03 · Tayler · max. 2 Podcast/Woche)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420582816', text:'ROAS – Was Werbung wirklich kostet & bringt\nB-Tribe · <a href="https://www.canva.com/d/3ICH0Zf4N_pPwwx" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708190929723', text:'5 Zahlen, die du als Unternehmerin kennen musst\n(Zahlen-Evergreen · sehr gut speicherbar)' },
+  ],
+  // Fr 20.06 – FIX: Themen-Reel (Evelyn) + Thema: Wachstum & Sichtbarkeit
+  [
+    { type:'reel',     tag:'📌 Fix · Evelyn · Themen-Reel', asanaId:'1215710315551445', text:'Themen-Reel KW25\n(jede Woche Freitag · Evelyn erstellt)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708299583444', text:'Wissen ist Gratis – Umsetzung kostet\nVideovorlage B · <a href="https://www.canva.com/d/5TxE7BYxMkI_a1i" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708299595133', text:'Wie ich meine Reichweite systematisch aufgebaut habe\n(How-To · passend zum Freitags-Thema)' },
+  ],
+  // Sa 21.06 – Thema: Systeme & Skalierung · PODCAST-SLOT 2
+  [
+    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast', asanaId:'1215759320830896', text:'Systeme schaffen, die ohne dich laufen\n(#57 Reel 18 · Alex · max. 2 Podcast/Woche)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215707745828491', text:'Die 3 Skalierungshebel\nA-Zahlenfolie · <a href="https://www.canva.com/d/netpPVbK-psbsLD" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708420582752', text:'TET Circle: Warum die Community dein nächster Schritt ist\n(Tribe-CTA-Format)' },
+  ],
+  // So 22.06 – Thema: Brand & Beziehung
+  [
+    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Claudio',  asanaId:'1215759320830960', text:'Business automatisieren – aber die Beziehung zu Menschen behalten\n(Alex W. · bereits aufgenommen · bei Claudio in Bearbeitung)' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708448927252', text:'KW25-Wrap-Up: Das nehmen wir mit\n(leichtes persönliches Format · Sonntag)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420535406', text:'Skalierungshebel – Wiederholung als Evergreen\nA-Zahlenfolie · <a href="https://www.canva.com/d/netpPVbK-psbsLD" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+  ],
+];
+
+// ── Asana Story-Kalender ──
+// Token hier eintragen sobald vorhanden:
+const ASANA_PAT = ''; // Token wird lokal über den Server geladen
+const STORY_SECTION = '1215695447009362';
+
+async function loadStoryCalendar() {
+  const storyCal = document.getElementById('story-calendar');
+  if (!ASANA_PAT) {
+    // Kein Token: leere Slots pro Tag + Link zur Asana-Section
+    days.forEach(d => {
+      storyCal.innerHTML += `
+        <div class="story-day">
+          <div class="story-day-header">
+            <div class="cal-day-name">${d.name}</div>
+            <div class="cal-day-date" style="font-size:15px;font-weight:700;color:var(--white)">${d.date}</div>
+          </div>
+          <div class="story-slots">
+            <div class="story-slot" style="color:var(--dim);font-style:italic;grid-column:1/-1">Noch keine Stories geplant</div>
+          </div>
+        </div>`;
+    });
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      `https://app.asana.com/api/1.0/sections/${STORY_SECTION}/tasks?opt_fields=name,due_on,notes,gid&limit=50`,
+      { headers: { Authorization: `Bearer ${ASANA_PAT}`, Accept: 'application/json' } }
+    );
+    const json = await res.json();
+    const tasks = json.data || [];
+
+    // Gruppe Tasks nach due_on
+    const byDate = {};
+    tasks.forEach(t => { if (t.due_on) { (byDate[t.due_on] = byDate[t.due_on] || []).push(t); } });
+
+    // Datums-Map für die KW-Tage (Mo=15.06 … So=21.06 2026)
+    const kwDates = ['2026-06-15','2026-06-16','2026-06-17','2026-06-18','2026-06-19','2026-06-20','2026-06-21'];
+
+    days.forEach((d, i) => {
+      const dayTasks = byDate[kwDates[i]] || [];
+      const slotsHTML = dayTasks.length
+        ? dayTasks.map(t => `
+            <div class="story-slot-num">Story</div>
+            <a href="${asanaLink(t.gid)}" target="_blank" style="text-decoration:none">
+              <div class="story-slot filled" title="In Asana öffnen" style="cursor:pointer">${t.name}</div>
+            </a>`).join('')
+        : `<div class="story-slot" style="color:var(--dim);font-style:italic;grid-column:1/-1">Noch keine Stories geplant</div>`;
+
+      storyCal.innerHTML += `
+        <div class="story-day">
+          <div class="story-day-header">
+            <div class="cal-day-name">${d.name}</div>
+            <div class="cal-day-date" style="font-size:15px;font-weight:700;color:var(--white)">${d.date}</div>
+          </div>
+          <div class="story-slots">${slotsHTML}</div>
+        </div>`;
+    });
+  } catch(e) {
+    document.getElementById('story-calendar').innerHTML =
+      `<div style="color:var(--dim);padding:16px">Fehler beim Laden der Stories aus Asana.</div>`;
+  }
+}
+loadStoryCalendar();
+
+// Render feed calendar
+const feedCal = document.getElementById('feed-calendar');
+days.forEach((d, i) => {
+  const items = feedPlan[i] || [];
+  const itemsHTML = items.map(item => {
+    const textHTML = item.text.replace(/\n/g, '<br>');
+    const inner = `<div class="cal-item" data-type="${item.type}" ${item.asanaId ? `style="cursor:pointer" title="In Asana öffnen"` : ''}>
+      ${item.tag ? `<div class="cal-item-tag">${item.tag}</div>` : ''}
+      <div>${textHTML}</div>
+    </div>`;
+    return item.asanaId
+      ? `<a href="${asanaLink(item.asanaId)}" target="_blank" style="text-decoration:none;display:block;color:inherit">${inner}</a>`
+      : inner;
+  }).join('');
+  feedCal.innerHTML += `
+    <div class="cal-day ${d.today?'today':''}">
+      <div class="cal-day-header">
+        <div class="cal-day-name">${d.name}</div>
+        <div class="cal-day-date">${d.date}</div>
+      </div>
+      <div class="cal-day-body">${itemsHTML}</div>
+    </div>`;
+});
+
+
+// ── Render top posts ──
+const posts = [
+  { date:"16.05.", text:"TET Tribe – deine Circle Community ist ab sofort für alle Unternehmer geöffnet…", views:1992, engagement:3.25 },
+  { date:"09.06.", text:"Diese Woche sind 4 Updates live gegangen, die deine Content-Strategie direkt betreffen…", views:1502, engagement:5.91 },
+  { date:"28.05.", text:"Was mich als SM-Mentorin diese Woche interessiert – deutlich zeigt…", views:1223, engagement:4.46 },
+  { date:"19.05.", text:"Was mich als SM-Mentorin interessiert – Social Media bewegt sich gerade…", views:1071, engagement:3.69 },
+  { date:"02.06.", text:"Was mich als SM-Mentorin juckt – Plattformen zeigen eine gemischte…", views:1070, engagement:3.13 },
+  { date:"05.06.", text:"Social Media war nie wirklich kostenlos. Du hast immer bezahlt…", views:775, engagement:4.81 },
+  { date:"01.06.", text:"Coaching und Dienstleistung ist strukturell stärker als jeder DAX-Konzern…", views:642, engagement:4.47 },
+];
+const reels = [
+  { date:"03.06.", text:"Während du noch darauf wartest, dein nächstes Reel zu posten oder sichtbar zu werden…", views:967, engagement:5.55 },
+  { date:"10.06.", text:"Vor 1,5 Jahren wusste @mindspiration_ nicht mit was sie ein Business starten kann…", views:724, engagement:5.96 },
+  { date:"17.05.", text:"(Kein Text) – Talking Head Format", views:729, engagement:2.36 },
+  { date:"15.05.", text:"Kommentiere 222 und wir schicken dir den Link zu unserer kostenlosen Circle Community…", views:671, engagement:2.94 },
+  { date:"28.05.", text:"Du hast einen Funnel. Du hast eine Customer Journey. Trotzdem verkauft es sich nicht…", views:660, engagement:2.36 },
+];
+
+function renderRankRows(items, bodyId, maxViews) {
+  const body = document.getElementById(bodyId);
+  items.forEach((p, i) => {
+    const engHigh = p.engagement >= 4.5;
+    const fillW = Math.round((p.engagement / 7) * 100);
+    body.innerHTML += `
+      <tr>
+        <td><span class="rank-num">${i+1}</span></td>
+        <td>
+          <div class="rank-text">${p.text}</div>
+          <div class="rank-date">${p.date}</div>
+        </td>
+        <td class="rank-stat">${p.views.toLocaleString('de')}<small>Ansichten</small></td>
+        <td class="rank-stat">
+          ${p.engagement.toFixed(2)}
+          <div class="engagement-bar ${engHigh?'engagement-high':''}">
+            <div class="engagement-fill" style="width:${fillW}%"></div>
+          </div>
+        </td>
+      </tr>`;
+  });
+}
+renderRankRows(posts, 'top-posts-body', 2000);
+renderRankRows(reels, 'top-reels-body', 1000);
+
+// ── Follower chart ──
+const historyData = {
+  labels: ['KW12','KW13','KW14','KW15','KW16','KW17','KW18','KW19','KW20','KW21','12. Jun'],
+  data:   [5800,  5858,  5912,  5964,  6020,  6080,  6145,  6210,  6270,  6335,  6498]
+};
+const ctx = document.getElementById('follower-chart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: historyData.labels,
+    datasets: [{
+      label: 'Follower',
+      data: historyData.data,
+      borderColor: '#7CA7EB',
+      backgroundColor: 'rgba(124,167,235,0.08)',
+      borderWidth: 2.5,
+      pointBackgroundColor: '#7CA7EB',
+      pointRadius: 4,
+      pointHoverRadius: 6,
+      tension: 0.35,
+      fill: true,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: {
+      backgroundColor: '#071429', borderColor: 'rgba(124,167,235,.2)', borderWidth: 1,
+      titleColor: '#7CA7EB', bodyColor: '#fff', padding: 10,
+    }},
+    scales: {
+      x: { grid: { color: 'rgba(124,167,235,.06)' }, ticks: { color: '#6b85a8', font: { size: 11 } } },
+      y: {
+        grid: { color: 'rgba(124,167,235,.06)' }, ticks: { color: '#6b85a8', font: { size: 11 } },
+        min: 5700, suggestedMax: 6600,
+      }
+    }
+  }
+});
+
+// ── Live Google Sheet ──
+const SHEET_CSV = 'https://docs.google.com/spreadsheets/d/1WScTq32DHJGFb40QDbm-1afgZqlRdJVQcBWnJfPrYQg/export?format=csv&gid=0';
+
+function parseNum(s) {
+  if (!s || s.trim() === '-' || s.trim() === '') return null;
+  return parseInt(s.replace(/\./g, '').replace(/,/g, '')) || null;
+}
+
+async function loadSheet() {
+  const status = document.getElementById('sheet-status');
+  const table = document.getElementById('sheet-table');
+  const body = document.getElementById('sheet-body');
+  const chartEl = document.getElementById('sheet-chart');
+  status.textContent = 'Lade Daten aus Google Sheet…';
+  body.innerHTML = '';
+  try {
+    const res = await fetch(SHEET_CSV + '&t=' + Date.now());
+    if (!res.ok) throw new Error('Sheet nicht erreichbar (HTTP ' + res.status + ')');
+    const csv = await res.text();
+    if (csv.includes('<!DOCTYPE') || csv.includes('<html')) throw new Error('Sheet nicht öffentlich freigegeben');
+    const parseCSVRow = line => { const cols=[]; let cur='',inQ=false; for(let i=0;i<line.length;i++){const c=line[i];if(c==='"'){inQ=!inQ;}else if(c===','&&!inQ){cols.push(cur.trim());cur='';}else{cur+=c;}} cols.push(cur.trim()); return cols; };
+    const rows = csv.split('\n').map(parseCSVRow);
+    const dataRows = rows.filter(r => r[1] && /\d{2}\.\d{2}\.\d{4}/.test(r[1]));
+    if (!dataRows.length) { status.textContent = 'Noch keine Daten eingetragen.'; return; }
+
+    // sort by date
+    dataRows.sort((a, b) => {
+      const toISO = s => { const m = s.match(/(\d{2})\.(\d{2})\.(\d{4})/); return m ? m[3]+m[2]+m[1] : ''; };
+      return toISO(a[1]).localeCompare(toISO(b[1]));
+    });
+
+    table.style.display = 'table';
+    dataRows.forEach((r, i) => {
+      const follower = parseNum(r[2]);
+      const followerPct = r[3] ? r[3] : '—';
+      const reach = parseNum(r[4]);
+      const reachPct = r[5] ? r[5] : '—';
+      const inter = parseNum(r[6]);
+      const interPct = r[7] ? r[7] : '—';
+      const isLatest = i === dataRows.length - 1;
+      const fmt = n => n != null ? n.toLocaleString('de') : '—';
+      const pctColor = p => {
+        const v = parseFloat(p);
+        if (isNaN(v)) return 'var(--dim)';
+        return v >= 0 ? '#4ade80' : '#f87171';
+      };
+      const pctHtml = p => {
+        const v = parseFloat(p);
+        if (isNaN(v) || p === '—') return '<span style="color:var(--dim)">—</span>';
+        return `<span style="color:${pctColor(p)}">${v >= 0 ? '▲' : '▼'} ${Math.abs(v).toFixed(2)}%</span>`;
+      };
+      body.innerHTML += `<tr style="${isLatest ? 'background:rgba(124,167,235,.06);font-weight:600' : ''}border-bottom:1px solid rgba(255,255,255,.04)">
+        <td style="padding:10px 12px;color:${isLatest ? 'var(--white)' : 'var(--text)'}">${r[1]}${isLatest ? ' <span style="font-size:10px;background:rgba(124,167,235,.2);color:var(--blue);padding:1px 6px;border-radius:4px;font-weight:700">AKTUELL</span>' : ''}</td>
+        <td style="text-align:right;padding:10px 12px;color:var(--white)">${fmt(follower)}</td>
+        <td style="text-align:right;padding:10px 12px">${pctHtml(followerPct)}</td>
+        <td style="text-align:right;padding:10px 12px;color:var(--white)">${fmt(reach)}</td>
+        <td style="text-align:right;padding:10px 12px">${pctHtml(reachPct)}</td>
+        <td style="text-align:right;padding:10px 12px;color:var(--white)">${fmt(inter)}</td>
+        <td style="text-align:right;padding:10px 12px">${pctHtml(interPct)}</td>
+      </tr>`;
+    });
+
+    // mini follower trend chart
+    const labels = dataRows.map(r => r[1].slice(0,5));
+    const values = dataRows.map(r => parseNum(r[2])).filter(v => v != null);
+    if (values.length >= 2) {
+      chartEl.style.display = 'block';
+      if (window._sheetChart) window._sheetChart.destroy();
+      window._sheetChart = new Chart(chartEl.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{ data: values, borderColor: '#7CA7EB', backgroundColor: 'rgba(124,167,235,.1)', tension: 0.4, fill: true, pointRadius: 4, pointBackgroundColor: '#7CA7EB' }]
+        },
+        options: { plugins: { legend: { display: false } }, scales: {
+          x: { ticks: { color: 'rgba(255,255,255,.4)', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,.04)' } },
+          y: { ticks: { color: 'rgba(255,255,255,.4)', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,.06)' } }
+        }}
+      });
+    }
+
+    const ts = new Date().toLocaleTimeString('de', { hour: '2-digit', minute: '2-digit' });
+    status.innerHTML = `<span style="color:#4ade80">✓</span> ${dataRows.length} Einträge · zuletzt geladen ${ts} · <a href="https://docs.google.com/spreadsheets/d/1WScTq32DHJGFb40QDbm-1afgZqlRdJVQcBWnJfPrYQg" target="_blank" style="color:var(--blue)">Sheet öffnen ↗</a>`;
+  } catch(e) {
+    status.innerHTML = `<span style="color:#f87171">⚠ ${e.message}</span> · <a href="https://docs.google.com/spreadsheets/d/1WScTq32DHJGFb40QDbm-1afgZqlRdJVQcBWnJfPrYQg" target="_blank" style="color:var(--blue)">Sheet öffnen ↗</a>`;
+  }
+}
+
+loadSheet();
+</script>
+</body>
+</html>

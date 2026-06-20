@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TET Dashboard · Setup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #010D26; --bg-card: #071429; --blue: #7CA7EB;
+      --camel: #CDB08F; --white: #FFFFFF; --text-dim: #6b85a8;
+      --border: rgba(124,167,235,0.14); --green: #52C984; --red: #E85555;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: 14px;
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 32px;
+    }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px 48px; width: 100%; max-width: 540px;
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--camel); margin-bottom: 6px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 8px; }
+    .subtitle { font-size: 13px; color: var(--text-dim); margin-bottom: 32px; line-height: 1.6; }
+    .step {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: rgba(124,167,235,0.05); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px; margin-bottom: 12px;
+    }
+    .step-num {
+      background: var(--blue); color: #010D26; border-radius: 50%;
+      width: 24px; height: 24px; display: flex; align-items: center;
+      justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
+    .step-text { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+    .step-text strong { color: var(--white); }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+    .btn-primary {
+      width: 100%; background: var(--blue); color: #010D26;
+      border: none; border-radius: 10px; font-size: 15px; font-weight: 700;
+      padding: 16px; cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: opacity 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+    .status-box {
+      display: none; border-radius: 10px; padding: 16px 18px;
+      font-size: 13px; margin-top: 18px; line-height: 1.7;
+    }
+    .status-box.loading { background: rgba(124,167,235,0.1); border: 1px solid rgba(124,167,235,0.2); color: var(--blue); display: block; }
+    .status-box.success { background: rgba(82,201,132,0.1); border: 1px solid rgba(82,201,132,0.2); color: var(--green); display: block; }
+    .status-box.error   { background: rgba(232,85,85,0.1);  border: 1px solid rgba(232,85,85,0.2);  color: var(--red);   display: block; }
+    .spin { display: inline-block; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .footer-note { font-size: 11px; color: var(--text-dim); text-align: center; line-height: 1.6; margin-top: 20px; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">The Escape Theorie</div>
+  <h1>Dashboard Setup</h1>
+  <p class="subtitle">
+    Einmalige Anmeldung bei Metricool — danach läuft das Dashboard<br>
+    vollautomatisch, täglich, für immer.
+  </p>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-text">
+      <strong>Browser öffnet sich automatisch</strong><br>
+      Klick auf den Button unten. Ein Metricool-Fenster öffnet sich auf deinem Bildschirm.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-text">
+      <strong>Einloggen wie gewohnt</strong><br>
+      Verwende deinen Beziehungscode oder eine andere Login-Methode — genauso wie immer.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-text">
+      <strong>Fertig — Session wird automatisch gespeichert</strong><br>
+      Sobald du im Dashboard bist, erkennt das System den Login und speichert alles dauerhaft.
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <button class="btn-primary" id="start-btn" onclick="startBrowser()">
+    🖥️ &nbsp; Browser öffnen und bei Metricool einloggen
+  </button>
+
+  <div class="status-box" id="status-box">
+    <div id="status-text"></div>
+  </div>
+
+  <p class="footer-note">
+    Deine Session wird ausschließlich lokal auf diesem Server gespeichert<br>
+    und nie an Dritte übertragen.
+  </p>
+</div>
+
+<script>
+const btn = document.getElementById('start-btn');
+const box = document.getElementById('status-box');
+const txt = document.getElementById('status-text');
+
+function setStatus(type, msg) {
+  box.className = `status-box ${type}`;
+  txt.innerHTML = msg;
+}
+
+async function startBrowser() {
+  btn.disabled = true;
+  btn.textContent = '⏳  Browser startet…';
+  setStatus('loading',
+    '<span class="spin">⟳</span> Browser öffnet sich gleich auf deinem Bildschirm…<br><br>' +
+    '<strong>Bitte einloggen</strong> — du hast 4 Minuten Zeit.<br>' +
+    'Das Fenster schließt sich automatisch nach dem Login.'
+  );
+
+  try {
+    const res = await fetch('/api/setup/start-browser', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      setStatus('success',
+        `✓ Login erfolgreich!<br><br>` +
+        `<strong>User-ID:</strong> ${data.userId}<br>` +
+        `<strong>Blog-ID:</strong> ${data.blogId}<br><br>` +
+        `Session gespeichert. Dashboard startet in 3 Sekunden…`
+      );
+      setTimeout(() => { window.location.href = '/'; }, 3000);
+    } else {
+      throw new Error(data.error ?? 'Unbekannter Fehler');
+    }
+  } catch (err) {
+    setStatus('error', `✗ ${err.message}<br><br>Bitte erneut versuchen.`);
+    btn.disabled = false;
+    btn.textContent = '🖥️   Erneut versuchen';
+  }
+}
+</script>
+</body>
+</html>
