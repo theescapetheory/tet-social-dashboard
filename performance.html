@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TET · Performance-Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #010D26;
+      --bg-card:   #071429;
+      --bg-card-2: #0c1e3a;
+      --blue:      #7CA7EB;
+      --blue-dim:  rgba(124,167,235,0.12);
+      --camel:     #CDB08F;
+      --camel-dim: rgba(205,176,143,0.12);
+      --white:     #FFFFFF;
+      --text-dim:  #6b85a8;
+      --border:    rgba(124,167,235,0.14);
+      --green:     #52C984;
+      --green-dim: rgba(82,201,132,0.10);
+      --red:       #E8736B;
+      --red-dim:   rgba(232,115,107,0.10);
+      --amber:     #E8B96B;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px; min-height: 100vh; padding-bottom: 60px; }
+    header { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 18px 32px; display: flex; align-items: center; gap: 20px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; color: var(--camel); text-decoration: none; }
+    .header-divider { width: 1px; height: 24px; background: var(--border); }
+    .header-title { font-size: 13px; font-weight: 500; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; }
+    .back-btn { margin-left: auto; font-size: 12px; color: var(--text-dim); text-decoration: none; border: 1px solid var(--border); padding: 5px 12px; border-radius: 6px; transition: color .2s, border-color .2s; }
+    .back-btn:hover { color: var(--white); border-color: var(--blue); }
+    main { max-width: 920px; margin: 0 auto; padding: 32px 24px; }
+
+    .page-intro { margin-bottom: 24px; }
+    .page-intro h1 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--camel); margin-bottom: 8px; }
+    .page-intro p { color: var(--text-dim); line-height: 1.6; max-width: 640px; }
+    .updated-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: var(--green); background: var(--green-dim); border: 1px solid rgba(82,201,132,0.2); padding: 3px 10px; border-radius: 20px; margin-bottom: 16px; }
+
+    .section-label { font-family:'Playfair Display',serif; font-size: 18px; font-weight: 700; color: var(--camel); margin: 34px 0 14px; display:flex; align-items:center; gap:9px; }
+
+    /* GOAL / FORECAST */
+    .goal-card { background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-2) 100%); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+    .goal-top { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+    .goal-current { font-family:'Playfair Display',serif; font-size: 34px; font-weight:900; color: var(--white); }
+    .goal-target { font-size: 13px; color: var(--text-dim); }
+    .goal-target b { color: var(--camel); }
+    .progress-track { height: 10px; background: var(--bg); border-radius: 20px; overflow:hidden; border:1px solid var(--border); }
+    .progress-fill { height:100%; background: linear-gradient(90deg, var(--blue), var(--camel)); border-radius:20px; transition: width .8s ease; }
+    .goal-pct { font-size:11px; color: var(--text-dim); margin-top:6px; }
+    .verdict-box { margin-top:18px; background: var(--bg); border-left: 3px solid var(--amber); border-radius: 0 8px 8px 0; padding: 14px 16px; line-height:1.6; font-size:13.5px; color:#dbe5f3; }
+    .forecast-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:16px; }
+    .fc-item { background: var(--bg); border:1px solid var(--border); border-radius:10px; padding:13px 15px; }
+    .fc-item .fc-val { font-size:19px; font-weight:600; color: var(--white); }
+    .fc-item .fc-lab { font-size:11px; color: var(--text-dim); margin-top:3px; line-height:1.4; }
+    .fc-item.warn .fc-val { color: var(--red); }
+    .fc-item.good .fc-val { color: var(--green); }
+
+    /* KPI CARDS */
+    .kpi-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+    .kpi { background: var(--bg-card); border:1px solid var(--border); border-radius:11px; padding:16px; }
+    .kpi-label { font-size:11px; text-transform:uppercase; letter-spacing:1px; color: var(--text-dim); margin-bottom:8px; }
+    .kpi-value { font-size:24px; font-weight:600; color: var(--white); font-family:'Playfair Display',serif; }
+    .kpi-delta { display:inline-block; font-size:11px; font-weight:600; margin-top:6px; padding:2px 8px; border-radius:12px; }
+    .kpi-delta.up { color: var(--green); background: var(--green-dim); }
+    .kpi-delta.down { color: var(--red); background: var(--red-dim); }
+    .kpi-note { font-size:11px; color: var(--text-dim); margin-top:8px; line-height:1.45; }
+
+    /* WORKING / FIXING */
+    .item { border:1px solid var(--border); border-radius:11px; margin-bottom:11px; overflow:hidden; }
+    .item.work { background: var(--green-dim); border-color: rgba(82,201,132,0.22); }
+    .item.fix  { background: var(--bg-card); }
+    .item-head { padding:14px 16px; display:flex; align-items:flex-start; gap:11px; }
+    .item-icon { font-size:16px; line-height:1.4; flex-shrink:0; }
+    .prio-badge { font-size:11px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; background: var(--camel); color: var(--bg); flex-shrink:0; }
+    .item-title { font-size:14.5px; font-weight:600; color: var(--white); margin-bottom:4px; }
+    .item-detail { font-size:13px; color:#b9c8dd; line-height:1.6; }
+    .item-tags { display:flex; gap:7px; margin-top:9px; flex-wrap:wrap; }
+    .tag { font-size:10px; text-transform:uppercase; letter-spacing:.5px; padding:3px 9px; border-radius:5px; background: var(--blue-dim); color: var(--blue); font-weight:600; }
+    .tag.impact-hoch { background: var(--red-dim); color: var(--red); }
+    .tag.impact-mittel { background: rgba(232,185,107,0.12); color: var(--amber); }
+    .tag.impact-niedrig { background: var(--blue-dim); color: var(--blue); }
+    .evidence { font-size:11px; color: var(--text-dim); margin-top:8px; font-style:italic; }
+
+    .summary-box { background: var(--bg-card-2); border:1px solid var(--border); border-radius:12px; padding:20px 22px; line-height:1.7; font-size:14px; color:#dbe5f3; }
+    .summary-box b { color: var(--camel); }
+
+    .empty { text-align:center; padding:60px 20px; color: var(--text-dim); }
+    .empty h2 { font-size:18px; margin-bottom:8px; color: var(--white); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">TET</a>
+  <div class="header-divider"></div>
+  <span class="header-title">Performance-Analyst</span>
+  <a href="/" class="back-btn">← Dashboard</a>
+</header>
+
+<main>
+  <div class="page-intro">
+    <h1>Performance &amp; Wachstumsstrategie</h1>
+    <p>Wöchentliche Auswertung von <b style="color:var(--blue)">@the_escapetheory</b> wie von einem Social-Media-Profi: Was läuft, was nicht, und die konkreten Schritte Richtung 10.000 Follower. Aktualisiert jeden Montag automatisch.</p>
+  </div>
+
+  <div id="updated-badge" class="updated-badge" style="display:none;">
+    <span>●</span> <span id="updated-text">Aktualisiert</span>
+  </div>
+
+  <div id="content"></div>
+
+  <div id="empty-state" class="empty" style="display:none;">
+    <h2>Noch keine Auswertung</h2>
+    <p>Der Scheduled Task <code>tet-performance-analyst</code> befüllt diese Seite jeden Montag früh mit der neuen Analyse.</p>
+  </div>
+</main>
+
+<script>
+  async function loadData() {
+    try {
+      const res = await fetch('/performance-data.json?t=' + Date.now());
+      if (!res.ok) throw new Error('not found');
+      render(await res.json());
+    } catch (e) {
+      document.getElementById('empty-state').style.display = 'block';
+    }
+  }
+
+  const esc = s => (s || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+  function render(d) {
+    if (d.updated) {
+      const b = document.getElementById('updated-badge');
+      b.style.display = 'inline-flex';
+      document.getElementById('updated-text').textContent = 'KW ' + (d.kw || '—') + ' · ' + (d.period || d.updated);
+    }
+
+    const g = d.goal || {}, f = d.forecast || {};
+    const pct = g.target ? Math.min(100, (g.current / g.target) * 100) : 0;
+    let html = '';
+
+    // GOAL + FORECAST
+    html += `
+      <div class="section-label">🎯 Ziel: ${(g.target||0).toLocaleString('de-DE')} Follower</div>
+      <div class="goal-card">
+        <div class="goal-top">
+          <div class="goal-current">${(g.current||0).toLocaleString('de-DE')}</div>
+          <div class="goal-target">Ziel: <b>${(g.target||0).toLocaleString('de-DE')}</b> · noch ${(f.gapToGoal||0).toLocaleString('de-DE')}</div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" style="width:${pct.toFixed(1)}%"></div></div>
+        <div class="goal-pct">${pct.toFixed(1)}% erreicht</div>
+        ${f.verdict ? `<div class="verdict-box">${esc(f.verdict)}</div>` : ''}
+        <div class="forecast-grid">
+          <div class="fc-item warn"><div class="fc-val">${f.etaLabelCurrentPace || '—'}</div><div class="fc-lab">bis 10K beim aktuellen Tempo (~+${f.weeklyGrowthNet ?? '?'}/Woche)</div></div>
+          <div class="fc-item good"><div class="fc-val">+${f.neededWeeklyGrowth12Months ?? '?'}/Wo</div><div class="fc-lab">nötig für 10K in 12 Monaten</div></div>
+          <div class="fc-item good"><div class="fc-val">+${f.neededWeeklyGrowth6Months ?? '?'}/Wo</div><div class="fc-lab">nötig für 10K in 6 Monaten</div></div>
+        </div>
+      </div>`;
+
+    // KPIs
+    if (d.kpis && d.kpis.length) {
+      html += `<div class="section-label">📊 Kennzahlen der Woche</div><div class="kpi-grid">`;
+      d.kpis.forEach(k => {
+        const dir = (k.delta >= 0) ? 'up' : 'down';
+        const arrow = (k.delta >= 0) ? '▲' : '▼';
+        html += `
+          <div class="kpi">
+            <div class="kpi-label">${esc(k.label)}</div>
+            <div class="kpi-value">${esc(String(k.value))}</div>
+            ${k.delta !== undefined ? `<div class="kpi-delta ${dir}">${arrow} ${Math.abs(k.delta)}%${k.deltaAbs ? ' · ' + esc(k.deltaAbs) : ''}</div>` : ''}
+            ${k.note ? `<div class="kpi-note">${esc(k.note)}</div>` : ''}
+          </div>`;
+      });
+      html += `</div>`;
+    }
+
+    // WORKING
+    if (d.working && d.working.length) {
+      html += `<div class="section-label">✅ Was gut läuft</div>`;
+      d.working.forEach(w => {
+        html += `
+          <div class="item work">
+            <div class="item-head">
+              <span class="item-icon">✅</span>
+              <div>
+                <div class="item-title">${esc(w.title)}</div>
+                <div class="item-detail">${esc(w.detail)}</div>
+                ${w.evidence ? `<div class="evidence">Beleg: ${esc(w.evidence)}</div>` : ''}
+              </div>
+            </div>
+          </div>`;
+      });
+    }
+
+    // FIXING
+    if (d.fixing && d.fixing.length) {
+      html += `<div class="section-label">🔧 Jetzt umsetzen (priorisiert)</div>`;
+      d.fixing.forEach(x => {
+        const imp = (x.impact || '').toLowerCase();
+        html += `
+          <div class="item fix">
+            <div class="item-head">
+              <span class="prio-badge">${x.priority || '•'}</span>
+              <div>
+                <div class="item-title">${esc(x.title)}</div>
+                <div class="item-detail">${esc(x.detail)}</div>
+                <div class="item-tags">
+                  ${x.impact ? `<span class="tag impact-${imp}">Impact: ${esc(x.impact)}</span>` : ''}
+                  ${x.effort ? `<span class="tag">Aufwand: ${esc(x.effort)}</span>` : ''}
+                </div>
+              </div>
+            </div>
+          </div>`;
+      });
+    }
+
+    // SUMMARY
+    if (d.summary) {
+      html += `<div class="section-label">🧭 Fazit</div><div class="summary-box">${esc(d.summary)}</div>`;
+    }
+
+    document.getElementById('content').innerHTML = html;
+  }
+
+  loadData();
+</script>
+</body>
+</html>

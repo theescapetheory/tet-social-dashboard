@@ -1,0 +1,39 @@
+{
+  "updated": "2026-06-21",
+  "kw": 25,
+  "account": "the_escapetheory",
+  "period": "20. Mai – 18. Juni 2026",
+  "goal": { "metric": "Follower", "target": 10000, "current": 6507 },
+  "forecast": {
+    "weeklyGrowthNet": 3,
+    "trend": "flat",
+    "gapToGoal": 3493,
+    "etaWeeksCurrentPace": 1164,
+    "etaLabelCurrentPace": "über 20 Jahre",
+    "neededWeeklyGrowth6Months": 134,
+    "neededWeeklyGrowth12Months": 68,
+    "verdict": "Beim aktuellen Netto-Tempo (~+3 Follower/Woche) ist 10K praktisch unerreichbar. Die Reichweite ist da, aber sie wandelt sich nicht in Follower um. Der Hebel ist NICHT mehr Reichweite — sondern Follow-Conversion und systematisch mehr Reels (Discovery). Realistisches Ziel: +68/Woche für 10K in 12 Monaten, +134/Woche für 6 Monate.",
+    "confidence": "hoch — basiert auf 30-Tage-Metricool-Daten"
+  },
+  "kpis": [
+    { "label": "Follower", "value": "6.507", "delta": 0.18, "deltaAbs": "+12 / 30 Tage", "good": false, "note": "Netto fast Stillstand trotz 92K Impressionen" },
+    { "label": "Impressionen", "value": "92.740", "delta": -11.31, "good": false, "note": "Reichweite rückläufig" },
+    { "label": "Interaktionen", "value": "352", "delta": 7.98, "good": true, "note": "Engagement-Qualität steigt" },
+    { "label": "Ø Engagement Karussell", "value": "3,76", "delta": 19.96, "good": true, "note": "klar über Reels (2,42)" },
+    { "label": "Gespeichert (Karussell)", "value": "18", "delta": 500.0, "good": true, "note": "stärkstes Signal: Content ist wertvoll" },
+    { "label": "Ø Reichweite/Reel", "value": "342", "delta": -33.88, "good": false, "note": "Discovery-Motor stottert" }
+  ],
+  "working": [
+    { "title": "Karussells schlagen Reels deutlich", "detail": "Alle 5 Top-Posts nach Reichweite sind Karussells. Engagement +19,96%, Saves +500%. Das ist das Format, das aktuell zieht.", "evidence": "Top-Post 09.06. (1.753 Views), SM-News 16.06. (7,0 Engagement)" },
+    { "title": "Wiederkehrende Wochenformate funktionieren", "detail": "SM-News der Woche & 'Was mich diese Woche beschäftigt' performen verlässlich — Wiedererkennung schafft Erwartung.", "evidence": "3 der Top-5-Posts sind feste Formate" },
+    { "title": "Engagement-Qualität steigt", "detail": "Interaktionen +7,98%, Saves explodieren. Wer den Content sieht, findet ihn relevant. Die Zielgruppe (35–44 w, DACH) passt.", "evidence": "Saves +500%, Interaktionen +188% bei Karussells" }
+  ],
+  "fixing": [
+    { "priority": 1, "title": "Follow-Conversion reparieren", "detail": "92K Impressionen → nur +12 Follower. Das Profil und die Post-Endings holen den Follow nicht ab. Sofort: Bio mit klarem Nutzenversprechen + CTA, jede letzte Karussell-Slide mit 'Folge @the_escapetheory für…', Profil-Highlights als Beweis-Wand.", "impact": "hoch", "effort": "niedrig" },
+    { "priority": 2, "title": "Reels als Discovery-Motor neu aufsetzen", "detail": "Follower kommen über Reichweite bei Nicht-Followern — das leisten primär Reels, nicht Karussells. Reel-Reichweite fällt -34%. Top-Karussell-Hooks in 3–5 schnelle Talking-Head-Reels (Alex) repurposen, Trending-Audio, erste 2 Sek = Hook.", "impact": "hoch", "effort": "mittel" },
+    { "priority": 3, "title": "Posting-Frequenz auf Ziel hochfahren", "detail": "39 Beiträge/30 Tage = ~1,3/Tag. Ziel sind 3/Tag. Mehr vom beweisbar funktionierenden Format (Karussell) über die Pipeline skalieren — ohne die Reel-Lücke offen zu lassen.", "impact": "mittel", "effort": "niedrig" },
+    { "priority": 4, "title": "Kommentar-CTAs / Keyword-Funnel einbauen", "detail": "Fast 0 Kommentare. Kommentare sind das stärkste Reichweiten-Signal. Pro Post eine konkrete Frage ODER ein Keyword-CTA ('Kommentiere STRATEGIE und ich schicke dir…') → triggert Reichweite UND Leads.", "impact": "hoch", "effort": "niedrig" },
+    { "priority": 5, "title": "TikTok-Entscheidung treffen", "detail": "53K Follower, aber 96% Asien — keine DACH-Überschneidung, faktisch brach. Entweder bewusst DACH-Reels dort spiegeln oder offiziell deprioritisieren, damit keine Zeit verpufft.", "impact": "niedrig", "effort": "niedrig" }
+  ],
+  "summary": "Reichweite ist vorhanden und der Content wird gespeichert — aber er verwandelt sich nicht in Follower. Der entscheidende Hebel für 10K ist Follow-Conversion (Profil + CTAs) plus Reels als Discovery-Motor, nicht noch mehr Karussell-Reichweite. Beim aktuellen Tempo ist das Ziel unerreichbar; mit +68/Woche ist 10K in 12 Monaten realistisch."
+}

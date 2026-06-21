@@ -142,6 +142,26 @@ main{padding:40px 32px}
 .story-slot.filled{border-style:solid;border-color:rgba(205,176,143,.3);background:rgba(205,176,143,.07);color:var(--white)}
 .story-slot-num{font-size:9px;color:rgba(205,176,143,.5);font-weight:700;margin-bottom:2px}
 
+/* ── Evelyn Board ── */
+.ev-filter{background:transparent;border:1px solid var(--border);color:var(--dim);font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;cursor:pointer;transition:all .2s}
+.ev-filter:hover,.ev-filter.active{background:rgba(124,167,235,.15);border-color:var(--blue);color:var(--blue)}
+.ev-col-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:10px;margin-bottom:12px;background:rgba(255,255,255,.04);border-left:3px solid var(--col-color);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white)}
+.ev-count{background:rgba(255,255,255,.08);border-radius:10px;padding:2px 8px;font-size:11px;color:var(--dim)}
+.ev-cards{display:flex;flex-direction:column;gap:8px}
+.ev-card{background:var(--navy2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .2s;display:flex;flex-direction:column;gap:6px}
+.ev-card:hover{border-color:rgba(124,167,235,.35)}
+.ev-card.hidden{display:none}
+.ev-id{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--dim)}
+.ev-title{font-size:13px;font-weight:600;color:var(--white);line-height:1.4}
+.ev-tag{display:inline-block;font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px;letter-spacing:.04em}
+.ev-status{font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;width:fit-content}
+.ev-status.idee{background:rgba(107,133,168,.15);color:var(--dim)}
+.ev-status.skript{background:rgba(82,201,132,.15);color:#52C984}
+.ev-status.aufnahme{background:rgba(124,167,235,.15);color:var(--blue)}
+.ev-add{border:1px dashed rgba(124,167,235,.2)!important;color:var(--dim);font-size:12px;text-align:center;padding:10px;background:transparent!important}
+.ev-add:hover{border-color:var(--blue)!important;color:var(--blue)}
+.ev-col.hidden{display:none}
+
 /* ── Footer ── */
 footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--dim)}
 </style>
@@ -633,6 +653,321 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
   </div>
 
 
+  <!-- ── Evelyn: Aufnahme-Vorbereitung ── -->
+  <div class="section-title" style="margin-top:60px">🎬 Evelyn · Aufnahme-Vorbereitung mit Alex</div>
+  <p style="color:var(--dim);margin:-12px 0 24px;font-size:13px">Alle Ideen & fertigen Skripte nach Content-Säulen · zum Abhaken vor jeder Aufnahme-Session</p>
+
+  <!-- Filter Bar -->
+  <div id="ev-filters" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px">
+    <button class="ev-filter active" data-col="all" onclick="evFilter('all',this)">Alle</button>
+    <button class="ev-filter" data-col="personality" onclick="evFilter('personality',this)">Personality</button>
+    <button class="ev-filter" data-col="authority" onclick="evFilter('authority',this)">Authority</button>
+    <button class="ev-filter" data-col="trust" onclick="evFilter('trust',this)">Trust</button>
+    <button class="ev-filter" data-col="brand-culture" onclick="evFilter('brand-culture',this)">Brand Culture</button>
+    <button class="ev-filter" data-col="conversion" onclick="evFilter('conversion',this)">Conversion</button>
+    <span style="margin-left:auto;display:flex;gap:8px;align-items:center">
+      <button class="ev-filter" data-status="all" onclick="evFilterStatus('all',this)" style="border-color:rgba(255,255,255,.12)">Alle Status</button>
+      <button class="ev-filter" data-status="idee" onclick="evFilterStatus('idee',this)">💡 Idee</button>
+      <button class="ev-filter" data-status="skript" onclick="evFilterStatus('skript',this)">📝 Skript fertig</button>
+      <button class="ev-filter" data-status="aufnahme" onclick="evFilterStatus('aufnahme',this)">🎙 Aufgenommen</button>
+    </span>
+  </div>
+
+  <!-- Kanban Board -->
+  <div id="ev-board" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start">
+
+    <!-- PERSONALITY -->
+    <div class="ev-col" data-col="personality">
+      <div class="ev-col-header" style="--col-color:#E1306C">
+        <span>Personality</span><span class="ev-count" id="cnt-personality"></span>
+      </div>
+      <div class="ev-cards">
+        <div class="ev-card" data-col="personality" data-status="idee">
+          <div class="ev-id">PERS 01</div>
+          <div class="ev-title">Vorher/Nachher: vom Chaos zur Architektin</div>
+          <span class="ev-tag" style="background:#E1306C22;color:#E1306C">Positionierung</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="personality" data-status="idee">
+          <div class="ev-id">PERS 02</div>
+          <div class="ev-title">Der Waffelstand mit 8 – meine erste "Firma"</div>
+          <span class="ev-tag" style="background:#E1306C22;color:#E1306C">Positionierung</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="personality" data-status="idee">
+          <div class="ev-id">PERS 03</div>
+          <div class="ev-title">Die Idee, die ich nie umgesetzt habe</div>
+          <span class="ev-tag" style="background:#E1306C22;color:#E1306C">Positionierung</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="personality" data-status="idee">
+          <div class="ev-id">PERS 04</div>
+          <div class="ev-title">Der Moment, in dem ich brauche Hilfe</div>
+          <span class="ev-tag" style="background:#E1306C22;color:#E1306C">Positionierung</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card ev-add" data-col="personality" onclick="evAddCard('personality')">+ Idee hinzufügen</div>
+      </div>
+    </div>
+
+    <!-- AUTHORITY -->
+    <div class="ev-col" data-col="authority">
+      <div class="ev-col-header" style="--col-color:#F5C542">
+        <span>Authority</span><span class="ev-count" id="cnt-authority"></span>
+      </div>
+      <div class="ev-cards">
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 01</div>
+          <div class="ev-title">Die 4 Phasen des Unternehmenswachstums</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 02</div>
+          <div class="ev-title">Warum du kein Produkt-Problem hast – du hast ein Positioning-Problem</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 03</div>
+          <div class="ev-title">Die 5 Leaks in deinem Funnel</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 04</div>
+          <div class="ev-title">Pricing-Psychologie: Warum der Preis nie das echte Problem ist</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 05</div>
+          <div class="ev-title">Content-Säulen: warum die meisten falsch denken</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 06</div>
+          <div class="ev-title">Die 3 Phasen vom Offer zum Umsatz</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 07</div>
+          <div class="ev-title">Evergreen vs. Trend-Content: was wirklich konvertiert</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 08</div>
+          <div class="ev-title">Skalierung ohne Team: die Grenzen und was danach kommt</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 09</div>
+          <div class="ev-title">Warum "mit Wasser kochen" alle Top-Player verbindet</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="authority" data-status="idee">
+          <div class="ev-id">AUTH 10</div>
+          <div class="ev-title">Business Röntgenblick: was die meisten Analysen übersehen</div>
+          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card ev-add" data-col="authority" onclick="evAddCard('authority')">+ Idee hinzufügen</div>
+      </div>
+    </div>
+
+    <!-- TRUST -->
+    <div class="ev-col" data-col="trust">
+      <div class="ev-col-header" style="--col-color:#69C9D0">
+        <span>Trust</span><span class="ev-count" id="cnt-trust"></span>
+      </div>
+      <div class="ev-cards">
+        <div class="ev-card" data-col="trust" data-status="idee">
+          <div class="ev-id">TRUST 01</div>
+          <div class="ev-title">Das erste Gespräch, das alles verändert hat</div>
+          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="trust" data-status="idee">
+          <div class="ev-id">TRUST 02</div>
+          <div class="ev-title">"Von 5K Chaos zu 20K System"</div>
+          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="trust" data-status="idee">
+          <div class="ev-id">TRUST 03</div>
+          <div class="ev-title">Warum Kunden nicht kaufen – und was sich wirklich geändert hat</div>
+          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="trust" data-status="idee">
+          <div class="ev-id">TRUST 04</div>
+          <div class="ev-title">Der Sparring-Call, der den eigentlichen Hebel zeigte</div>
+          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="trust" data-status="idee">
+          <div class="ev-id">TRUST 05</div>
+          <div class="ev-title">Was Mentorin-Arbeit wirklich bedeutet – hinter den Kulissen</div>
+          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="trust" data-status="idee">
+          <div class="ev-id">TRUST 06</div>
+          <div class="ev-title">Drei Monate, drei Durchbrüche – ein Rückblick</div>
+          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="trust" data-status="idee">
+          <div class="ev-id">TRUST 07</div>
+          <div class="ev-title">Von kleinem Nebenprojekt zur skalierten Organisation</div>
+          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="trust" data-status="idee">
+          <div class="ev-id">TRUST 08</div>
+          <div class="ev-title">Community statt Coach-Rolle – warum das den Unterschied macht</div>
+          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="trust" data-status="idee">
+          <div class="ev-id">TRUST 09</div>
+          <div class="ev-title">Das Feedback, das mich überrascht hat</div>
+          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card ev-add" data-col="trust" onclick="evAddCard('trust')">+ Idee hinzufügen</div>
+      </div>
+    </div>
+
+    <!-- BRAND CULTURE -->
+    <div class="ev-col" data-col="brand-culture">
+      <div class="ev-col-header" style="--col-color:#CDB08F">
+        <span>Brand Culture</span><span class="ev-count" id="cnt-brand-culture"></span>
+      </div>
+      <div class="ev-cards">
+        <div class="ev-card" data-col="brand-culture" data-status="idee">
+          <div class="ev-id">BC 01</div>
+          <div class="ev-title">Warum wir keinen "normalen" Coaching-Stil haben</div>
+          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="brand-culture" data-status="idee">
+          <div class="ev-id">BC 02</div>
+          <div class="ev-title">Ein Tag mit Sam (Behind the Scenes)</div>
+          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="brand-culture" data-status="idee">
+          <div class="ev-id">BC 03</div>
+          <div class="ev-title">Whiteboard-Session: "Diese Diskussion hatten wir im Team"</div>
+          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="brand-culture" data-status="idee">
+          <div class="ev-id">BC 04</div>
+          <div class="ev-title">Wie wir Entscheidungen im Team treffen</div>
+          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="brand-culture" data-status="idee">
+          <div class="ev-id">BC 05</div>
+          <div class="ev-title">Was "Qualität über Quantität" bei TET wirklich bedeutet</div>
+          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="brand-culture" data-status="idee">
+          <div class="ev-id">BC 06</div>
+          <div class="ev-title">Unser Onboarding-Prozess: was neue Mentees als erstes erleben</div>
+          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="brand-culture" data-status="idee">
+          <div class="ev-id">BC 07</div>
+          <div class="ev-title">Architecture Sessions: ein Blick in die Live-Session</div>
+          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="brand-culture" data-status="idee">
+          <div class="ev-id">BC 08</div>
+          <div class="ev-title">Premium statt Palmen: warum wir uns bewusst absetzen</div>
+          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card ev-add" data-col="brand-culture" onclick="evAddCard('brand-culture')">+ Idee hinzufügen</div>
+      </div>
+    </div>
+
+    <!-- CONVERSION -->
+    <div class="ev-col" data-col="conversion">
+      <div class="ev-col-header" style="--col-color:#52C984">
+        <span>Conversion</span><span class="ev-count" id="cnt-conversion"></span>
+      </div>
+      <div class="ev-cards">
+        <div class="ev-card" data-col="conversion" data-status="idee">
+          <div class="ev-id">CONV 01</div>
+          <div class="ev-title">Mehr Reichweite, weniger Umsatz? Der Fehler dahinter</div>
+          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="conversion" data-status="idee">
+          <div class="ev-id">CONV 02</div>
+          <div class="ev-title">Warum dein nächstes Angebot nicht das Problem löst</div>
+          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="conversion" data-status="idee">
+          <div class="ev-id">CONV 03</div>
+          <div class="ev-title">10k/Monat und trotzdem kein System – was fehlt</div>
+          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="conversion" data-status="idee">
+          <div class="ev-id">CONV 04</div>
+          <div class="ev-title">Der Unterschied zwischen "interessiert" und "kaufbereit"</div>
+          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="conversion" data-status="idee">
+          <div class="ev-id">CONV 05</div>
+          <div class="ev-title">Umsatz verdoppeln mit weniger Aufwand (Case Study)</div>
+          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="conversion" data-status="idee">
+          <div class="ev-id">CONV 06</div>
+          <div class="ev-title">Was echte Premium-Positionierung in der DM verändert</div>
+          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="conversion" data-status="idee">
+          <div class="ev-id">CONV 07</div>
+          <div class="ev-title">Freebie → Offer: die Lücke, die Geld kostet</div>
+          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="conversion" data-status="idee">
+          <div class="ev-id">CONV 08</div>
+          <div class="ev-title">Launch vs. Evergreen: was für dich gerade das Richtige ist</div>
+          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card" data-col="conversion" data-status="idee">
+          <div class="ev-id">CONV 09</div>
+          <div class="ev-title">Business das Fühl-Argument – warum Fakten allein nicht konvertieren</div>
+          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
+          <span class="ev-status idee">💡 Idee</span>
+        </div>
+        <div class="ev-card ev-add" data-col="conversion" onclick="evAddCard('conversion')">+ Idee hinzufügen</div>
+      </div>
+    </div>
+
+  </div><!-- /ev-board -->
+
   <!-- ── Team ── -->
   <div style="text-align:center;padding:60px 0 48px;border-top:1px solid var(--border);margin-top:20px">
     <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--blue);text-transform:uppercase;margin-bottom:14px">Das Team</div>
@@ -963,6 +1298,73 @@ async function loadSheet() {
 }
 
 loadSheet();
+
+// ── Evelyn Board: Filter + Status-Toggle + Zähler ──
+let evActiveCol = 'all';
+let evActiveStatus = 'all';
+
+function evUpdateCounts() {
+  ['personality','authority','trust','brand-culture','conversion'].forEach(col => {
+    const cards = document.querySelectorAll(`.ev-card[data-col="${col}"]:not(.ev-add)`);
+    const visible = [...cards].filter(c => !c.classList.contains('hidden')).length;
+    const el = document.getElementById('cnt-' + col);
+    if (el) el.textContent = visible;
+  });
+}
+
+function evApplyFilters() {
+  document.querySelectorAll('.ev-card:not(.ev-add)').forEach(card => {
+    const colMatch = evActiveCol === 'all' || card.dataset.col === evActiveCol;
+    const statusMatch = evActiveStatus === 'all' || card.dataset.status === evActiveStatus;
+    card.classList.toggle('hidden', !(colMatch && statusMatch));
+  });
+  document.querySelectorAll('.ev-col').forEach(col => {
+    if (evActiveCol !== 'all') {
+      col.classList.toggle('hidden', col.dataset.col !== evActiveCol);
+    } else {
+      col.classList.remove('hidden');
+    }
+  });
+  // grid cols when filtered
+  const board = document.getElementById('ev-board');
+  const visibleCols = document.querySelectorAll('.ev-col:not(.hidden)').length;
+  board.style.gridTemplateColumns = evActiveCol === 'all'
+    ? 'repeat(5,1fr)'
+    : '1fr';
+  evUpdateCounts();
+}
+
+function evFilter(col, btn) {
+  evActiveCol = col;
+  document.querySelectorAll('[data-col]').forEach(b => { if(b.classList.contains('ev-filter')) b.classList.remove('active'); });
+  btn.classList.add('active');
+  evApplyFilters();
+}
+
+function evFilterStatus(status, btn) {
+  evActiveStatus = status;
+  document.querySelectorAll('[data-status]').forEach(b => { if(b.classList.contains('ev-filter')) b.classList.remove('active'); });
+  btn.classList.add('active');
+  evApplyFilters();
+}
+
+// Status-Toggle beim Klick auf Karte
+document.querySelectorAll('.ev-card:not(.ev-add)').forEach(card => {
+  card.addEventListener('click', () => {
+    const statusEl = card.querySelector('.ev-status');
+    if (!statusEl) return;
+    const cycle = ['idee','skript','aufnahme'];
+    const cur = card.dataset.status;
+    const next = cycle[(cycle.indexOf(cur) + 1) % cycle.length];
+    card.dataset.status = next;
+    statusEl.className = 'ev-status ' + next;
+    const labels = { idee:'💡 Idee', skript:'📝 Skript fertig', aufnahme:'🎙 Aufgenommen' };
+    statusEl.textContent = labels[next];
+    evApplyFilters();
+  });
+});
+
+evUpdateCounts();
 </script>
 </body>
 </html>
