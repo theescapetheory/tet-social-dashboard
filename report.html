@@ -201,17 +201,17 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
       <div class="platform-label"><span class="platform-dot"></span>Instagram</div>
       <div class="kpi-grid">
         <div class="kpi-item wide">
-          <div class="kpi-value" id="ig-followers">6.507</div>
+          <div class="kpi-value" id="ig-followers">6.510</div>
           <div class="kpi-label">Follower</div>
-          <div class="kpi-change up">▲ +0,12% · +8 im Zeitraum</div>
+          <div class="kpi-change up">▲ +0,12% · +3 im Zeitraum</div>
         </div>
         <div class="kpi-item">
-          <div class="kpi-value" style="font-size:22px">92,74K</div>
+          <div class="kpi-value" style="font-size:22px" data-kpi="ig-reach">92,74K</div>
           <div class="kpi-label">Impressionen</div>
           <div class="kpi-change up">▲ +7,16%</div>
         </div>
         <div class="kpi-item">
-          <div class="kpi-value" style="font-size:22px">352</div>
+          <div class="kpi-value" style="font-size:22px" data-kpi="ig-interactions">352</div>
           <div class="kpi-label">Interaktionen</div>
           <div class="kpi-change up">▲ +4,45%</div>
         </div>
@@ -943,6 +943,17 @@ async function loadSheet() {
         }}
       });
     }
+
+    // Neueste Werte in Plattform-KPI-Karte spiegeln
+    const latest = dataRows[dataRows.length - 1];
+    const latestFollower = parseNum(latest[2]);
+    const latestReach    = parseNum(latest[4]);
+    const latestInter    = parseNum(latest[6]);
+    if (latestFollower) document.getElementById('ig-followers').textContent = latestFollower.toLocaleString('de');
+    const igReachEl = document.querySelector('[data-kpi="ig-reach"]');
+    const igInterEl = document.querySelector('[data-kpi="ig-interactions"]');
+    if (igReachEl && latestReach)  igReachEl.textContent = (latestReach/1000).toFixed(2).replace('.',',') + 'K';
+    if (igInterEl && latestInter)  igInterEl.textContent = latestInter.toLocaleString('de');
 
     const ts = new Date().toLocaleTimeString('de', { hour: '2-digit', minute: '2-digit' });
     status.innerHTML = `<span style="color:#4ade80">✓</span> ${dataRows.length} Einträge · zuletzt geladen ${ts} · <a href="https://docs.google.com/spreadsheets/d/1WScTq32DHJGFb40QDbm-1afgZqlRdJVQcBWnJfPrYQg" target="_blank" style="color:var(--blue)">Sheet öffnen ↗</a>`;
