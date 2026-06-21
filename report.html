@@ -861,44 +861,7 @@ function renderRankRows(items, bodyId, maxViews) {
 renderRankRows(posts, 'top-posts-body', 2000);
 renderRankRows(reels, 'top-reels-body', 1000);
 
-// ── Follower chart ──
-const historyData = {
-  labels: ['KW12','KW13','KW14','KW15','KW16','KW17','KW18','KW19','KW20','KW21','12. Jun'],
-  data:   [5800,  5858,  5912,  5964,  6020,  6080,  6145,  6210,  6270,  6335,  6498]
-};
-const ctx = document.getElementById('follower-chart').getContext('2d');
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: historyData.labels,
-    datasets: [{
-      label: 'Follower',
-      data: historyData.data,
-      borderColor: '#7CA7EB',
-      backgroundColor: 'rgba(124,167,235,0.08)',
-      borderWidth: 2.5,
-      pointBackgroundColor: '#7CA7EB',
-      pointRadius: 4,
-      pointHoverRadius: 6,
-      tension: 0.35,
-      fill: true,
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: false }, tooltip: {
-      backgroundColor: '#071429', borderColor: 'rgba(124,167,235,.2)', borderWidth: 1,
-      titleColor: '#7CA7EB', bodyColor: '#fff', padding: 10,
-    }},
-    scales: {
-      x: { grid: { color: 'rgba(124,167,235,.06)' }, ticks: { color: '#6b85a8', font: { size: 11 } } },
-      y: {
-        grid: { color: 'rgba(124,167,235,.06)' }, ticks: { color: '#6b85a8', font: { size: 11 } },
-        min: 5700, suggestedMax: 6600,
-      }
-    }
-  }
-});
+// Follower-Chart entfernt (Daten bereits im Sheet-Abschnitt sichtbar)
 
 // ── Live Google Sheet ──
 const SHEET_CSV = 'https://docs.google.com/spreadsheets/d/1WScTq32DHJGFb40QDbm-1afgZqlRdJVQcBWnJfPrYQg/export?format=csv&gid=0';
