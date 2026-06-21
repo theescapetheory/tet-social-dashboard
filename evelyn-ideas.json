@@ -1,46 +1,366 @@
 {
   "version": 1,
-  "last_updated": "",
+  "last_updated": "2026-06-21",
   "ideas": [
-    { "id": "PERS 01", "col": "personality", "title": "Vorher/Nachher: vom Chaos zur Architektin", "tag": "Positionierung", "status": "idee", "hook": "", "script": "" },
-    { "id": "PERS 02", "col": "personality", "title": "Der Waffelstand mit 8 – meine erste \"Firma\"", "tag": "Positionierung", "status": "idee", "hook": "", "script": "" },
-    { "id": "PERS 03", "col": "personality", "title": "Die Idee, die ich nie umgesetzt habe", "tag": "Positionierung", "status": "idee", "hook": "", "script": "" },
-    { "id": "PERS 04", "col": "personality", "title": "Der Moment, in dem ich Hilfe brauchte", "tag": "Positionierung", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 01", "col": "authority", "title": "Die 4 Phasen des Unternehmenswachstums", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 02", "col": "authority", "title": "Warum du kein Produkt-Problem hast – du hast ein Positioning-Problem", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 03", "col": "authority", "title": "Die 5 Leaks in deinem Funnel", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 04", "col": "authority", "title": "Pricing-Psychologie: Warum der Preis nie das echte Problem ist", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 05", "col": "authority", "title": "Content-Säulen: warum die meisten falsch denken", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 06", "col": "authority", "title": "Die 3 Phasen vom Offer zum Umsatz", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 07", "col": "authority", "title": "Evergreen vs. Trend-Content: was wirklich konvertiert", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 08", "col": "authority", "title": "Skalierung ohne Team: die Grenzen und was danach kommt", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 09", "col": "authority", "title": "Warum \"mit Wasser kochen\" alle Top-Player verbindet", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "AUTH 10", "col": "authority", "title": "Business Röntgenblick: was die meisten Analysen übersehen", "tag": "Framework / Case Study", "status": "idee", "hook": "", "script": "" },
-    { "id": "TRUST 01", "col": "trust", "title": "Das erste Gespräch, das alles verändert hat", "tag": "Proof / Success Stories", "status": "idee", "hook": "", "script": "" },
-    { "id": "TRUST 02", "col": "trust", "title": "\"Von 5K Chaos zu 20K System\"", "tag": "Proof / Success Stories", "status": "idee", "hook": "", "script": "" },
-    { "id": "TRUST 03", "col": "trust", "title": "Warum Kunden nicht kaufen – und was sich wirklich geändert hat", "tag": "Proof / Success Stories", "status": "idee", "hook": "", "script": "" },
-    { "id": "TRUST 04", "col": "trust", "title": "Der Sparring-Call, der den eigentlichen Hebel zeigte", "tag": "Proof / Success Stories", "status": "idee", "hook": "", "script": "" },
-    { "id": "TRUST 05", "col": "trust", "title": "Was Mentorin-Arbeit wirklich bedeutet – hinter den Kulissen", "tag": "Proof / Success Stories", "status": "idee", "hook": "", "script": "" },
-    { "id": "TRUST 06", "col": "trust", "title": "Drei Monate, drei Durchbrüche – ein Rückblick", "tag": "Proof / Success Stories", "status": "idee", "hook": "", "script": "" },
-    { "id": "TRUST 07", "col": "trust", "title": "Von kleinem Nebenprojekt zur skalierten Organisation", "tag": "Proof / Success Stories", "status": "idee", "hook": "", "script": "" },
-    { "id": "TRUST 08", "col": "trust", "title": "Community statt Coach-Rolle – warum das den Unterschied macht", "tag": "Proof / Success Stories", "status": "idee", "hook": "", "script": "" },
-    { "id": "TRUST 09", "col": "trust", "title": "Das Feedback, das mich überrascht hat", "tag": "Proof / Success Stories", "status": "idee", "hook": "", "script": "" },
-    { "id": "BC 01", "col": "brand-culture", "title": "Warum wir keinen \"normalen\" Coaching-Stil haben", "tag": "Behind the Scenes", "status": "idee", "hook": "", "script": "" },
-    { "id": "BC 02", "col": "brand-culture", "title": "Ein Tag mit Sam (Behind the Scenes)", "tag": "Behind the Scenes", "status": "idee", "hook": "", "script": "" },
-    { "id": "BC 03", "col": "brand-culture", "title": "Whiteboard-Session: \"Diese Diskussion hatten wir im Team\"", "tag": "Behind the Scenes", "status": "idee", "hook": "", "script": "" },
-    { "id": "BC 04", "col": "brand-culture", "title": "Wie wir Entscheidungen im Team treffen", "tag": "Behind the Scenes", "status": "idee", "hook": "", "script": "" },
-    { "id": "BC 05", "col": "brand-culture", "title": "Was \"Qualität über Quantität\" bei TET wirklich bedeutet", "tag": "Behind the Scenes", "status": "idee", "hook": "", "script": "" },
-    { "id": "BC 06", "col": "brand-culture", "title": "Unser Onboarding-Prozess: was neue Mentees als erstes erleben", "tag": "Behind the Scenes", "status": "idee", "hook": "", "script": "" },
-    { "id": "BC 07", "col": "brand-culture", "title": "Architecture Sessions: ein Blick in die Live-Session", "tag": "Behind the Scenes", "status": "idee", "hook": "", "script": "" },
-    { "id": "BC 08", "col": "brand-culture", "title": "Premium statt Palmen: warum wir uns bewusst absetzen", "tag": "Behind the Scenes", "status": "idee", "hook": "", "script": "" },
-    { "id": "CONV 01", "col": "conversion", "title": "Mehr Reichweite, weniger Umsatz? Der Fehler dahinter", "tag": "Authority / CTA", "status": "idee", "hook": "", "script": "" },
-    { "id": "CONV 02", "col": "conversion", "title": "Warum dein nächstes Angebot nicht das Problem löst", "tag": "Authority / CTA", "status": "idee", "hook": "", "script": "" },
-    { "id": "CONV 03", "col": "conversion", "title": "10k/Monat und trotzdem kein System – was fehlt", "tag": "Authority / CTA", "status": "idee", "hook": "", "script": "" },
-    { "id": "CONV 04", "col": "conversion", "title": "Der Unterschied zwischen \"interessiert\" und \"kaufbereit\"", "tag": "Authority / CTA", "status": "idee", "hook": "", "script": "" },
-    { "id": "CONV 05", "col": "conversion", "title": "Umsatz verdoppeln mit weniger Aufwand (Case Study)", "tag": "Authority / CTA", "status": "idee", "hook": "", "script": "" },
-    { "id": "CONV 06", "col": "conversion", "title": "Was echte Premium-Positionierung in der DM verändert", "tag": "Authority / CTA", "status": "idee", "hook": "", "script": "" },
-    { "id": "CONV 07", "col": "conversion", "title": "Freebie → Offer: die Lücke, die Geld kostet", "tag": "Authority / CTA", "status": "idee", "hook": "", "script": "" },
-    { "id": "CONV 08", "col": "conversion", "title": "Launch vs. Evergreen: was für dich gerade das Richtige ist", "tag": "Authority / CTA", "status": "idee", "hook": "", "script": "" },
-    { "id": "CONV 09", "col": "conversion", "title": "Business das Fühl-Argument – warum Fakten allein nicht konvertieren", "tag": "Authority / CTA", "status": "idee", "hook": "", "script": "" }
+    {
+      "id": "PERS 01",
+      "col": "personality",
+      "title": "Vorher/Nachher: vom Chaos zur Architektin",
+      "tag": "Positionierung",
+      "status": "skript",
+      "hook": "Ich hatte mal 12 verschiedene Angebote, drei Zielgruppen und keinen einzigen klaren Satz darüber, wofür ich eigentlich stehe. Und trotzdem habe ich jeden Monat Kunden gewonnen — nur halt nicht die richtigen.",
+      "script": "Ich hatte mal 12 verschiedene Angebote, drei Zielgruppen und keinen einzigen klaren Satz darüber, wofür ich eigentlich stehe.\n\nUnd trotzdem habe ich jeden Monat Kunden gewonnen — nur halt nicht die richtigen.\n\nDie Kunden, die auf deinen Preis verhandeln. Die, die um 22 Uhr Sprachnachrichten schicken. Die, bei denen du nach jedem Call das Gefühl hast, du hast etwas falsch gemacht.\n\nDer Wendepunkt für mich war nicht ein neues Angebot. Es war eine Entscheidung: Ich höre auf, für jeden da zu sein, und fange an, für die Richtigen unübersehbar zu werden.\n\nSeitdem ist mein Business kleiner — aber profitabler. Ruhiger — aber klarer. Und ich stehe morgens auf und will arbeiten.\n\nWenn du gerade das Gefühl hast, du läufst schnell in die falsche Richtung — dann ist das hier für dich. Positionierung ist kein Marketing-Trick. Es ist die Entscheidung, wer du sein willst.\n\nSpeichere diesen Post. Du wirst ihn brauchen."
+    },
+    {
+      "id": "PERS 02",
+      "col": "personality",
+      "title": "Der Waffelstand mit 8 — meine erste \"Firma\"",
+      "tag": "Positionierung",
+      "status": "skript",
+      "hook": "Mit 8 Jahren hatte ich meinen ersten Betrieb. Waffelstand vor dem Supermarkt. Ich habe Teig gemacht, Geld kassiert und am Ende des Tages Gewinn gezählt. Niemand hat mir das beigebracht — ich wollte es einfach.",
+      "script": "Mit 8 Jahren hatte ich meinen ersten Betrieb. Waffelstand vor dem Supermarkt. Ich habe Teig gemacht, Geld kassiert und am Ende des Tages Gewinn gezählt.\n\nNiemand hat mir das beigebracht — ich wollte es einfach.\n\nDas Lustige ist: Die Fragen, die ich mir damals gestellt habe, sind heute dieselben. Was will der Kunde? Was bin ich bereit zu geben? Was bleibt am Ende übrig?\n\nUnternehmertum hat für mich nie mit einem Kurs angefangen oder mit einem perfekten Business-Plan. Es hat angefangen mit dem Hunger, etwas aufzubauen.\n\nUnd ich glaube, du bist hier, weil du diesen Hunger auch kennst.\n\nAber Hunger allein reicht irgendwann nicht mehr. Irgendwann braucht es Systeme. Strategie. Klarheit über das, was du wirklich baust.\n\nGenau dafür sind wir bei The Escape Theorie da.\n\nNicht um dir beizubringen, Unternehmer zu sein. Du bist es bereits. Sondern um sicherzustellen, dass du es auch in 3 Jahren noch willst."
+    },
+    {
+      "id": "PERS 03",
+      "col": "personality",
+      "title": "Die Idee, die ich nie umgesetzt habe",
+      "tag": "Positionierung",
+      "status": "skript",
+      "hook": "Es gibt eine Geschäftsidee, die ich seit vier Jahren mit mir trage. Ich habe sie nie umgesetzt. Nicht weil sie schlecht ist — sondern weil ich Angst hatte, dass sie zu gut ist und ich scheitere.",
+      "script": "Es gibt eine Geschäftsidee, die ich seit vier Jahren mit mir trage. Ich habe sie nie umgesetzt.\n\nNicht weil sie schlecht ist — sondern weil ich Angst hatte, dass sie zu gut ist und ich scheitere.\n\nKennst du das? Diese Ideen, die du nachts aufschreibst, am nächsten Morgen weglegst und nie wieder anfasst?\n\nDas ist kein Motivationsproblem. Das ist kein Zeitproblem. Das ist ein Vertrauensproblem — du vertraust dir selbst nicht genug, um den ersten Schritt zu machen.\n\nIch habe inzwischen verstanden: Perfekte Vorbereitung ist oft die eleganteste Form der Selbstsabotage.\n\nDie Leute, die ich am meisten bewundere, haben nicht gewartet, bis sie bereit waren. Sie sind gestartet — und sind dabei bereit geworden.\n\nWas ist deine Idee, die du dir selbst schuldig bist?\n\nSchreib sie in die Kommentare. Manchmal reicht es, sie laut auszusprechen."
+    },
+    {
+      "id": "PERS 04",
+      "col": "personality",
+      "title": "Der Moment, in dem ich Hilfe brauchte",
+      "tag": "Positionierung",
+      "status": "skript",
+      "hook": "Es gab einen Moment in meinem Business, da war mein Konto im Minus, mein nächster Kunde wusste nicht, wann er zahlt, und ich habe so getan, als wäre alles in Ordnung. Weil Unternehmer ja keine Schwäche zeigen.",
+      "script": "Es gab einen Moment in meinem Business, da war mein Konto im Minus, mein nächster Kunde wusste nicht, wann er zahlt, und ich habe so getan, als wäre alles in Ordnung.\n\nWeil Unternehmer ja keine Schwäche zeigen.\n\nDas war der größte Fehler, den ich in dieser Phase gemacht habe — nicht die fehlende Liquidität, sondern die fehlende Bereitschaft, um Hilfe zu bitten.\n\nIch habe drei Wochen gebraucht, bis ich das erste Mal offen mit jemandem gesprochen habe, der schon durch das gegangen war, was ich gerade erlebte.\n\nDieses eine Gespräch hat mehr verändert als sechs Monate Selbststudium vorher.\n\nWenn du gerade in einer Phase bist, wo du funktionierst aber nicht wirklich weißt, wohin — dann ist Isolation das Letzte, was du brauchst.\n\nDu brauchst jemanden, der schon dort war, wo du hinwillst. Und der dir sagt: Das ist normal. Und das ist der nächste Schritt.\n\nDafür ist The Circle da. Link in der Bio."
+    },
+    {
+      "id": "AUTH 01",
+      "col": "authority",
+      "title": "Die 4 Phasen des Unternehmenswachstums",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Fast jeder Unternehmer, der bei 5k stagniert, macht denselben Fehler: Er löst das Problem der nächsten Phase — bevor er das Problem der aktuellen Phase gelöst hat.",
+      "script": "Fast jeder Unternehmer, der bei 5k stagniert, macht denselben Fehler: Er löst das Problem der nächsten Phase — bevor er das Problem der aktuellen Phase gelöst hat.\n\nHier sind die 4 Phasen, die wir bei fast allen Mentees sehen:\n\nPhase 1: Überleben. Du verkaufst, was du kannst, an wen du kannst. Ziel: Cashflow.\n\nPhase 2: Stabilisieren. Du hast ein Kernprodukt, aber noch kein System. Du bist der Engpass.\n\nPhase 3: Skalieren. Du baust Prozesse, delegierst und wächst planbar.\n\nPhase 4: Führen. Du arbeitest am Business, nicht im Business.\n\nDas Problem? Die meisten versuchen in Phase 1 zu skalieren. Sie kaufen Ads, bauen Funnels, heuern VAs an — und haben noch kein einziges Angebot, das konstant konvertiert.\n\nWenn du weißt, in welcher Phase du bist, wird alles leichter. Weil du aufhörst, das Falsche zu priorisieren.\n\nKommentiere 'PHASE' und ich schicke dir die vollständige Übersicht."
+    },
+    {
+      "id": "AUTH 02",
+      "col": "authority",
+      "title": "Warum du kein Produkt-Problem hast – du hast ein Positioning-Problem",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Wenn du dir sagst: 'Ich muss mein Angebot überarbeiten' — dann lüg dich nicht an. In 80% der Fälle ist das Angebot nicht das Problem. Das Problem ist, wem du es anbietest und wie du darüber sprichst.",
+      "script": "Wenn du dir sagst: 'Ich muss mein Angebot überarbeiten' — dann lüg dich nicht an.\n\nIn 80% der Fälle ist das Angebot nicht das Problem. Das Problem ist, wem du es anbietest und wie du darüber sprichst.\n\nBeispiel: Wir hatten eine Mentee, die seit Monaten ihr Coaching-Paket geändert hat. Immer neue Module, immer neue Boni, immer neue Preise.\n\nIhr Problem war nicht das Produkt. Ihr Problem war, dass sie zu generisch gesprochen hat. Jeder konnte ihr Angebot kaufen — also hat es sich für niemanden wirklich angefühlt, als wäre es für ihn gemacht.\n\nNachdem wir ihre Positionierung geschärft haben — gleiches Produkt, andere Sprache, klarere Zielgruppe — hat sie in vier Wochen mehr verkauft als in den vier Monaten davor.\n\nPositionierung ist nicht, was du anbietest. Positionierung ist, wem du es anbietest, warum gerade du und warum jetzt.\n\nWenn du das klar hast, verkauft dein Content für dich."
+    },
+    {
+      "id": "AUTH 03",
+      "col": "authority",
+      "title": "Die 5 Leaks in deinem Funnel",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Du verlierst Kunden nicht, weil dein Produkt schlecht ist. Du verlierst sie, weil irgendwo in deinem Prozess eine Lücke ist — und du weißt nicht wo.",
+      "script": "Du verlierst Kunden nicht, weil dein Produkt schlecht ist. Du verlierst sie, weil irgendwo in deinem Prozess eine Lücke ist — und du weißt nicht wo.\n\nHier sind die 5 häufigsten Leaks, die wir sehen:\n\nLeak 1: Dein Hook zieht die Falschen an. Du bekommst viele Anfragen — aber keine zahlungswilligen.\n\nLeak 2: Dein Erstgespräch ist ein Infogespräch, kein Verkaufsgespräch. Du erklärst, statt zu qualifizieren.\n\nLeak 3: Dein Angebot ist nicht klar genug. Der Interessent versteht nicht, was er konkret bekommt.\n\nLeak 4: Du hast keinen Follow-up. 'Ich denke noch nach' bedeutet meistens: Du hast mich nicht überzeugt.\n\nLeak 5: Dein Onboarding enttäuscht. Erste Eindrücke entscheiden, ob jemand bleibt — oder refundet.\n\nWelcher trifft auf dich zu? Schreib die Nummer in die Kommentare — ich antworte direkt."
+    },
+    {
+      "id": "AUTH 04",
+      "col": "authority",
+      "title": "Pricing-Psychologie: Warum der Preis nie das echte Problem ist",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Wenn jemand sagt 'das ist zu teuer', dann sagt er dir nicht, dass dein Preis zu hoch ist. Er sagt dir, dass dein Wert in seinem Kopf noch nicht hoch genug ist.",
+      "script": "Wenn jemand sagt 'das ist zu teuer', dann sagt er dir nicht, dass dein Preis zu hoch ist. Er sagt dir, dass dein Wert in seinem Kopf noch nicht hoch genug ist.\n\nDas ist ein Unterschied, den du verstehen musst — sonst wirst du deinen Preis für immer senken und trotzdem nie genug verkaufen.\n\nWir haben Mentees, die heute 3x mehr verlangen als vor 12 Monaten — und mehr Kunden haben als damals. Nicht weil der Markt sich verändert hat. Sondern weil sie gelernt haben, Wert zu kommunizieren.\n\nDrei Dinge, die deinen wahrgenommenen Wert sofort erhöhen:\n\nErstens: Rede über das Ergebnis, nicht über den Prozess. Nicht '12 Wochen Coaching' — sondern 'Du weißt danach genau, wie du planbar auf 10k skalierst.'\n\nZweitens: Zeig Transformation, nicht Features. Testimonials sind Goldes wert.\n\nDrittens: Sei teurer als du dich traust. Dein Preis ist eine Positionierungsaussage.\n\nDen richtigen Preis zu finden ist keine Mathe-Aufgabe. Es ist eine Frage deines Selbstwerts als Unternehmer."
+    },
+    {
+      "id": "AUTH 05",
+      "col": "authority",
+      "title": "Content-Säulen: warum die meisten falsch denken",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Deine Content-Säulen sind nicht dazu da, dir beim Posten zu helfen. Sie sind dazu da, in deinem idealen Kunden einen Gedanken zu verankern: Das ist die Person, die mir helfen kann.",
+      "script": "Deine Content-Säulen sind nicht dazu da, dir beim Posten zu helfen.\n\nSie sind dazu da, in deinem idealen Kunden einen Gedanken zu verankern: Das ist die Person, die mir helfen kann.\n\nDie meisten denken über Content-Säulen als Themenfelder. Motivationspost Montag, Tipp Mittwoch, Behind-the-Scenes Freitag. Das ist ein Redaktionsplan — kein Positionierungssystem.\n\nEchte Content-Säulen beantworten vier Fragen für deinen Kunden:\n\nErstens: Warum bist du der Richtige? — Authority.\nZweitens: Warum kann ich dir vertrauen? — Trust.\nDrittens: Warum soll ich jetzt handeln? — Conversion.\nViertens: Wer bist du wirklich? — Personality.\n\nWenn dein Content diese vier Fragen regelmäßig beantwortet, musst du nicht mehr verkaufen. Dein Account verkauft für dich.\n\nDer Fehler ist nicht, zu wenig zu posten. Der Fehler ist, ohne Strategie zu posten.\n\nSpeichere das. Und schau dir mal deinen letzten Monat an — welche der vier Fragen hast du am meisten beantwortet? Welche gar nicht?"
+    },
+    {
+      "id": "AUTH 06",
+      "col": "authority",
+      "title": "Die 3 Phasen vom Offer zum Umsatz",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Du kannst das beste Angebot der Welt haben und trotzdem nichts verkaufen. Weil zwischen 'Ich habe ein Angebot' und 'Ich mache Umsatz' drei Phasen liegen, die die meisten überspringen.",
+      "script": "Du kannst das beste Angebot der Welt haben und trotzdem nichts verkaufen.\n\nWeil zwischen 'Ich habe ein Angebot' und 'Ich mache Umsatz' drei Phasen liegen, die die meisten überspringen.\n\nPhase 1: Klarheit. Weißt du wirklich, wer dein Offer kauft, warum er es kauft und was sein Leben danach anders ist? Nicht theoretisch — sondern so konkret, dass du es in einem Satz sagen kannst?\n\nPhase 2: Sichtbarkeit. Kein Angebot verkauft sich, wenn die Falschen davon hören — oder wenn die Richtigen es nie sehen. Dein Content ist der Kanal.\n\nPhase 3: Konversion. Das Gespräch, die DM, die Landingpage. Der Moment, wo Interesse zu Entscheidung wird. Die meisten verlieren hier — nicht weil das Angebot schlecht ist, sondern weil sie nicht abschließen.\n\nDrei Phasen. Die meisten sind in Phase 1 stecken und glauben, das Problem liegt in Phase 3.\n\nWo bist du gerade? Schreib es in die Kommentare — ich lese alles."
+    },
+    {
+      "id": "AUTH 07",
+      "col": "authority",
+      "title": "Evergreen vs. Trend-Content: was wirklich konvertiert",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Trend-Content bringt dir Reichweite. Evergreen-Content bringt dir Kunden. Und die meisten haben das komplett falsch verstanden.",
+      "script": "Trend-Content bringt dir Reichweite. Evergreen-Content bringt dir Kunden. Und die meisten haben das komplett falsch verstanden.\n\nIch sehe jeden Tag Accounts, die jedem Trend hinterherjagen. Jedes Audio, jedes Format, jeder Meme-Moment. Ihre Reichweite geht hoch, ihre Conversions gehen runter.\n\nWarum? Weil Trends Aufmerksamkeit anziehen — aber nicht von den Menschen, die kaufen wollen.\n\nEvergreen-Content arbeitet anders. Ein Post, der erklärt warum dein Kunde kein Skalierungsproblem hat sondern ein Positionierungsproblem — der ist in 6 Monaten noch genauso relevant. Der wird geteilt. Der wird gespeichert. Der lässt Menschen in dein Profil kommen und durchscrollen.\n\nMeine Empfehlung: 70% Evergreen, 30% Trend. Nutz Trends, um neue Augen auf dein Profil zu holen — und dann lass dein Evergreen-Content die Konversionsarbeit machen.\n\nQualität über Quantität. Immer."
+    },
+    {
+      "id": "AUTH 08",
+      "col": "authority",
+      "title": "Skalierung ohne Team: die Grenzen und was danach kommt",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Es gibt eine Einkommensgrenze, die du alleine nicht überschreiten kannst. Nicht weil du nicht gut genug bist — sondern weil 24 Stunden am Tag eine harte Grenze sind.",
+      "script": "Es gibt eine Einkommensgrenze, die du alleine nicht überschreiten kannst. Nicht weil du nicht gut genug bist — sondern weil 24 Stunden am Tag eine harte Grenze sind.\n\nDie meisten Solo-Unternehmer treffen diese Grenze irgendwo zwischen 8k und 15k im Monat. Sie arbeiten mehr, verdienen aber nicht mehr. Jede Stunde mehr Arbeit bedeutet eine Stunde weniger Freiheit — und das war eigentlich nicht der Plan.\n\nDer Ausweg ist nicht 'mehr arbeiten'. Der Ausweg ist: Was von dem, was du tust, kann jemand anderes genauso gut — oder sogar besser?\n\nDas erste, was du delegierst, ist nie das Wichtigste. Es ist das, was dich am meisten Energie kostet und am wenigsten Impact bringt.\n\nWir haben Mentees, die mit einer einzigen Delegation — eine VA für 10 Stunden pro Woche — ihren Umsatz verdoppelt haben. Nicht weil die VA mehr verkauft hat. Sondern weil sie wieder Kapazität hatten, das zu tun, was wirklich zählt.\n\nDelegieren ist kein Luxus. Es ist der Hebel."
+    },
+    {
+      "id": "AUTH 09",
+      "col": "authority",
+      "title": "Warum \"mit Wasser kochen\" alle Top-Player verbindet",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Ich habe in den letzten Jahren mit einigen der erfolgreichsten Online-Unternehmer in Deutschland gesprochen. Und das Erstaunlichste war nicht, was sie wissen — sondern wie ähnlich ihre Probleme unseren sind.",
+      "script": "Ich habe in den letzten Jahren mit einigen der erfolgreichsten Online-Unternehmer in Deutschland gesprochen.\n\nUnd das Erstaunlichste war nicht, was sie wissen — sondern wie ähnlich ihre Probleme unseren sind.\n\nSie zweifeln auch. Sie haben auch schlechte Monate. Sie stellen auch manchmal das Falsche ein und bauen Angebote, die nicht funktionieren.\n\nDer Unterschied ist nicht, dass sie die Lösung kennen — der Unterschied ist, dass sie schneller durch das Problem durchkommen.\n\nWarum? Weil sie nicht alleine durch sind. Sie haben Menschen um sich, die schon dort waren. Die ihnen sagen: Das ist normal. Hier ist der nächste Schritt.\n\nErfolg im Business ist kein Wissensproblem. Es ist ein Umfeld-Problem.\n\nDu wirst auf das Niveau deines nächsten Umfeldes steigen — oder du wirst dort stecken bleiben.\n\nDas ist der eigentliche Grund, warum wir The Circle gebaut haben. Nicht für Kurse. Für Umfeld."
+    },
+    {
+      "id": "AUTH 10",
+      "col": "authority",
+      "title": "Business Röntgenblick: was die meisten Analysen übersehen",
+      "tag": "Framework / Case Study",
+      "status": "skript",
+      "hook": "Die meisten Unternehmer wissen, was ihr Umsatz ist. Die wenigsten wissen, warum er so ist. Und das ist der Grund, warum sie nächsten Monat dasselbe Problem haben.",
+      "script": "Die meisten Unternehmer wissen, was ihr Umsatz ist. Die wenigsten wissen, warum er so ist.\n\nUnd das ist der Grund, warum sie nächsten Monat dasselbe Problem haben.\n\nIn unseren Architecture Sessions — das sind unsere 1:1-Strategie-Calls — schauen wir uns immer drei Dinge an:\n\nErstens: Wo kommen deine Kunden wirklich her? Nicht was du glaubst — sondern was die Zahlen sagen.\n\nZweitens: Wo verlierst du Interessenten? Im Erstkontakt? Im Gespräch? Nach dem Gespräch? Jede Phase ist anders.\n\nDrittens: Was wäre, wenn du nur deine drei besten Kunden replizierst? Was haben sie gemeinsam — und wie findest du mehr davon?\n\nDiese drei Fragen klingen einfach. Aber die meisten haben sie noch nie systematisch beantwortet.\n\nBusiness-Wachstum ist kein Mysterium. Es ist Ursache und Wirkung. Wenn du die Ursachen kennst, steuerst du die Wirkung.\n\nWas ist deine größte blinde Stelle gerade? Kommentiere — ich antworte."
+    },
+    {
+      "id": "TRUST 01",
+      "col": "trust",
+      "title": "Das erste Gespräch, das alles verändert hat",
+      "tag": "Proof / Success Stories",
+      "status": "skript",
+      "hook": "Manchmal braucht es ein einziges Gespräch, um zu verstehen, was die letzten 12 Monate so schwer gemacht hat.",
+      "script": "Manchmal braucht es ein einziges Gespräch, um zu verstehen, was die letzten 12 Monate so schwer gemacht hat.\n\nEine unserer Mentees kam zu uns mit 4k Monat — gut für eine Nebentätigkeit, aber weit weg von dem, was sie sich vorgestellt hatte.\n\nSie hatte Kurse gemacht, Coaches gebucht, YouTube-Videos gefressen. Sie wusste viel. Sie verdiente wenig.\n\nIn unserem ersten Call haben wir 20 Minuten damit verbracht, ihre letzten 10 Verkäufe anzuschauen. Nicht wie viel — sondern warum. Warum haben diese Menschen gekauft? Was hat sie überzeugt?\n\nUnd in diesem Gespräch ist ihr etwas aufgegangen: Alle 10 haben gekauft, weil sie ihre Geschichte gehört haben. Nicht ihre Expertise. Ihre Geschichte.\n\nSie hat aufgehört, Wissen zu posten — und angefangen, Erfahrungen zu teilen.\n\nDrei Monate später: 11k Monat.\n\nDas Wissen war schon immer da. Der Rahmen hat gefehlt."
+    },
+    {
+      "id": "TRUST 02",
+      "col": "trust",
+      "title": "\"Von 5K Chaos zu 20K System\"",
+      "tag": "Proof / Success Stories",
+      "status": "skript",
+      "hook": "5.000 Euro Monat — und trotzdem jedes Mal der Gefühl, nicht zu wissen, ob nächsten Monat wieder Geld reinkommt.",
+      "script": "5.000 Euro Monat — und trotzdem jedes Mal das Gefühl, nicht zu wissen, ob nächsten Monat wieder Geld reinkommt.\n\nSo hat eine unserer Mentees ihre Situation beschrieben, als wir uns das erste Mal gesprochen haben.\n\nSie hatte Kunden. Sie hatte Umsatz. Aber sie hatte kein System. Jeder Monat neu anfangen. Jeder Monat zittern.\n\nDas erste, was wir gemacht haben: Raus aus dem 1:1-Modus. Nicht weil 1:1 schlecht ist — sondern weil sie die einzige war, die skalieren konnte. Und sie hatte nur 24 Stunden.\n\nDann: Angebot klar machen. Ein Kernprodukt. Klare Transformation. Klarer Preis.\n\nDann: Content-System aufbauen. Nicht mehr posten — sondern strategischer posten.\n\nSieben Monate später: 20k. Nicht jeder Monat perfekt. Aber planbar. Vorhersehbar. Ruhig.\n\nDer Unterschied zwischen 5k und 20k ist meistens nicht Talent. Es ist Struktur.\n\nWenn du bereit bist, Struktur aufzubauen: Du weißt, wo du uns findest."
+    },
+    {
+      "id": "TRUST 03",
+      "col": "trust",
+      "title": "Warum Kunden nicht kaufen – und was sich wirklich geändert hat",
+      "tag": "Proof / Success Stories",
+      "status": "skript",
+      "hook": "Ein Interessent sagt dir 'Ich muss nochmal drüber nachdenken' — und verschwindet. Was läuft da wirklich falsch?",
+      "script": "Ein Interessent sagt dir 'Ich muss nochmal drüber nachdenken' — und verschwindet. Was läuft da wirklich falsch?\n\nMeistens nicht das, was du denkst.\n\nWir hatten eine Mentee, die hervorragende Erstgespräche geführt hat. Sie war sympathisch, kompetent, strukturiert. Und trotzdem hat sie unter 30% ihrer Gespräche in Kunden konvertiert.\n\nDas Problem: Sie hat am Ende jedes Gesprächs die Entscheidung dem Kunden überlassen. Ohne eine klare nächste Handlung. Ohne Dringlichkeit. Ohne zu fragen: 'Was hält dich gerade noch zurück?'\n\nNach zwei Wochen Training auf ihr Abschlussgespräch: 60% Conversion. Gleiche Leads. Gleiche Qualität. Anderes Ende.\n\nKunden kaufen nicht, wenn sie 'drüber nachdenken'. Sie kaufen in dem Moment, wo jemand ihnen hilft, eine Entscheidung zu treffen.\n\nDein Job im Verkaufsgespräch ist nicht, zu überzeugen. Es ist, Klarheit zu schaffen. Klarheit führt zu Entscheidungen.\n\nSpeichere das. Du wirst es brauchen."
+    },
+    {
+      "id": "TRUST 04",
+      "col": "trust",
+      "title": "Der Sparring-Call, der den eigentlichen Hebel zeigte",
+      "tag": "Proof / Success Stories",
+      "status": "skript",
+      "hook": "Manchmal sieht ein Außenstehender in 30 Minuten, was du selbst nach 6 Monaten nicht siehst.",
+      "script": "Manchmal sieht ein Außenstehender in 30 Minuten, was du selbst nach 6 Monaten nicht siehst.\n\nEin Mentee kam zu einem unserer Sparring-Calls mit einem konkreten Problem: Seine Leads wurden mehr, seine Conversions aber weniger.\n\nEr war überzeugt, dass er das Angebot überarbeiten muss. Mehr Module, bessere Namengebung, niedrigerer Einstiegspreis.\n\nWir haben stattdessen seine letzten 20 Erstgespräche analysiert. Und haben etwas gesehen, was er selbst nicht sehen konnte: Er hat im ersten Gespräch zu viel erklärt — und dabei den Kunden verloren.\n\nSein Interessent wollte keine Roadmap. Er wollte das Gefühl, dass jemand sein Problem wirklich versteht.\n\nDrei Wochen später, nach einer Änderung im Gesprächsaufbau: Conversion von 25% auf 55%.\n\nDas Angebot war schon gut. Der Hebel lag woanders.\n\nDas ist der Wert von einem echten Sparring-Partner: Er sieht, was du nicht siehst."
+    },
+    {
+      "id": "TRUST 05",
+      "col": "trust",
+      "title": "Was Mentorin-Arbeit wirklich bedeutet – hinter den Kulissen",
+      "tag": "Proof / Success Stories",
+      "status": "skript",
+      "hook": "Die schönsten Momente in meiner Arbeit passieren nicht auf der Bühne und nicht in großen Zahlen. Sie passieren in den kleinen Nachrichten, die ich morgens bekomme.",
+      "script": "Die schönsten Momente in meiner Arbeit passieren nicht auf der Bühne und nicht in großen Zahlen. Sie passieren in den kleinen Nachrichten, die ich morgens bekomme.\n\n'Ich habe heute Nacht geschlafen — zum ersten Mal seit Monaten. Ich weiß endlich, was ich tun muss.'\n\n'Ich habe mein erstes 10k-Monat gemacht. Ich kann das kaum glauben.'\n\n'Ich habe nein gesagt zu einem Kunden, der nicht zu mir passt. Und es hat sich richtig angefühlt.'\n\nDas ist, was Mentorin-Arbeit bedeutet. Nicht Kurse verkaufen. Nicht Zahlen produzieren. Sondern sehen, wie jemand in seine Kraft kommt.\n\nJeder Unternehmer hat einen Moment, in dem er aufhört, um Erlaubnis zu fragen — und anfängt, Entscheidungen zu treffen. Diesen Moment zu begleiten, ist das Beste, was ich kenne.\n\nWenn du weißt, dass du so einen Moment gerade brauchst — wir haben freie Plätze im Architecture Program. Link in der Bio."
+    },
+    {
+      "id": "TRUST 06",
+      "col": "trust",
+      "title": "Drei Monate, drei Durchbrüche – ein Rückblick",
+      "tag": "Proof / Success Stories",
+      "status": "skript",
+      "hook": "Was kann in 90 Tagen wirklich passieren — wenn jemand aufhört zu zögern und anfängt zu entscheiden?",
+      "script": "Was kann in 90 Tagen wirklich passieren — wenn jemand aufhört zu zögern und anfängt zu entscheiden?\n\nIch schaue gerade auf die letzten drei Monate unserer Mentees zurück. Und ich bin immer wieder überrascht, was in 90 Tagen möglich ist.\n\nEiner hat sein erstes Gruppen-Programm gestartet — 11 Teilnehmer, 22.000 Euro in einer Woche.\n\nEine andere hat ein Angebot beerdigt, das sie vier Jahre mitgeschleppt hat — und innerhalb von sechs Wochen ein neues auf 8k monatlich skaliert.\n\nEin dritter hat seinen Preis verdoppelt. Nicht erhöht — verdoppelt. Und hat seitdem mehr Anfragen als vorher.\n\nDas sind nicht Ausnahmen. Das ist, was passiert, wenn Menschen aufhören, auf die perfekte Situation zu warten — und anfangen, mit dem zu arbeiten, was sie haben.\n\n90 Tage. Drei Entscheidungen. Ein anderes Business.\n\nWas wäre deine eine Entscheidung, die alles verändert?"
+    },
+    {
+      "id": "TRUST 07",
+      "col": "trust",
+      "title": "Von kleinem Nebenprojekt zur skalierten Organisation",
+      "tag": "Proof / Success Stories",
+      "status": "skript",
+      "hook": "Vor drei Jahren war The Escape Theorie ein Instagram-Account mit ein paar hundert Followern und dem Ziel, irgendwie hilfreich zu sein. Heute begleiten wir Unternehmer von 5k auf 100k.",
+      "script": "Vor drei Jahren war The Escape Theorie ein Instagram-Account mit ein paar hundert Followern und dem Ziel, irgendwie hilfreich zu sein.\n\nKein klares Angebot. Kein System. Keine Ahnung, ob das jemals etwas wird.\n\nWas es verändert hat, war nicht ein viraler Post und kein Investor. Es war die Entscheidung, wirklich tief zu gehen — nicht für alle, sondern für eine sehr klare Gruppe von Menschen.\n\nCoaches und Dienstleister, die gut in dem sind, was sie tun. Die aber nicht wissen, wie sie ihr Wissen in ein skalierbares Business verwandeln.\n\nSeit wir das entschieden haben, ist alles leichter geworden. Produktentwicklung. Content. Kundengewinnung. Weil wir nicht mehr für jeden sprechen.\n\nDas Paradoxon des Wachstums: Je enger du definierst, wen du hilfst — desto mehr Menschen wollen, dass du ihnen hilfst.\n\nWas ist dein 'Für wen'?"
+    },
+    {
+      "id": "TRUST 08",
+      "col": "trust",
+      "title": "Community statt Coach-Rolle – warum das den Unterschied macht",
+      "tag": "Proof / Success Stories",
+      "status": "skript",
+      "hook": "Ein guter Coach gibt dir Antworten. Eine gute Community stellt dir die Fragen, die du dir selbst nicht stellen würdest.",
+      "script": "Ein guter Coach gibt dir Antworten. Eine gute Community stellt dir die Fragen, die du dir selbst nicht stellen würdest.\n\nWir haben früh entschieden, dass The Escape Theorie nicht nur ein Coaching-Programm ist — sondern ein Ökosystem.\n\nDenn was wir immer wieder beobachten: Die größten Durchbrüche passieren nicht im 1:1-Call. Sie passieren in dem Moment, wo jemand einem anderen Mitglied bei seinem Problem zuhört — und plötzlich seine eigene Lösung sieht.\n\nGemeinschaft unter Gleichgesinnten ist unterschätzt. Nicht Gleichgesinnte im Sinne von 'gleiche Nische' — sondern Gleichgesinnte im Sinne von 'wir wollen alle dasselbe: ein Business, das zu unserem Leben passt'.\n\nUnser The Circle ist kostenlos. Nicht weil wir müssen — sondern weil wir glauben, dass die besten Verbindungen entstehen, bevor jemand etwas kauft.\n\nWenn du noch nicht drin bist: Link in der Bio. Komm einfach mal rein."
+    },
+    {
+      "id": "TRUST 09",
+      "col": "trust",
+      "title": "Das Feedback, das mich überrascht hat",
+      "tag": "Proof / Success Stories",
+      "status": "skript",
+      "hook": "Wir haben unsere Mentees gefragt: Was hat dich bei TET am meisten überrascht? Ich hätte nicht mit dieser Antwort gerechnet.",
+      "script": "Wir haben unsere Mentees gefragt: Was hat dich bei TET am meisten überrascht?\n\nIch hätte nicht mit dieser Antwort gerechnet.\n\nNicht die Strategien. Nicht die Zahlen. Nicht einmal die Ergebnisse.\n\nDie häufigste Antwort war: 'Dass ihr wirklich da seid. Dass ihr wirklich lest. Dass ihr wirklich antwortet.'\n\nDas hat mich ehrlich gesagt getroffen. Weil es zeigt, wie niedrig die Erwartung in dieser Branche ist.\n\nUnternehmer sind es gewohnt, Kurse zu kaufen und dann allein gelassen zu werden. Fragen ins Leere zu schicken. Sich selbst irgendwie durchzukämpfen.\n\nWir haben von Anfang an entschieden: Das ist nicht, wie wir arbeiten wollen.\n\nWenn jemand in unser Programm kommt, kommt er nicht für Content — er kommt für Begleitung.\n\nDas ist kein Marketingversprechen. Das ist unser Standard.\n\nWenn du wissen willst, wie das konkret aussieht: Kommentiere 'INFO' und ich melde mich."
+    },
+    {
+      "id": "BC 01",
+      "col": "brand-culture",
+      "title": "Warum wir keinen \"normalen\" Coaching-Stil haben",
+      "tag": "Behind the Scenes",
+      "status": "skript",
+      "hook": "Die meisten Coaching-Programme funktionieren so: Du kriegst Materialien, machst Calls, hoffst auf Ergebnisse. Wir haben das komplett anders aufgebaut — und hier ist warum.",
+      "script": "Die meisten Coaching-Programme funktionieren so: Du kriegst Materialien, machst Calls, hoffst auf Ergebnisse.\n\nWir haben das komplett anders aufgebaut — und hier ist warum.\n\nWir glauben, dass Veränderung nicht in Modulen passiert. Sie passiert in Momenten. Und Momente kann man nicht vorplanen.\n\nDeshalb haben wir unser gesamtes Programm um Flexibilität und echte Nähe gebaut. Kein Kurs-Feeling. Kein 'Schau dir Woche 4 an bevor du Woche 5 machst'.\n\nStattdessen: Wir schauen, wo du gerade stehst. Was dein spezifisches Bottleneck ist. Und dann arbeiten wir genau daran — auch wenn das bedeutet, dass wir einen geplanten Call kurzfristig umentwickeln.\n\nDas kostet uns mehr. Das ist uneffizienter für uns. Aber es ist effektiver für dich.\n\nWir haben uns entschieden, dass wir lieber ein kleineres Programm mit echten Ergebnissen wollen — als ein großes mit durchschnittlichen.\n\nDas ist unser Stil. Nicht für jeden. Für die Richtigen."
+    },
+    {
+      "id": "BC 02",
+      "col": "brand-culture",
+      "title": "Ein Tag mit Sam (Behind the Scenes)",
+      "tag": "Behind the Scenes",
+      "status": "skript",
+      "hook": "Ich zeige dir mal, wie ein normaler Arbeitstag bei uns aussieht — weil ich glaube, dass transparente Teams vertrauenswürdigere Marken bauen.",
+      "script": "Ich zeige dir mal, wie ein normaler Arbeitstag bei uns aussieht — weil ich glaube, dass transparente Teams vertrauenswürdigere Marken bauen.\n\nHeute mit Sam.\n\nSam ist verantwortlich für unsere Mentee-Experience. Das bedeutet: Sie ist die erste Person, die antwortet, wenn jemand eine Frage hat. Die sicherstellt, dass niemand verloren geht. Die sieht, wenn jemand gerade kämpft — bevor er selbst danach fragt.\n\nIhr Morgen beginnt mit einem Blick auf die Community. Was wurde gefragt? Was braucht Attention? Wer hat sich länger nicht gemeldet?\n\nDann: Calls vorbereiten. Sicherstellen, dass die Unterlagen stimmen. Feedback aus der letzten Woche lesen.\n\nNachmittag: Onboarding neuer Mentees. Das erste Gespräch, das erste Gefühl. Sam nennt das 'den Grundstein legen'.\n\nWas ich an ihr am meisten schätze: Sie behandelt jeden Mentee, als wäre er ihr einziger.\n\nDas ist Kultur. Und Kultur entsteht nicht in Meetings — sie entsteht in dem, was jeder Tag tatsächlich bedeutet."
+    },
+    {
+      "id": "BC 03",
+      "col": "brand-culture",
+      "title": "Whiteboard-Session: \"Diese Diskussion hatten wir im Team\"",
+      "tag": "Behind the Scenes",
+      "status": "skript",
+      "hook": "Letzte Woche hatten wir eine Diskussion im Team, die zwei Stunden gedauert hat. Über eine einzige Frage: Sollen wir unser Programm für mehr Menschen öffnen oder kleiner halten?",
+      "script": "Letzte Woche hatten wir eine Diskussion im Team, die zwei Stunden gedauert hat.\n\nÜber eine einzige Frage: Sollen wir unser Programm für mehr Menschen öffnen — oder kleiner halten?\n\nDie Wachstums-Logik sagt: Mehr Teilnehmer, mehr Umsatz, mehr Impact.\n\nUnsere Erfahrung sagt etwas anderes.\n\nJedes Mal, wenn wir das Programm vergrößert haben, ist die durchschnittliche Erfahrung schlechter geworden. Nicht dramatisch — aber spürbar. Weniger individuelle Aufmerksamkeit. Weniger echte Verbindung.\n\nAm Ende haben wir entschieden: Wir bleiben klein. Absichtlich.\n\nNicht weil wir nicht wachsen wollen. Sondern weil unser Versprechen — echte, tiefe Begleitung — nur haltbar ist, wenn wir die Kontrolle über die Qualität behalten.\n\nDas bedeutet: Wir nehmen nicht jeden. Und wir nehmen nicht so viele, wie wir könnten.\n\nIch finde, das ist eine Entscheidung wert, darüber zu sprechen. Was denkst du?"
+    },
+    {
+      "id": "BC 04",
+      "col": "brand-culture",
+      "title": "Wie wir Entscheidungen im Team treffen",
+      "tag": "Behind the Scenes",
+      "status": "skript",
+      "hook": "Wir haben keine endlosen Meeting-Runden. Wir haben eine Regel: Wer die Information hat, trifft die Entscheidung — und informiert danach.",
+      "script": "Wir haben keine endlosen Meeting-Runden. Wir haben eine Regel: Wer die Information hat, trifft die Entscheidung — und informiert danach.\n\nKlingt simpel. Ist es auch. Und trotzdem scheitern die meisten kleinen Teams genau daran.\n\nWir sind in der Vergangenheit auch mal in die Falle getappt. Jede Änderung wird abgestimmt. Jede neue Idee braucht Konsens. Ergebnis: Wir haben drei Mal so lange gebraucht für halb so viele Entscheidungen.\n\nHeute haben wir klare Verantwortlichkeiten. Sam entscheidet über alles, was Mentee-Experience betrifft. Ich entscheide über Strategie und Programm-Inhalt. Tayler entscheidet über Finanzen und Wachstum.\n\nWenn wir Input wollen, holen wir ihn aktiv ein. Nicht passiv durch Abstimmung.\n\nDas macht uns schneller. Und es macht jeden verantwortlicher für das, was er entscheidet.\n\nKlare Verantwortung erzeugt klare Ergebnisse. Das gilt für Teams — und für dein Business."
+    },
+    {
+      "id": "BC 05",
+      "col": "brand-culture",
+      "title": "Was \"Qualität über Quantität\" bei TET wirklich bedeutet",
+      "tag": "Behind the Scenes",
+      "status": "skript",
+      "hook": "Qualität über Quantität — das sagen viele. Aber was bedeutet das konkret, wenn man ein Online-Business führt?",
+      "script": "Qualität über Quantität — das sagen viele. Aber was bedeutet das konkret, wenn man ein Online-Business führt?\n\nFür uns bedeutet es konkret: Wir nehmen weniger Mentees, als wir könnten. Wir posten weniger Content, als der Algorithmus fordert. Wir haben weniger Angebote, als wir könnten.\n\nUnd in jedem dieser Bereiche sind wir bewusst schlechter im Vergleich zu dem, was 'maximal' wäre.\n\nDafür sind wir gut in dem, was wir tun. Sehr gut.\n\nUnsere Abschlussrate bei Mentees — also der Anteil, der sein Ziel innerhalb des Programms erreicht — liegt bei über 80%.\n\nDas ist kein Zufall. Das ist das Ergebnis davon, nicht zu viel auf einmal zu wollen.\n\nDie gefährlichste Falle für wachsende Unternehmen ist Überehrgiz: Mehr Produkte, mehr Kunden, mehr Kanäle — bevor das Fundament steht.\n\nWas wäre, wenn du das Gegenteil machst? Weniger — aber besser?\n\nDas ist unsere Wette. Und sie zahlt sich aus."
+    },
+    {
+      "id": "BC 06",
+      "col": "brand-culture",
+      "title": "Unser Onboarding-Prozess: was neue Mentees als erstes erleben",
+      "tag": "Behind the Scenes",
+      "status": "skript",
+      "hook": "Der erste Eindruck nach dem Kauf entscheidet, ob jemand Ergebnisse holt — oder enttäuscht ist, noch bevor er angefangen hat.",
+      "script": "Der erste Eindruck nach dem Kauf entscheidet, ob jemand Ergebnisse holt — oder enttäuscht ist, noch bevor er angefangen hat.\n\nDas klingt dramatisch. Aber es stimmt.\n\nWir haben früher unseren Onboarding-Prozess unterschätzt. Neuer Mentee zahlt, kriegt Zugang, liest sich ein. Fertig.\n\nDas Problem: In den ersten 72 Stunden nach dem Kauf entscheidet sich im Kopf des Kunden, ob er glaubt, dass er die richtige Entscheidung getroffen hat.\n\nHeute haben wir ein strukturiertes Onboarding: Persönliche Begrüßungs-Nachricht innerhalb von 2 Stunden nach Zahlung. Ein erstes Orientierungsgespräch in der ersten Woche. Klare nächste Schritte, die konkret und machbar sind.\n\nDas Ergebnis: Unsere Mentees sind in der ersten Woche aktiver — und sie bleiben es.\n\nWenn du selbst Programme oder Dienstleistungen verkaufst: Schau dir mal an, was deine Kunden in den ersten 72 Stunden nach dem Kauf erleben. Meistens liegt der größte Hebel genau dort."
+    },
+    {
+      "id": "BC 07",
+      "col": "brand-culture",
+      "title": "Architecture Sessions: ein Blick in die Live-Session",
+      "tag": "Behind the Scenes",
+      "status": "skript",
+      "hook": "Ich nehme dich mal mit in eine unserer Architecture Sessions — weil ich glaube, dass du danach anders über Strategie-Arbeit denkst.",
+      "script": "Ich nehme dich mal mit in eine unserer Architecture Sessions — weil ich glaube, dass du danach anders über Strategie-Arbeit denkst.\n\nArchitecture Sessions sind unsere intensivsten 1:1-Formate. 90 Minuten, ein konkretes Thema, und wir gehen wirklich tief rein.\n\nLetzte Woche: Ein Mentee mit einem Signature-Programm, das seit drei Monaten nicht wächst. Trotz guten Contents, trotz guter Reichweite.\n\nWir haben die ersten 30 Minuten damit verbracht, seinen Verkaufsprozess zu sezieren. Nicht optimieren — erst verstehen.\n\nAm Ende haben wir einen einzigen Hebel identifiziert: Er hat im Erstgespräch die Investition zu früh genannt. Bevor er den Schmerz des Kunden wirklich verstanden hatte.\n\nDrei Wochen später: 4 neue Kunden. Selbe Leads. Anderes Timing.\n\nDas ist, was Architecture-Arbeit bedeutet. Nicht mehr Strategien. Sondern die eine Sache, die wirklich den Unterschied macht — und dann konkret daran arbeiten.\n\nWillst du eine Architecture Session? DM oder Link in der Bio."
+    },
+    {
+      "id": "BC 08",
+      "col": "brand-culture",
+      "title": "Premium statt Palmen: warum wir uns bewusst absetzen",
+      "tag": "Behind the Scenes",
+      "status": "skript",
+      "hook": "Wir haben sehr früh entschieden: Wir zeigen keine Palmen, keine Lamborghinis, kein 'Dank meines Businesses arbeite ich von der Insel'. Und das war eine der besten Entscheidungen, die wir je getroffen haben.",
+      "script": "Wir haben sehr früh entschieden: Wir zeigen keine Palmen, keine Lamborghinis, kein 'Dank meines Businesses arbeite ich von der Insel'.\n\nUnd das war eine der besten Entscheidungen, die wir je getroffen haben.\n\nNicht weil das per se schlecht ist. Sondern weil es nicht wir sind.\n\nUnser Kunde kauft nicht bei uns, weil er von der Insel arbeiten will. Er kauft, weil er ein Business aufbauen will, das ihm Freiheit gibt — auf seine Art. Vielleicht ist das ein schönes Büro. Vielleicht ist das mehr Zeit für die Familie. Vielleicht ist es einfach nicht mehr jedes Wochenende arbeiten.\n\nWir sprechen von Premium-Positionierung — aber nicht Glamour-Positionierung. Das sind zwei verschiedene Dinge.\n\nPremium bedeutet: Du bist die beste Wahl für einen bestimmten Menschen, für ein bestimmtes Problem, auf eine bestimmte Art.\n\nGlamour bedeutet: Du positionierst dich über ein Lifestyle-Bild, das du selbst vielleicht nicht mal lebst.\n\nWir haben uns für das Erste entschieden. Für die, die das auch wollen: Herzlich willkommen."
+    },
+    {
+      "id": "CONV 01",
+      "col": "conversion",
+      "title": "Mehr Reichweite, weniger Umsatz? Der Fehler dahinter",
+      "tag": "Authority / CTA",
+      "status": "skript",
+      "hook": "Deine Follower wachsen. Deine Anfragen werden mehr. Aber dein Umsatz bleibt gleich. Das ist kein Reichweiten-Problem. Das ist ein Konversionsproblem — und es hat einen sehr konkreten Grund.",
+      "script": "Deine Follower wachsen. Deine Anfragen werden mehr. Aber dein Umsatz bleibt gleich.\n\nDas ist kein Reichweiten-Problem. Das ist ein Konversionsproblem — und es hat einen sehr konkreten Grund.\n\nWenn Reichweite nicht zu Umsatz führt, liegt das fast immer an einem von drei Dingen:\n\nErstens: Du ziehst die falschen Menschen an. Dein Content spricht zu viele an — und die Richtigen fühlen sich nicht direkt angesprochen.\n\nZweitens: Dein Offer ist unklar. Wenn jemand auf dein Profil kommt, versteht er nicht sofort, was du konkret anbietest und für wen.\n\nDrittens: Du hast keinen klaren nächsten Schritt. Dein Follower weiß nicht, wie er von 'ich finde das interessant' zu 'ich will das kaufen' kommt.\n\nReichweite ohne Konversion ist teures Marketing ohne ROI.\n\nDie gute Nachricht: Das ist behebbar. Ohne mehr zu posten. Ohne mehr Reichweite.\n\nKommentiere 'AUDIT' und ich schaue mir deinen Funnel kurz an."
+    },
+    {
+      "id": "CONV 02",
+      "col": "conversion",
+      "title": "Warum dein nächstes Angebot nicht das Problem löst",
+      "tag": "Authority / CTA",
+      "status": "skript",
+      "hook": "Wenn dein aktuelles Angebot nicht verkauft, bringt dir ein neues Angebot nichts. Du nimmst nur das Problem mit — in ein neues Produkt.",
+      "script": "Wenn dein aktuelles Angebot nicht verkauft, bringt dir ein neues Angebot nichts. Du nimmst nur das Problem mit — in ein neues Produkt.\n\nIch sehe das so oft: Jemand hat ein Coaching-Paket, das nicht läuft. Also macht er einen Online-Kurs. Der läuft auch nicht. Also macht er eine Membership. Und so weiter.\n\nDas Problem ist nicht das Produkt. Das Problem ist, dass niemand klar versteht, für wen das Produkt ist und was es konkret verändert.\n\nEin Angebot, das klar kommuniziert, wer es kauft und was danach anders ist, verkauft sich — egal ob es ein Kurs oder ein High-Ticket-Programm ist.\n\nBevor du das nächste Angebot baust: Beantworte diese drei Fragen über dein aktuelles.\n\nErstens: Für wen genau ist es — in einem Satz?\nZweitens: Was ist danach konkret anders — in Zahlen oder Ergebnissen?\nDrittens: Warum du — und nicht jemand anderes?\n\nWenn du diese drei Fragen nicht klar beantworten kannst, bau erst keine neuen Produkte. Klär die Antworten.\n\nDann verkauft sich das, was du schon hast."
+    },
+    {
+      "id": "CONV 03",
+      "col": "conversion",
+      "title": "10k/Monat und trotzdem kein System – was fehlt",
+      "tag": "Authority / CTA",
+      "status": "skript",
+      "hook": "10.000 Euro im Monat klingt nach Erfolg. Aber wenn du weißt, dass du nächsten Monat wieder bei null anfängst — dann ist es kein System. Es ist Glück mit guten Monaten.",
+      "script": "10.000 Euro im Monat klingt nach Erfolg. Aber wenn du weißt, dass du nächsten Monat wieder bei null anfängst — dann ist es kein System. Es ist Glück mit guten Monaten.\n\nDas ist eine Falle, in die viele Unternehmer tappen. Gute Monate durch harte Arbeit, schlechte Monate durch Fehlen von Struktur.\n\nEin echtes Business-System hat drei Dinge:\n\nErstens: Planbare Lead-Generierung. Du weißt, wie viele neue Interessenten du pro Monat bekommst — und du kannst diesen Kanal skalieren.\n\nZweitens: Reproduzierbarer Verkaufsprozess. Du weißt, was du tust, wenn ein Interessent sich meldet — und du tust es immer gleich.\n\nDrittens: Retention. Bestehende Kunden, die länger bleiben oder wieder kaufen, sind günstiger als neue Kunden zu gewinnen.\n\nWenn eines dieser drei fehlt, hast du kein System. Du hast einen guten Monat.\n\nWo ist bei dir die größte Lücke? Schreib es in die Kommentare."
+    },
+    {
+      "id": "CONV 04",
+      "col": "conversion",
+      "title": "Der Unterschied zwischen \"interessiert\" und \"kaufbereit\"",
+      "tag": "Authority / CTA",
+      "status": "skript",
+      "hook": "Jemand, der deine Posts liked und spart, ist noch kein Käufer. Es gibt einen konkreten Schritt zwischen 'interessiert' und 'kaufbereit' — und die meisten übersehen ihn.",
+      "script": "Jemand, der deine Posts liked und spart, ist noch kein Käufer.\n\nEs gibt einen konkreten Schritt zwischen 'interessiert' und 'kaufbereit' — und die meisten übersehen ihn.\n\nDieser Schritt heißt: Vertrauen in die Spezifität.\n\nDein Follower muss nicht nur glauben, dass du weißt, wovon du redest. Er muss glauben, dass du spezifisch für sein Problem die richtige Person bist.\n\nDer Unterschied:\n'Ich helfe Unternehmern zu wachsen.' → Interessant.\n'Ich helfe Coaches und Dienstleistern, die zwischen 3 und 10k monatlich verdienen, planbar auf 20k+ zu skalieren — ohne mehr Stunden zu arbeiten.' → Kaufbereit.\n\nJe spezifischer du bist, desto mehr fühlt sich dein idealer Kunde direkt angesprochen.\n\nUnd je mehr er sich direkt angesprochen fühlt, desto schneller kommt er in die DM.\n\nWas ist dein spezifischster Satz darüber, wem du hilfst? Schreib ihn in die Kommentare — ich gebe dir ehrliches Feedback."
+    },
+    {
+      "id": "CONV 05",
+      "col": "conversion",
+      "title": "Umsatz verdoppeln mit weniger Aufwand (Case Study)",
+      "tag": "Authority / CTA",
+      "status": "skript",
+      "hook": "Eine Mentee hat ihren Umsatz in 90 Tagen verdoppelt — und dabei weniger Arbeitsstunden gehabt als vorher. Was sie verändert hat, ist einfacher als du denkst.",
+      "script": "Eine Mentee hat ihren Umsatz in 90 Tagen verdoppelt — und dabei weniger Arbeitsstunden gehabt als vorher.\n\nWas sie verändert hat, ist einfacher als du denkst.\n\nSie hat nicht mehr gepostet. Nicht mehr Calls gemacht. Nicht mehr Werbung geschaltet.\n\nSie hat zwei Dinge geändert:\n\nErstens: Ihren Preis. Sie hatte sich jahrelang unter Wert verkauft — weil sie dachte, höhere Preise bedeuten weniger Kunden. Das Gegenteil war wahr. Bessere Kunden, weniger Handwerk, mehr Ergebnisse.\n\nZweitens: Ihr Angebot-Format. Von stündlicher 1:1-Betreuung zu einem strukturierten Programm mit klaren Milestones. Weniger Flexibilität für den Kunden — mehr Ergebnis für beide.\n\nSie hat nicht mehr getan. Sie hat das Richtige getan.\n\nWenn du gerade das Gefühl hast, du müsstest nur mehr arbeiten um mehr zu verdienen — dann stimmt die Struktur wahrscheinlich nicht.\n\nWillst du wissen, wo bei dir der Hebel liegt? DM mir das Wort 'AUDIT' und ich schaue drauf."
+    },
+    {
+      "id": "CONV 06",
+      "col": "conversion",
+      "title": "Was echte Premium-Positionierung in der DM verändert",
+      "tag": "Authority / CTA",
+      "status": "skript",
+      "hook": "Wenn jemand dich in der DM anschreibt und als erstes fragt 'Was kostet das?' — dann hast du ein Positionierungsproblem. Premium-Käufer fragen zuerst nach dem Ergebnis.",
+      "script": "Wenn jemand dich in der DM anschreibt und als erstes fragt 'Was kostet das?' — dann hast du ein Positionierungsproblem.\n\nPremium-Käufer fragen zuerst nach dem Ergebnis.\n\nDas ist keine Beobachtung über Kunden. Das ist eine Beobachtung über Positionierung.\n\nWenn dein Content nicht klar macht, was der Unterschied nach deiner Zusammenarbeit ist — dann ist 'Was kostet das?' die einzige sinnvolle Frage. Weil es keinen anderen Referenzpunkt gibt.\n\nWenn dein Content dagegen zeigt, wer du bist, was konkret passiert, und warum du die richtige Person für dieses Problem bist — dann kommen Interessenten in die DM und sagen 'Ich will das. Wie funktioniert das bei dir?'\n\nDas ist Premium-Positionierung. Nicht dein Preis. Dein wahrgenommener Wert.\n\nDrei Fragen, die du dir stellen solltest: Zeigt mein letzter Monat Content, wer mein Traumkunde ist? Zeigt er, was ich konkret an Ergebnis liefere? Und zeigt er, warum ich die beste Wahl dafür bin?\n\nWenn du eine der drei mit 'nein' beantwortest — dort liegt deine Hausaufgabe."
+    },
+    {
+      "id": "CONV 07",
+      "col": "conversion",
+      "title": "Freebie → Offer: die Lücke, die Geld kostet",
+      "tag": "Authority / CTA",
+      "status": "skript",
+      "hook": "Du hast ein Freebie, das gut ankommt. Du hast ein Angebot, das gut ist. Aber zwischen beidem gibt es eine Lücke — und in dieser Lücke verlierst du Geld.",
+      "script": "Du hast ein Freebie, das gut ankommt. Du hast ein Angebot, das gut ist. Aber zwischen beidem gibt es eine Lücke — und in dieser Lücke verlierst du Geld.\n\nDiese Lücke heißt: fehlende Brücke.\n\nEin Freebie löst ein kleines, unmittelbares Problem. Dein Angebot löst ein größeres, tieferes Problem. Wenn der Weg von einem zum anderen nicht klar ist, gibt es keinen logischen nächsten Schritt — und der Interessent kauft nichts.\n\nWie baust du die Brücke? Drei Möglichkeiten:\n\nEine Danke-Seite nach dem Freebie-Download, die zeigt, was der nächste Schritt ist.\n\nEine E-Mail-Sequenz, die in 5–7 Nachrichten vom Freebie-Problem zum größeren Problem führt.\n\nOder: Dein Freebie ist direkt auf dein Kernproblem ausgerichtet — und macht dein Angebot zur logischen Fortsetzung.\n\nDas Freebie zu optimieren ist die zweitbeste Investition. Die beste ist die Brücke danach.\n\nHast du eine? Oder verschenkst du gerade Leads?"
+    },
+    {
+      "id": "CONV 08",
+      "col": "conversion",
+      "title": "Launch vs. Evergreen: was für dich gerade das Richtige ist",
+      "tag": "Authority / CTA",
+      "status": "skript",
+      "hook": "Launches sind sexy. Evergreen ist verlässlich. Und die meisten wählen das Falsche — weil sie nicht wissen, in welcher Phase ihres Business sie gerade sind.",
+      "script": "Launches sind sexy. Evergreen ist verlässlich. Und die meisten wählen das Falsche — weil sie nicht wissen, in welcher Phase ihres Business sie gerade sind.\n\nHier ist die einfache Wahrheit:\n\nLaunches sind richtig, wenn du beweisen willst, dass dein Angebot funktioniert. Wenn du schnell viel Cash generieren willst. Wenn du Energie und Aufmerksamkeit für eine begrenzte Zeit bündeln kannst.\n\nEvergreen ist richtig, wenn du schon weißt, dass dein Angebot konvertiert. Wenn du planbare, ruhige Einnahmen willst. Wenn du nicht jeden Monat neu mobilisieren möchtest.\n\nDie häufigste Falle: Jemand macht einen Launch, bevor er weiß ob sein Angebot konvertiert. Oder jemand baut Evergreen, bevor er einen Proof of Concept hat.\n\nReihenfolge: Launch zuerst — um zu testen, zu beweisen, Testimonials zu sammeln. Dann Evergreen — um zu systematisieren und zu skalieren.\n\nWo bist du gerade? Und bist du in der richtigen Phase für das, was du gerade tust?"
+    },
+    {
+      "id": "CONV 09",
+      "col": "conversion",
+      "title": "Business das Fühl-Argument – warum Fakten allein nicht konvertieren",
+      "tag": "Authority / CTA",
+      "status": "skript",
+      "hook": "Du kannst jemandem alle Fakten liefern — Ergebnisse, Zahlen, Case Studies — und er kauft trotzdem nicht. Weil Menschen nicht mit dem Kopf kaufen. Sie kaufen mit dem Bauch — und rechtfertigen danach mit dem Kopf.",
+      "script": "Du kannst jemandem alle Fakten liefern — Ergebnisse, Zahlen, Case Studies — und er kauft trotzdem nicht.\n\nWeil Menschen nicht mit dem Kopf kaufen. Sie kaufen mit dem Bauch — und rechtfertigen danach mit dem Kopf.\n\nDas bedeutet: Dein Content braucht beides. Fakten für den Kopf. Gefühl für den Bauch.\n\nDer Fehler, den ich oft sehe: Nur Expertise zeigen. Tipps geben. Frameworks teilen. Das baut Wissen auf — aber kein Vertrauen.\n\nVertrauen entsteht, wenn jemand das Gefühl hat: Dieser Mensch versteht mich. Nicht nur mein Problem — sondern mich.\n\nWie machst du das in Content? Indem du nicht nur zeigst, was du weißt — sondern auch, wie du denkst. Was du glaubst. Warum dir das wichtig ist.\n\nMenschen kaufen von Menschen, die sie mögen und denen sie vertrauen. Expertise ist die Eintrittskarte. Verbindung ist der Kaufgrund.\n\nWas ist das letzte Mal, dass du etwas Persönliches in deinem Content geteilt hast?"
+    }
   ]
 }

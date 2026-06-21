@@ -120,7 +120,7 @@
 <script>
   async function loadData() {
     try {
-      const res = await fetch('/performance-data.json?t=' + Date.now());
+      const res = await fetch('performance-data.json?t=' + Date.now());
       if (!res.ok) throw new Error('not found');
       render(await res.json());
     } catch (e) {
