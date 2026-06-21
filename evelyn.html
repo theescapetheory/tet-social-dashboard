@@ -165,6 +165,9 @@ if (sessionStorage.getItem('tet_ev_ok') === '1') {
     </div>
   </div>
 
+  <!-- Update-Badge -->
+  <div id="ev-updated" style="font-size:11px;color:var(--dim);margin:-20px 0 20px;text-align:right"></div>
+
   <!-- Stats -->
   <div class="stats-bar">
     <div class="stat-item"><div class="stat-val" id="stat-total">40</div><div class="stat-lbl">Ideen gesamt</div></div>
@@ -179,7 +182,8 @@ if (sessionStorage.getItem('tet_ev_ok') === '1') {
 </main>
 
 <script>
-const IDEAS = [
+// Fallback falls JSON nicht erreichbar
+const IDEAS_FALLBACK = [
   // PERSONALITY
   { id:'PERS 01', col:'personality', title:'Vorher/Nachher: vom Chaos zur Architektin', tag:'Positionierung', tagColor:'var(--pers)' },
   { id:'PERS 02', col:'personality', title:'Der Waffelstand mit 8 – meine erste "Firma"', tag:'Positionierung', tagColor:'var(--pers)' },
@@ -234,14 +238,35 @@ function setStorage(key, val) { try { localStorage.setItem('tet_ev_' + key, val)
 
 let activeCol = 'all';
 let activeStatus = 'all';
+let IDEAS = [];
+
+async function loadIdeas() {
+  try {
+    const res = await fetch('./evelyn-ideas.json?t=' + Date.now());
+    if (!res.ok) throw new Error('JSON nicht erreichbar');
+    const data = await res.json();
+    IDEAS = (data.ideas || []).map(i => ({
+      ...i,
+      tagColor: colColors[i.col] || 'var(--blue)'
+    }));
+    if (data.last_updated) {
+      const badge = document.getElementById('ev-updated');
+      if (badge) badge.textContent = 'Zuletzt aktualisiert: ' + data.last_updated;
+    }
+  } catch(e) {
+    IDEAS = IDEAS_FALLBACK;
+  }
+  buildCards();
+}
 
 function buildCards() {
   const grid = document.getElementById('card-grid');
   grid.innerHTML = '';
   IDEAS.forEach(idea => {
-    const savedStatus = getStorage('status_' + idea.id) || 'idee';
-    const savedHook   = getStorage('hook_' + idea.id);
-    const savedScript = getStorage('script_' + idea.id);
+    // localStorage-Override hat Vorrang; JSON-Wert als Fallback
+    const savedStatus = getStorage('status_' + idea.id) || idea.status || 'idee';
+    const savedHook   = getStorage('hook_'   + idea.id) || idea.hook   || '';
+    const savedScript = getStorage('script_' + idea.id) || idea.script || '';
 
     const statusLabel = { idee:'💡 Idee', skript:'📝 Skript fertig', aufnahme:'🎙 Aufgenommen' };
     const statusClass = { idee:'', skript:' skript', aufnahme:' aufnahme' };
@@ -353,7 +378,7 @@ function updateStats() {
   document.getElementById('stat-idee').textContent     = idee;
 }
 
-buildCards();
+loadIdeas();
 </script>
 </body>
 </html>
