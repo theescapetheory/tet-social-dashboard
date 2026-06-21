@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TET · SM Command Center</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<script src="./chart.min.js"></script>
+<script src="/chart.min.js"></script>
 <style>
 :root {
   --navy: #010D26; --navy2: #071429; --navy3: #0d1e3a;
@@ -142,26 +142,6 @@ main{padding:40px 32px}
 .story-slot.filled{border-style:solid;border-color:rgba(205,176,143,.3);background:rgba(205,176,143,.07);color:var(--white)}
 .story-slot-num{font-size:9px;color:rgba(205,176,143,.5);font-weight:700;margin-bottom:2px}
 
-/* ── Evelyn Board ── */
-.ev-filter{background:transparent;border:1px solid var(--border);color:var(--dim);font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;cursor:pointer;transition:all .2s}
-.ev-filter:hover,.ev-filter.active{background:rgba(124,167,235,.15);border-color:var(--blue);color:var(--blue)}
-.ev-col-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:10px;margin-bottom:12px;background:rgba(255,255,255,.04);border-left:3px solid var(--col-color);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white)}
-.ev-count{background:rgba(255,255,255,.08);border-radius:10px;padding:2px 8px;font-size:11px;color:var(--dim)}
-.ev-cards{display:flex;flex-direction:column;gap:8px}
-.ev-card{background:var(--navy2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .2s;display:flex;flex-direction:column;gap:6px}
-.ev-card:hover{border-color:rgba(124,167,235,.35)}
-.ev-card.hidden{display:none}
-.ev-id{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--dim)}
-.ev-title{font-size:13px;font-weight:600;color:var(--white);line-height:1.4}
-.ev-tag{display:inline-block;font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px;letter-spacing:.04em}
-.ev-status{font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;width:fit-content}
-.ev-status.idee{background:rgba(107,133,168,.15);color:var(--dim)}
-.ev-status.skript{background:rgba(82,201,132,.15);color:#52C984}
-.ev-status.aufnahme{background:rgba(124,167,235,.15);color:var(--blue)}
-.ev-add{border:1px dashed rgba(124,167,235,.2)!important;color:var(--dim);font-size:12px;text-align:center;padding:10px;background:transparent!important}
-.ev-add:hover{border-color:var(--blue)!important;color:var(--blue)}
-.ev-col.hidden{display:none}
-
 /* ── Footer ── */
 footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--dim)}
 </style>
@@ -205,7 +185,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
     </div>
     <div class="header-meta">
       <div>Instagram · TikTok · YouTube</div>
-      <div class="period-badge" id="period-label">20. Mai – 18. Juni 2026</div>
+      <div class="period-badge" id="period-label">14. Mai – 12. Juni 2026</div>
     </div>
   </div>
 </header>
@@ -221,24 +201,24 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
       <div class="platform-label"><span class="platform-dot"></span>Instagram</div>
       <div class="kpi-grid">
         <div class="kpi-item wide">
-          <div class="kpi-value" id="ig-followers">6.510</div>
+          <div class="kpi-value" id="ig-followers">6.498</div>
           <div class="kpi-label">Follower</div>
-          <div class="kpi-change up">▲ +0,12% · +3 im Zeitraum</div>
+          <div class="kpi-change up">▲ +0,28% · +18 im Zeitraum</div>
         </div>
         <div class="kpi-item">
-          <div class="kpi-value" style="font-size:22px" data-kpi="ig-reach">92,74K</div>
+          <div class="kpi-value" style="font-size:22px">81,98K</div>
           <div class="kpi-label">Impressionen</div>
-          <div class="kpi-change up">▲ +7,16%</div>
+          <div class="kpi-change down">▼ –21,72%</div>
         </div>
         <div class="kpi-item">
-          <div class="kpi-value" style="font-size:22px" data-kpi="ig-interactions">352</div>
+          <div class="kpi-value" style="font-size:22px">337</div>
           <div class="kpi-label">Interaktionen</div>
-          <div class="kpi-change up">▲ +4,45%</div>
+          <div class="kpi-change down">▼ –1,46%</div>
         </div>
         <div class="kpi-item">
-          <div class="kpi-value" style="font-size:22px">39</div>
+          <div class="kpi-value" style="font-size:22px">32</div>
           <div class="kpi-label">Beiträge</div>
-          <div class="kpi-change up">▲ +21,88%</div>
+          <div class="kpi-change up">▲ +6,67%</div>
         </div>
         <div class="kpi-item">
           <div class="kpi-value" style="font-size:22px">3,60</div>
@@ -253,14 +233,14 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
       <div class="platform-label"><span class="platform-dot"></span>TikTok</div>
       <div class="kpi-grid">
         <div class="kpi-item wide">
-          <div class="kpi-value">53,19K</div>
+          <div class="kpi-value">53,2K</div>
           <div class="kpi-label">Follower</div>
-          <div class="kpi-change down">▼ –0,02% · –10 netto</div>
+          <div class="kpi-change down">▼ –0,09% · –73 netto</div>
         </div>
         <div class="kpi-item">
-          <div class="kpi-value" style="font-size:22px">1.280</div>
+          <div class="kpi-value" style="font-size:22px">1.181</div>
           <div class="kpi-label">Videoansichten</div>
-          <div class="kpi-change up">▲ +8,38%</div>
+          <div class="kpi-change down">▼ –86,08%</div>
         </div>
         <div class="kpi-item">
           <div class="kpi-value" style="font-size:22px">2</div>
@@ -344,21 +324,21 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
       <div class="insight-icon">🏆</div>
       <div class="insight-title">Bester Content-Typ: Karussell</div>
       <div class="insight-text">
-        Top-Post dieser Periode: <strong>"4 Updates live" (1.753 Ansichten, Engagement 5,87)</strong>. Die "Was mich als SM-Mentorin interessiert"-Serie liefert konstant 1.000+ Ansichten. SM-News-Karussell vom 09.06. ist klarer Ausreißer nach oben. <strong>Karussells dominieren weiterhin bei Reichweite und Engagement.</strong>
+        Der Top-Post ist ein Karussell (<strong>TET Tribe-Öffnung, 1.992 Ansichten, Engagement 3,25</strong>). Die wöchentliche "Was mich als SM-Mentorin interessiert"-Serie performt konstant mit 1.000+ Ansichten und Engagement >3,5. <strong>Karussells schlagen Reels klar bei Reichweite.</strong>
       </div>
     </div>
     <div class="insight-card">
       <div class="insight-icon">🎯</div>
-      <div class="insight-title">Reels: Reichweite sinkt, aber starke Hooks funktionieren</div>
+      <div class="insight-title">Reel-Formel: Erfolgsgeschichten + klare Aussage</div>
       <div class="insight-text">
-        Bestes Reel: <strong>"Während du noch darauf wartest…" (1.009 Ansichten, 5,32)</strong>. Zweiter Platz: <strong>@mindspiration_-Erfolgsgeschichte (835 Ansichten, 5,03)</strong>. Reels mit konkretem Versprechen im Hook schlagen allgemeine Themen deutlich.
+        Die zwei besten Reels sind: <strong>"@mindspiration_ – Erfolgsgeschichte" (Engagement 5,96)</strong> und <strong>"2K Abonnenten"-Benchmark-Reel (5,55)</strong>. Beide haben konkrete Aussagen im Hook. Allgemeine Reels ohne starke These liegen unter 2,5.
       </div>
     </div>
     <div class="insight-card">
       <div class="insight-icon">⚠️</div>
-      <div class="insight-title">TikTok: Aktivität erhöht, aber Zielgruppen-Problem bleibt</div>
+      <div class="insight-title">TikTok: kritischer Rückgang</div>
       <div class="insight-text">
-        4 Posts im Zeitraum (vorher: 2). Videoansichten +8,38%. TikTok-Follower: <strong>Mehrheit aus Asien</strong> (Philippines, Cambodia, Vietnam) – nicht die Zielgruppe DACH. Kanal braucht strategische Entscheidung trotz leichter Erholung.
+        Nur 2 Posts im Zeitraum bei 53K Followern. Videoansichten –86%, Interaktionen –97%. TikTok-Follower: <strong>68% weiblich, aber 96% aus Asien</strong> (Philippines, Cambodia, Vietnam) – nicht die Zielgruppe DACH. Kanal braucht strategische Entscheidung.
       </div>
     </div>
     <div class="insight-card">
@@ -369,17 +349,17 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
       </div>
     </div>
     <div class="insight-card">
-      <div class="insight-icon">📈</div>
-      <div class="insight-title">Reichweite erholt sich – Qualität zahlt sich aus</div>
+      <div class="insight-icon">📉</div>
+      <div class="insight-title">Reichweite fällt – trotz mehr Posts</div>
       <div class="insight-text">
-        Impressionen +7,16% (vorherige Periode: –21,72%). Beiträge +21,88%. Engagement-Rate stabil bei 3,76%. <strong>Die Trendwende ist da:</strong> Mehr Posts mit gleichbleibend hoher Qualität treiben die Reichweite wieder nach oben.
+        Impressionen –21,72% obwohl Beiträge +6,67%. <strong>Mehr Posting kompensiert nicht sinkende organische Reichweite.</strong> Qualität über Quantität: Die 5 stärksten Posts machen >70% der Gesamtreichweite aus.
       </div>
     </div>
     <div class="insight-card">
       <div class="insight-icon">🚀</div>
       <div class="insight-title">YouTube: Shorts als Wachstumshebel</div>
       <div class="insight-text">
-        <strong>72,5% des YouTube-Traffics kommt über Shorts.</strong> Der Kanal wächst trotz 1 neuem Video (+1,27% Abonnenten, 159 gesamt). Das "Wir escapen mal kurz"-Video hat 4m 32s Ø Watchtime – YouTube long-form könnte funktionieren wenn systematisch bespielt.
+        <strong>72,5% des YouTube-Traffics kommt über Shorts.</strong> Der Kanal wächst trotz 0 neuer Videos (+1,27% Abonnenten). Das "Wir escapen mal kurz"-Video hat 4m 32s Ø Watchtime – YouTube long-form könnte funktionieren wenn systematisch bespielt.
       </div>
     </div>
   </div>
@@ -410,6 +390,14 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
         </thead>
         <tbody id="top-reels-body"></tbody>
       </table>
+    </div>
+  </div>
+
+  <!-- ── Follower Trend ── -->
+  <div class="section-title">Follower-Entwicklung · Instagram</div>
+  <div class="card" style="margin-bottom:40px">
+    <div class="chart-wrap">
+      <canvas id="follower-chart"></canvas>
     </div>
   </div>
 
@@ -653,321 +641,6 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
   </div>
 
 
-  <!-- ── Evelyn: Aufnahme-Vorbereitung ── -->
-  <div class="section-title" style="margin-top:60px">🎬 Evelyn · Aufnahme-Vorbereitung mit Alex</div>
-  <p style="color:var(--dim);margin:-12px 0 24px;font-size:13px">Alle Ideen & fertigen Skripte nach Content-Säulen · zum Abhaken vor jeder Aufnahme-Session</p>
-
-  <!-- Filter Bar -->
-  <div id="ev-filters" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px">
-    <button class="ev-filter active" data-col="all" onclick="evFilter('all',this)">Alle</button>
-    <button class="ev-filter" data-col="personality" onclick="evFilter('personality',this)">Personality</button>
-    <button class="ev-filter" data-col="authority" onclick="evFilter('authority',this)">Authority</button>
-    <button class="ev-filter" data-col="trust" onclick="evFilter('trust',this)">Trust</button>
-    <button class="ev-filter" data-col="brand-culture" onclick="evFilter('brand-culture',this)">Brand Culture</button>
-    <button class="ev-filter" data-col="conversion" onclick="evFilter('conversion',this)">Conversion</button>
-    <span style="margin-left:auto;display:flex;gap:8px;align-items:center">
-      <button class="ev-filter" data-status="all" onclick="evFilterStatus('all',this)" style="border-color:rgba(255,255,255,.12)">Alle Status</button>
-      <button class="ev-filter" data-status="idee" onclick="evFilterStatus('idee',this)">💡 Idee</button>
-      <button class="ev-filter" data-status="skript" onclick="evFilterStatus('skript',this)">📝 Skript fertig</button>
-      <button class="ev-filter" data-status="aufnahme" onclick="evFilterStatus('aufnahme',this)">🎙 Aufgenommen</button>
-    </span>
-  </div>
-
-  <!-- Kanban Board -->
-  <div id="ev-board" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start">
-
-    <!-- PERSONALITY -->
-    <div class="ev-col" data-col="personality">
-      <div class="ev-col-header" style="--col-color:#E1306C">
-        <span>Personality</span><span class="ev-count" id="cnt-personality"></span>
-      </div>
-      <div class="ev-cards">
-        <div class="ev-card" data-col="personality" data-status="idee">
-          <div class="ev-id">PERS 01</div>
-          <div class="ev-title">Vorher/Nachher: vom Chaos zur Architektin</div>
-          <span class="ev-tag" style="background:#E1306C22;color:#E1306C">Positionierung</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="personality" data-status="idee">
-          <div class="ev-id">PERS 02</div>
-          <div class="ev-title">Der Waffelstand mit 8 – meine erste "Firma"</div>
-          <span class="ev-tag" style="background:#E1306C22;color:#E1306C">Positionierung</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="personality" data-status="idee">
-          <div class="ev-id">PERS 03</div>
-          <div class="ev-title">Die Idee, die ich nie umgesetzt habe</div>
-          <span class="ev-tag" style="background:#E1306C22;color:#E1306C">Positionierung</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="personality" data-status="idee">
-          <div class="ev-id">PERS 04</div>
-          <div class="ev-title">Der Moment, in dem ich brauche Hilfe</div>
-          <span class="ev-tag" style="background:#E1306C22;color:#E1306C">Positionierung</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card ev-add" data-col="personality" onclick="evAddCard('personality')">+ Idee hinzufügen</div>
-      </div>
-    </div>
-
-    <!-- AUTHORITY -->
-    <div class="ev-col" data-col="authority">
-      <div class="ev-col-header" style="--col-color:#F5C542">
-        <span>Authority</span><span class="ev-count" id="cnt-authority"></span>
-      </div>
-      <div class="ev-cards">
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 01</div>
-          <div class="ev-title">Die 4 Phasen des Unternehmenswachstums</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 02</div>
-          <div class="ev-title">Warum du kein Produkt-Problem hast – du hast ein Positioning-Problem</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 03</div>
-          <div class="ev-title">Die 5 Leaks in deinem Funnel</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 04</div>
-          <div class="ev-title">Pricing-Psychologie: Warum der Preis nie das echte Problem ist</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 05</div>
-          <div class="ev-title">Content-Säulen: warum die meisten falsch denken</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 06</div>
-          <div class="ev-title">Die 3 Phasen vom Offer zum Umsatz</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 07</div>
-          <div class="ev-title">Evergreen vs. Trend-Content: was wirklich konvertiert</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 08</div>
-          <div class="ev-title">Skalierung ohne Team: die Grenzen und was danach kommt</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 09</div>
-          <div class="ev-title">Warum "mit Wasser kochen" alle Top-Player verbindet</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="authority" data-status="idee">
-          <div class="ev-id">AUTH 10</div>
-          <div class="ev-title">Business Röntgenblick: was die meisten Analysen übersehen</div>
-          <span class="ev-tag" style="background:#F5C54222;color:#F5C542">Framework / Case Study</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card ev-add" data-col="authority" onclick="evAddCard('authority')">+ Idee hinzufügen</div>
-      </div>
-    </div>
-
-    <!-- TRUST -->
-    <div class="ev-col" data-col="trust">
-      <div class="ev-col-header" style="--col-color:#69C9D0">
-        <span>Trust</span><span class="ev-count" id="cnt-trust"></span>
-      </div>
-      <div class="ev-cards">
-        <div class="ev-card" data-col="trust" data-status="idee">
-          <div class="ev-id">TRUST 01</div>
-          <div class="ev-title">Das erste Gespräch, das alles verändert hat</div>
-          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="trust" data-status="idee">
-          <div class="ev-id">TRUST 02</div>
-          <div class="ev-title">"Von 5K Chaos zu 20K System"</div>
-          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="trust" data-status="idee">
-          <div class="ev-id">TRUST 03</div>
-          <div class="ev-title">Warum Kunden nicht kaufen – und was sich wirklich geändert hat</div>
-          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="trust" data-status="idee">
-          <div class="ev-id">TRUST 04</div>
-          <div class="ev-title">Der Sparring-Call, der den eigentlichen Hebel zeigte</div>
-          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="trust" data-status="idee">
-          <div class="ev-id">TRUST 05</div>
-          <div class="ev-title">Was Mentorin-Arbeit wirklich bedeutet – hinter den Kulissen</div>
-          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="trust" data-status="idee">
-          <div class="ev-id">TRUST 06</div>
-          <div class="ev-title">Drei Monate, drei Durchbrüche – ein Rückblick</div>
-          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="trust" data-status="idee">
-          <div class="ev-id">TRUST 07</div>
-          <div class="ev-title">Von kleinem Nebenprojekt zur skalierten Organisation</div>
-          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="trust" data-status="idee">
-          <div class="ev-id">TRUST 08</div>
-          <div class="ev-title">Community statt Coach-Rolle – warum das den Unterschied macht</div>
-          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="trust" data-status="idee">
-          <div class="ev-id">TRUST 09</div>
-          <div class="ev-title">Das Feedback, das mich überrascht hat</div>
-          <span class="ev-tag" style="background:#69C9D022;color:#69C9D0">Proof / Success Stories</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card ev-add" data-col="trust" onclick="evAddCard('trust')">+ Idee hinzufügen</div>
-      </div>
-    </div>
-
-    <!-- BRAND CULTURE -->
-    <div class="ev-col" data-col="brand-culture">
-      <div class="ev-col-header" style="--col-color:#CDB08F">
-        <span>Brand Culture</span><span class="ev-count" id="cnt-brand-culture"></span>
-      </div>
-      <div class="ev-cards">
-        <div class="ev-card" data-col="brand-culture" data-status="idee">
-          <div class="ev-id">BC 01</div>
-          <div class="ev-title">Warum wir keinen "normalen" Coaching-Stil haben</div>
-          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="brand-culture" data-status="idee">
-          <div class="ev-id">BC 02</div>
-          <div class="ev-title">Ein Tag mit Sam (Behind the Scenes)</div>
-          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="brand-culture" data-status="idee">
-          <div class="ev-id">BC 03</div>
-          <div class="ev-title">Whiteboard-Session: "Diese Diskussion hatten wir im Team"</div>
-          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="brand-culture" data-status="idee">
-          <div class="ev-id">BC 04</div>
-          <div class="ev-title">Wie wir Entscheidungen im Team treffen</div>
-          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="brand-culture" data-status="idee">
-          <div class="ev-id">BC 05</div>
-          <div class="ev-title">Was "Qualität über Quantität" bei TET wirklich bedeutet</div>
-          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="brand-culture" data-status="idee">
-          <div class="ev-id">BC 06</div>
-          <div class="ev-title">Unser Onboarding-Prozess: was neue Mentees als erstes erleben</div>
-          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="brand-culture" data-status="idee">
-          <div class="ev-id">BC 07</div>
-          <div class="ev-title">Architecture Sessions: ein Blick in die Live-Session</div>
-          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="brand-culture" data-status="idee">
-          <div class="ev-id">BC 08</div>
-          <div class="ev-title">Premium statt Palmen: warum wir uns bewusst absetzen</div>
-          <span class="ev-tag" style="background:#CDB08F22;color:#CDB08F">Behind the Scenes</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card ev-add" data-col="brand-culture" onclick="evAddCard('brand-culture')">+ Idee hinzufügen</div>
-      </div>
-    </div>
-
-    <!-- CONVERSION -->
-    <div class="ev-col" data-col="conversion">
-      <div class="ev-col-header" style="--col-color:#52C984">
-        <span>Conversion</span><span class="ev-count" id="cnt-conversion"></span>
-      </div>
-      <div class="ev-cards">
-        <div class="ev-card" data-col="conversion" data-status="idee">
-          <div class="ev-id">CONV 01</div>
-          <div class="ev-title">Mehr Reichweite, weniger Umsatz? Der Fehler dahinter</div>
-          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="conversion" data-status="idee">
-          <div class="ev-id">CONV 02</div>
-          <div class="ev-title">Warum dein nächstes Angebot nicht das Problem löst</div>
-          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="conversion" data-status="idee">
-          <div class="ev-id">CONV 03</div>
-          <div class="ev-title">10k/Monat und trotzdem kein System – was fehlt</div>
-          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="conversion" data-status="idee">
-          <div class="ev-id">CONV 04</div>
-          <div class="ev-title">Der Unterschied zwischen "interessiert" und "kaufbereit"</div>
-          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="conversion" data-status="idee">
-          <div class="ev-id">CONV 05</div>
-          <div class="ev-title">Umsatz verdoppeln mit weniger Aufwand (Case Study)</div>
-          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="conversion" data-status="idee">
-          <div class="ev-id">CONV 06</div>
-          <div class="ev-title">Was echte Premium-Positionierung in der DM verändert</div>
-          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="conversion" data-status="idee">
-          <div class="ev-id">CONV 07</div>
-          <div class="ev-title">Freebie → Offer: die Lücke, die Geld kostet</div>
-          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="conversion" data-status="idee">
-          <div class="ev-id">CONV 08</div>
-          <div class="ev-title">Launch vs. Evergreen: was für dich gerade das Richtige ist</div>
-          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card" data-col="conversion" data-status="idee">
-          <div class="ev-id">CONV 09</div>
-          <div class="ev-title">Business das Fühl-Argument – warum Fakten allein nicht konvertieren</div>
-          <span class="ev-tag" style="background:#52C98422;color:#52C984">Authority / CTA</span>
-          <span class="ev-status idee">💡 Idee</span>
-        </div>
-        <div class="ev-card ev-add" data-col="conversion" onclick="evAddCard('conversion')">+ Idee hinzufügen</div>
-      </div>
-    </div>
-
-  </div><!-- /ev-board -->
-
   <!-- ── Team ── -->
   <div style="text-align:center;padding:60px 0 48px;border-top:1px solid var(--border);margin-top:20px">
     <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--blue);text-transform:uppercase;margin-bottom:14px">Das Team</div>
@@ -979,7 +652,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
 
 <footer class="wrap">
   <div>The Escape Theorie · SM Command Center</div>
-  <div>Datenquelle: Metricool · Zeitraum: 20. Mai – 18. Juni 2026</div>
+  <div>Datenquelle: Metricool + Google Sheet · Zeitraum: 14. Mai – 12. Juni 2026</div>
 </footer>
 
 <script>
@@ -994,181 +667,164 @@ const days = [
   { name: 'So', date: '22. Jun', today: false },
 ];
 
-// ── Asana Live-Kalender ──
-// Regeln: 1 Reel/Tag aus "Ready to Post", max. 2 Podcasts/Woche,
-// Fallback auf "In Bearbeitung" | 2 Karussells/Tag aus "Planned"
-const ASANA_PROJECT   = '1205383636722371';
-const SECTION_READY   = '1209242190370411'; // READY TO POST 🤝🏽
-const SECTION_WIP     = '1209242190504301'; // IN BEARBEITUNG ⚙️
-const SECTION_PLANNED = '1213876841748225'; // Planned (Karussells)
-const STORY_SECTION   = '1215695447009362'; // Storyplanung
+// Integrated plan: Reels from Asana + produced carousels from pipeline
+// Fixer Wochenrhythmus: Di = SM-News (Anne), Mi = High-Performer-Reel (Sam), Fr = Themen-Reel (Evelyn)
+// Max. 2 Podcast-Reels/Woche (erkennbar am # · hier: Do + Sa)
+// 1 Reel + 2 Karussells pro Tag
+const ASANA_PROJECT = '1205383636722371';
 const asanaLink = id => `https://app.asana.com/0/${ASANA_PROJECT}/${id}/f`;
-const ASANA_PAT = '%%ASANA_PAT%%';
 
-// ── Hilfsfunktion: aktuelle KW-Daten berechnen ──
-function getCurrentWeekDates() {
-  const now = new Date();
-  const dow = now.getDay(); // 0=So, 1=Mo...
-  const diffToMon = (dow === 0 ? -6 : 1 - dow);
-  const mon = new Date(now); mon.setDate(now.getDate() + diffToMon);
-  return Array.from({length:7}, (_, i) => {
-    const d = new Date(mon); d.setDate(mon.getDate() + i);
-    return d.toISOString().split('T')[0]; // YYYY-MM-DD
-  });
-}
+const feedPlan = [
+  // Mo 16.06 – Thema: Produkt & Preis
+  [
+    { type:'reel',     tag:'✅ Reel · fertig',              asanaId:'1215158818133838', text:'Warum dein Produkt nicht verkauft wird\n(04 AW · Alex W. · eigener Reel)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708448974723', text:'Pricing & Anchor-Pricing – Premium-Positionierung\nVideovorlage A · <a href="https://www.canva.com/d/TxC3z1kiCUa06Sj" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420582912', text:'CAC – Was dich ein Neukunde wirklich kostet\nA-Zahlenfolie · <a href="https://www.canva.com/d/_aQH4TzHFrlTvYB" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+  ],
+  // Di 17.06 – FIX: SM-News Karussell (Anne) + Thema: Community & LTV
+  [
+    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Claudio',   asanaId:'1203553368670457', text:'Social Media hat zwei Aufgaben – und die meisten wissen den Grund nicht\n(bereits aufgenommen · bei Claudio in Bearbeitung)' },
+    { type:'carousel', tag:'📌 Fix · Anne · Karussell',     asanaId:'1215708441334814', text:'SM-News KW25: Was dich als SM-Unternehmerin diese Woche bewegt\n(jede Woche Dienstag · von Anne)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708448974625', text:'LTV – Was dein Kunde wirklich wert ist\nc-Tribe · <a href="https://www.canva.com/d/Ry6BsDajknXAm0p" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+  ],
+  // Mi 18.06 – FIX: High-Performer-Reel (Sam) + Thema: Erfolg & Transformation
+  [
+    { type:'reel',     tag:'📌 Fix · Sam · High-Performer', asanaId:'1215710321829115', text:'High-Performer-Reel: Kundencase KW25\n(jede Woche Mittwoch · Sam erstellt)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708190920630', text:'Funnel-Conversion-Rate verbessern\nC-Texthook · <a href="https://www.canva.com/d/iwVuclCmD9DeUA-" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708190929659', text:'Positionierungs-Framework: 3 Säulen, die unterscheiden\n(Evergreen · gut speicherbar)' },
+  ],
+  // Do 19.06 – Thema: Zahlen & ROI · PODCAST-SLOT 1
+  [
+    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast', asanaId:'1215759320763058', text:'Umsatz ist nicht Gewinn – was deine Zahlen wirklich sagen\n(#58 Reel 03 · Tayler · max. 2 Podcast/Woche)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420582816', text:'ROAS – Was Werbung wirklich kostet & bringt\nB-Tribe · <a href="https://www.canva.com/d/3ICH0Zf4N_pPwwx" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708190929723', text:'5 Zahlen, die du als Unternehmerin kennen musst\n(Zahlen-Evergreen · sehr gut speicherbar)' },
+  ],
+  // Fr 20.06 – FIX: Themen-Reel (Evelyn) + Thema: Wachstum & Sichtbarkeit
+  [
+    { type:'reel',     tag:'📌 Fix · Evelyn · Themen-Reel', asanaId:'1215710315551445', text:'Themen-Reel KW25\n(jede Woche Freitag · Evelyn erstellt)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708299583444', text:'Wissen ist Gratis – Umsetzung kostet\nVideovorlage B · <a href="https://www.canva.com/d/5TxE7BYxMkI_a1i" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708299595133', text:'Wie ich meine Reichweite systematisch aufgebaut habe\n(How-To · passend zum Freitags-Thema)' },
+  ],
+  // Sa 21.06 – Thema: Systeme & Skalierung · PODCAST-SLOT 2
+  [
+    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast', asanaId:'1215759320830896', text:'Systeme schaffen, die ohne dich laufen\n(#57 Reel 18 · Alex · max. 2 Podcast/Woche)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215707745828491', text:'Die 3 Skalierungshebel\nA-Zahlenfolie · <a href="https://www.canva.com/d/netpPVbK-psbsLD" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708420582752', text:'TET Circle: Warum die Community dein nächster Schritt ist\n(Tribe-CTA-Format)' },
+  ],
+  // So 22.06 – Thema: Brand & Beziehung
+  [
+    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Claudio',  asanaId:'1215759320830960', text:'Business automatisieren – aber die Beziehung zu Menschen behalten\n(Alex W. · bereits aufgenommen · bei Claudio in Bearbeitung)' },
+    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708448927252', text:'KW25-Wrap-Up: Das nehmen wir mit\n(leichtes persönliches Format · Sonntag)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420535406', text:'Skalierungshebel – Wiederholung als Evergreen\nA-Zahlenfolie · <a href="https://www.canva.com/d/netpPVbK-psbsLD" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+  ],
+];
 
-// ── Live Feed-Kalender aus Asana ──
-async function loadFeedCalendar() {
-  const feedCal = document.getElementById('feed-calendar');
-  const kwDates = getCurrentWeekDates(); // Mo–So der aktuellen KW
+// ── Asana Story-Kalender ──
+// Token hier eintragen sobald vorhanden:
+const ASANA_PAT = ''; // Token wird lokal über den Server geladen
+const STORY_SECTION = '1215695447009362';
 
-  // Wochentitel aktualisieren
-  const fmt = d => { const [,m,day] = d.split('-'); return `${parseInt(day)}.${parseInt(m)}.`; };
-  const kwLabel = `KW${getISOWeek(new Date(kwDates[0]))} (${fmt(kwDates[0])}–${fmt(kwDates[6])} ${new Date(kwDates[0]).getFullYear()})`;
-  const titleEl = document.querySelector('.section-title');
-  if (titleEl && titleEl.textContent.includes('Redaktionsplan')) titleEl.childNodes[0].textContent = `Redaktionsplan Feed · ${kwLabel}`;
-
-  if (!ASANA_PAT || ASANA_PAT === '%%ASANA_PAT%%') {
-    feedCal.innerHTML = `<div style="color:var(--dim);padding:24px;grid-column:1/-1">Asana-Verbindung wird eingerichtet…</div>`;
+async function loadStoryCalendar() {
+  const storyCal = document.getElementById('story-calendar');
+  if (!ASANA_PAT) {
+    // Kein Token: leere Slots pro Tag + Link zur Asana-Section
+    days.forEach(d => {
+      storyCal.innerHTML += `
+        <div class="story-day">
+          <div class="story-day-header">
+            <div class="cal-day-name">${d.name}</div>
+            <div class="cal-day-date" style="font-size:15px;font-weight:700;color:var(--white)">${d.date}</div>
+          </div>
+          <div class="story-slots">
+            <div class="story-slot" style="color:var(--dim);font-style:italic;grid-column:1/-1">Noch keine Stories geplant</div>
+          </div>
+        </div>`;
+    });
     return;
   }
 
-  const headers = { Authorization: `Bearer ${ASANA_PAT}`, Accept: 'application/json' };
-
   try {
-    // Parallel: Ready-to-Post Reels + In-Bearbeitung Reels + Karussells (Planned)
-    const [readyRes, wipRes, carouselRes, storyRes] = await Promise.all([
-      fetch(`https://app.asana.com/api/1.0/sections/${SECTION_READY}/tasks?opt_fields=name,due_on,gid,notes,completed&limit=50`, {headers}),
-      fetch(`https://app.asana.com/api/1.0/sections/${SECTION_WIP}/tasks?opt_fields=name,due_on,gid,notes,completed&limit=50`, {headers}),
-      fetch(`https://app.asana.com/api/1.0/sections/${SECTION_PLANNED}/tasks?opt_fields=name,due_on,gid,notes,completed&limit=100`, {headers}),
-      fetch(`https://app.asana.com/api/1.0/sections/${STORY_SECTION}/tasks?opt_fields=name,due_on,gid&limit=50`, {headers}),
-    ]);
-    const [readyData, wipData, carouselData, storyData] = await Promise.all([
-      readyRes.json(), wipRes.json(), carouselRes.json(), storyRes.json()
-    ]);
+    const res = await fetch(
+      `https://app.asana.com/api/1.0/sections/${STORY_SECTION}/tasks?opt_fields=name,due_on,notes,gid&limit=50`,
+      { headers: { Authorization: `Bearer ${ASANA_PAT}`, Accept: 'application/json' } }
+    );
+    const json = await res.json();
+    const tasks = json.data || [];
 
-    const readyReels  = (readyData.data   || []).filter(t => !t.completed);
-    const wipReels    = (wipData.data     || []).filter(t => !t.completed);
-    const carousels   = (carouselData.data|| []).filter(t => !t.completed);
+    // Gruppe Tasks nach due_on
+    const byDate = {};
+    tasks.forEach(t => { if (t.due_on) { (byDate[t.due_on] = byDate[t.due_on] || []).push(t); } });
 
-    // Karussells nach Datum gruppieren (für aktuelle KW filtern)
-    const carouselByDate = {};
-    carousels.forEach(t => { if (t.due_on) (carouselByDate[t.due_on] = carouselByDate[t.due_on]||[]).push(t); });
+    // Datums-Map für die KW-Tage (Mo=15.06 … So=21.06 2026)
+    const kwDates = ['2026-06-15','2026-06-16','2026-06-17','2026-06-18','2026-06-19','2026-06-20','2026-06-21'];
 
-    // Stories nach Datum gruppieren
-    const storyByDate = {};
-    (storyData.data||[]).forEach(t => { if (t.due_on) (storyByDate[t.due_on]=storyByDate[t.due_on]||[]).push(t); });
+    days.forEach((d, i) => {
+      const dayTasks = byDate[kwDates[i]] || [];
+      const slotsHTML = dayTasks.length
+        ? dayTasks.map(t => `
+            <div class="story-slot-num">Story</div>
+            <a href="${asanaLink(t.gid)}" target="_blank" style="text-decoration:none">
+              <div class="story-slot filled" title="In Asana öffnen" style="cursor:pointer">${t.name}</div>
+            </a>`).join('')
+        : `<div class="story-slot" style="color:var(--dim);font-style:italic;grid-column:1/-1">Noch keine Stories geplant</div>`;
 
-    // Reels einplanen: max. 2 Podcast-Reels/Woche, 1 Reel/Tag
-    // Podcast-Reel = Name enthält "#" oder "Podcast"
-    const isPodcast = t => /podcast|#\d{2}/i.test(t.name);
-
-    // Zuerst Reels mit due_on in dieser KW fixieren
-    const scheduledReels = {}; // date → task
-    readyReels.forEach(t => { if (t.due_on && kwDates.includes(t.due_on)) scheduledReels[t.due_on] = t; });
-
-    // Restliche Ready-Reels (ohne due_on oder außerhalb KW) in Queue
-    const reelQueue = readyReels.filter(t => !t.due_on || !kwDates.includes(t.due_on));
-    const wipQueue  = wipReels.filter(t => !t.due_on || !kwDates.includes(t.due_on));
-
-    // Podcast-Zähler: bereits verplante Podcast-Reels in dieser KW
-    let podcastCount = Object.values(scheduledReels).filter(isPodcast).length;
-
-    // Freie Tage mit Reels füllen
-    for (const date of kwDates) {
-      if (scheduledReels[date]) continue; // bereits belegt
-      // Versuche normalen Reel (kein Podcast) einzuplanen
-      let idx = reelQueue.findIndex(t => !isPodcast(t));
-      if (idx === -1 && podcastCount < 2) { idx = reelQueue.findIndex(isPodcast); if(idx>=0) podcastCount++; }
-      if (idx >= 0) { scheduledReels[date] = reelQueue.splice(idx,1)[0]; continue; }
-      // Fallback: In Bearbeitung
-      idx = wipQueue.findIndex(t => !isPodcast(t));
-      if (idx === -1 && podcastCount < 2) { idx = wipQueue.findIndex(isPodcast); if(idx>=0) podcastCount++; }
-      if (idx >= 0) scheduledReels[date] = wipQueue.splice(idx,1)[0];
-    }
-
-    // Kalender rendern
-    const dayNames = ['MO','DI','MI','DO','FR','SA','SO'];
-    feedCal.innerHTML = '';
-    kwDates.forEach((date, i) => {
-      const reel    = scheduledReels[date];
-      const dayCarousels = (carouselByDate[date] || []).slice(0,2);
-      const stories = storyByDate[date] || [];
-      const isToday = date === new Date().toISOString().split('T')[0];
-      const [y,m,d] = date.split('-');
-      const dateLabel = `${parseInt(d)}. ${['','Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'][parseInt(m)]}`;
-
-      const reelHTML = reel ? (() => {
-        const podcast = isPodcast(reel);
-        const wip = wipReels.some(w => w.gid === reel.gid);
-        const tag  = wip ? '⚙️ In Bearbeitung' : (podcast ? '✅ Reel · 🎙 Podcast' : '✅ Reel · fertig');
-        const type = wip ? 'reel-plan' : 'reel';
-        const inner = `<div class="cal-item" data-type="${type}" style="cursor:pointer" title="In Asana öffnen">
-          <div class="cal-item-tag">${tag}</div>
-          <div>${reel.name}</div>
-        </div>`;
-        return `<a href="${asanaLink(reel.gid)}" target="_blank" style="text-decoration:none;display:block;color:inherit">${inner}</a>`;
-      })() : `<div class="cal-item" data-type="reel-plan" style="opacity:.4"><div class="cal-item-tag">Kein Reel geplant</div></div>`;
-
-      const carouselHTML = dayCarousels.length
-        ? dayCarousels.map(c => `<a href="${asanaLink(c.gid)}" target="_blank" style="text-decoration:none;display:block;color:inherit">
-            <div class="cal-item" data-type="carousel" style="cursor:pointer" title="In Asana öffnen">
-              <div class="cal-item-tag">Karussell · Asana ↗</div>
-              <div>${c.name}</div>
-            </div></a>`).join('')
-        : `<div class="cal-item" data-type="carousel" style="opacity:.4"><div class="cal-item-tag">Keine Karussells geplant</div></div>`;
-
-      const storyHTML = stories.length
-        ? stories.map(s => `<a href="${asanaLink(s.gid)}" target="_blank" style="text-decoration:none;display:block;color:inherit">
-            <div class="cal-item" data-type="story" style="cursor:pointer;background:rgba(205,176,143,.07);border-color:rgba(205,176,143,.2)" title="In Asana öffnen">
-              <div class="cal-item-tag" style="color:var(--camel)">Story · geplant</div>
-              <div>${s.name}</div>
-            </div></a>`).join('')
-        : '';
-
-      feedCal.innerHTML += `
-        <div class="cal-day ${isToday?'today':''}">
-          <div class="cal-day-header">
-            <div class="cal-day-name">${dayNames[i]}</div>
-            <div class="cal-day-date">${dateLabel}</div>
+      storyCal.innerHTML += `
+        <div class="story-day">
+          <div class="story-day-header">
+            <div class="cal-day-name">${d.name}</div>
+            <div class="cal-day-date" style="font-size:15px;font-weight:700;color:var(--white)">${d.date}</div>
           </div>
-          <div class="cal-day-body">${reelHTML}${carouselHTML}${storyHTML}</div>
+          <div class="story-slots">${slotsHTML}</div>
         </div>`;
     });
-
   } catch(e) {
-    feedCal.innerHTML = `<div style="color:var(--red);padding:24px;grid-column:1/-1">Fehler beim Laden aus Asana: ${e.message}</div>`;
+    document.getElementById('story-calendar').innerHTML =
+      `<div style="color:var(--dim);padding:16px">Fehler beim Laden der Stories aus Asana.</div>`;
   }
 }
+loadStoryCalendar();
 
-function getISOWeek(date) {
-  const d = new Date(date); d.setHours(0,0,0,0);
-  d.setDate(d.getDate() + 3 - (d.getDay()+6)%7);
-  const w = new Date(d.getFullYear(), 0, 4);
-  return 1 + Math.round(((d-w)/86400000 - 3 + (w.getDay()+6)%7) / 7);
-}
-
-// ── Story-Kalender (wird jetzt im Feed-Kalender mitgeladen) ──
-async function loadStoryCalendar() { /* integriert in loadFeedCalendar */ }
-
-loadFeedCalendar();
+// Render feed calendar
+const feedCal = document.getElementById('feed-calendar');
+days.forEach((d, i) => {
+  const items = feedPlan[i] || [];
+  const itemsHTML = items.map(item => {
+    const textHTML = item.text.replace(/\n/g, '<br>');
+    const inner = `<div class="cal-item" data-type="${item.type}" ${item.asanaId ? `style="cursor:pointer" title="In Asana öffnen"` : ''}>
+      ${item.tag ? `<div class="cal-item-tag">${item.tag}</div>` : ''}
+      <div>${textHTML}</div>
+    </div>`;
+    return item.asanaId
+      ? `<a href="${asanaLink(item.asanaId)}" target="_blank" style="text-decoration:none;display:block;color:inherit">${inner}</a>`
+      : inner;
+  }).join('');
+  feedCal.innerHTML += `
+    <div class="cal-day ${d.today?'today':''}">
+      <div class="cal-day-header">
+        <div class="cal-day-name">${d.name}</div>
+        <div class="cal-day-date">${d.date}</div>
+      </div>
+      <div class="cal-day-body">${itemsHTML}</div>
+    </div>`;
+});
 
 
 // ── Render top posts ──
 const posts = [
-  { date:"09.06.", text:"Diese Woche sind 4 Updates live gegangen, die dein Social-Media-Business direkt betreffen…", views:1753, engagement:5.87 },
-  { date:"28.05.", text:"Was mich als Social-Media-Mentorin diese Woche interessiert…", views:1231, engagement:4.42 },
-  { date:"02.06.", text:"Was mich als Social-Media-Mentorin diese Woche juckt…", views:1139, engagement:2.96 },
-  { date:"17.06.", text:"Wir feiern jeden einzelnen Schritt auf deinem Weg…", views:959, engagement:5.99 },
-  { date:"16.06.", text:"SM-News der Woche – was du als Unternehmerin jetzt wissen musst…", views:945, engagement:7.0 },
-  { date:"05.06.", text:"Social Media war nie wirklich kostenlos. Du hast immer bezahlt…", views:872, engagement:4.6 },
+  { date:"16.05.", text:"TET Tribe – deine Circle Community ist ab sofort für alle Unternehmer geöffnet…", views:1992, engagement:3.25 },
+  { date:"09.06.", text:"Diese Woche sind 4 Updates live gegangen, die deine Content-Strategie direkt betreffen…", views:1502, engagement:5.91 },
+  { date:"28.05.", text:"Was mich als SM-Mentorin diese Woche interessiert – deutlich zeigt…", views:1223, engagement:4.46 },
+  { date:"19.05.", text:"Was mich als SM-Mentorin interessiert – Social Media bewegt sich gerade…", views:1071, engagement:3.69 },
+  { date:"02.06.", text:"Was mich als SM-Mentorin juckt – Plattformen zeigen eine gemischte…", views:1070, engagement:3.13 },
+  { date:"05.06.", text:"Social Media war nie wirklich kostenlos. Du hast immer bezahlt…", views:775, engagement:4.81 },
+  { date:"01.06.", text:"Coaching und Dienstleistung ist strukturell stärker als jeder DAX-Konzern…", views:642, engagement:4.47 },
 ];
 const reels = [
-  { date:"03.06.", text:"Während du noch darauf wartest, dein nächstes Reel zu posten oder sichtbar zu werden…", views:1009, engagement:5.32 },
-  { date:"10.06.", text:"Vor 1,5 Jahren wusste @mindspiration_ nicht mit was sie ein Business starten kann…", views:835, engagement:5.03 },
-  { date:"18.06.", text:"Deine Follower-Zahl ist nicht gleich deine Expertise…", views:672, engagement:2.35 },
-  { date:"28.05.", text:"Du hast einen Funnel. Du hast eine Customer Journey. Trotzdem verkauft es sich nicht…", views:666, engagement:2.34 },
-  { date:"22.05.", text:"Kommentiere ANALYSE und hole dir dein kostenloses Profil-Audit…", views:592, engagement:0.95 },
+  { date:"03.06.", text:"Während du noch darauf wartest, dein nächstes Reel zu posten oder sichtbar zu werden…", views:967, engagement:5.55 },
+  { date:"10.06.", text:"Vor 1,5 Jahren wusste @mindspiration_ nicht mit was sie ein Business starten kann…", views:724, engagement:5.96 },
+  { date:"17.05.", text:"(Kein Text) – Talking Head Format", views:729, engagement:2.36 },
+  { date:"15.05.", text:"Kommentiere 222 und wir schicken dir den Link zu unserer kostenlosen Circle Community…", views:671, engagement:2.94 },
+  { date:"28.05.", text:"Du hast einen Funnel. Du hast eine Customer Journey. Trotzdem verkauft es sich nicht…", views:660, engagement:2.36 },
 ];
 
 function renderRankRows(items, bodyId, maxViews) {
@@ -1196,7 +852,44 @@ function renderRankRows(items, bodyId, maxViews) {
 renderRankRows(posts, 'top-posts-body', 2000);
 renderRankRows(reels, 'top-reels-body', 1000);
 
-// Follower-Chart entfernt (Daten bereits im Sheet-Abschnitt sichtbar)
+// ── Follower chart ──
+const historyData = {
+  labels: ['KW12','KW13','KW14','KW15','KW16','KW17','KW18','KW19','KW20','KW21','12. Jun'],
+  data:   [5800,  5858,  5912,  5964,  6020,  6080,  6145,  6210,  6270,  6335,  6498]
+};
+const ctx = document.getElementById('follower-chart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: historyData.labels,
+    datasets: [{
+      label: 'Follower',
+      data: historyData.data,
+      borderColor: '#7CA7EB',
+      backgroundColor: 'rgba(124,167,235,0.08)',
+      borderWidth: 2.5,
+      pointBackgroundColor: '#7CA7EB',
+      pointRadius: 4,
+      pointHoverRadius: 6,
+      tension: 0.35,
+      fill: true,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: {
+      backgroundColor: '#071429', borderColor: 'rgba(124,167,235,.2)', borderWidth: 1,
+      titleColor: '#7CA7EB', bodyColor: '#fff', padding: 10,
+    }},
+    scales: {
+      x: { grid: { color: 'rgba(124,167,235,.06)' }, ticks: { color: '#6b85a8', font: { size: 11 } } },
+      y: {
+        grid: { color: 'rgba(124,167,235,.06)' }, ticks: { color: '#6b85a8', font: { size: 11 } },
+        min: 5700, suggestedMax: 6600,
+      }
+    }
+  }
+});
 
 // ── Live Google Sheet ──
 const SHEET_CSV = 'https://docs.google.com/spreadsheets/d/1WScTq32DHJGFb40QDbm-1afgZqlRdJVQcBWnJfPrYQg/export?format=csv&gid=0';
@@ -1279,17 +972,6 @@ async function loadSheet() {
       });
     }
 
-    // Neueste Werte in Plattform-KPI-Karte spiegeln
-    const latest = dataRows[dataRows.length - 1];
-    const latestFollower = parseNum(latest[2]);
-    const latestReach    = parseNum(latest[4]);
-    const latestInter    = parseNum(latest[6]);
-    if (latestFollower) document.getElementById('ig-followers').textContent = latestFollower.toLocaleString('de');
-    const igReachEl = document.querySelector('[data-kpi="ig-reach"]');
-    const igInterEl = document.querySelector('[data-kpi="ig-interactions"]');
-    if (igReachEl && latestReach)  igReachEl.textContent = (latestReach/1000).toFixed(2).replace('.',',') + 'K';
-    if (igInterEl && latestInter)  igInterEl.textContent = latestInter.toLocaleString('de');
-
     const ts = new Date().toLocaleTimeString('de', { hour: '2-digit', minute: '2-digit' });
     status.innerHTML = `<span style="color:#4ade80">✓</span> ${dataRows.length} Einträge · zuletzt geladen ${ts} · <a href="https://docs.google.com/spreadsheets/d/1WScTq32DHJGFb40QDbm-1afgZqlRdJVQcBWnJfPrYQg" target="_blank" style="color:var(--blue)">Sheet öffnen ↗</a>`;
   } catch(e) {
@@ -1298,73 +980,6 @@ async function loadSheet() {
 }
 
 loadSheet();
-
-// ── Evelyn Board: Filter + Status-Toggle + Zähler ──
-let evActiveCol = 'all';
-let evActiveStatus = 'all';
-
-function evUpdateCounts() {
-  ['personality','authority','trust','brand-culture','conversion'].forEach(col => {
-    const cards = document.querySelectorAll(`.ev-card[data-col="${col}"]:not(.ev-add)`);
-    const visible = [...cards].filter(c => !c.classList.contains('hidden')).length;
-    const el = document.getElementById('cnt-' + col);
-    if (el) el.textContent = visible;
-  });
-}
-
-function evApplyFilters() {
-  document.querySelectorAll('.ev-card:not(.ev-add)').forEach(card => {
-    const colMatch = evActiveCol === 'all' || card.dataset.col === evActiveCol;
-    const statusMatch = evActiveStatus === 'all' || card.dataset.status === evActiveStatus;
-    card.classList.toggle('hidden', !(colMatch && statusMatch));
-  });
-  document.querySelectorAll('.ev-col').forEach(col => {
-    if (evActiveCol !== 'all') {
-      col.classList.toggle('hidden', col.dataset.col !== evActiveCol);
-    } else {
-      col.classList.remove('hidden');
-    }
-  });
-  // grid cols when filtered
-  const board = document.getElementById('ev-board');
-  const visibleCols = document.querySelectorAll('.ev-col:not(.hidden)').length;
-  board.style.gridTemplateColumns = evActiveCol === 'all'
-    ? 'repeat(5,1fr)'
-    : '1fr';
-  evUpdateCounts();
-}
-
-function evFilter(col, btn) {
-  evActiveCol = col;
-  document.querySelectorAll('[data-col]').forEach(b => { if(b.classList.contains('ev-filter')) b.classList.remove('active'); });
-  btn.classList.add('active');
-  evApplyFilters();
-}
-
-function evFilterStatus(status, btn) {
-  evActiveStatus = status;
-  document.querySelectorAll('[data-status]').forEach(b => { if(b.classList.contains('ev-filter')) b.classList.remove('active'); });
-  btn.classList.add('active');
-  evApplyFilters();
-}
-
-// Status-Toggle beim Klick auf Karte
-document.querySelectorAll('.ev-card:not(.ev-add)').forEach(card => {
-  card.addEventListener('click', () => {
-    const statusEl = card.querySelector('.ev-status');
-    if (!statusEl) return;
-    const cycle = ['idee','skript','aufnahme'];
-    const cur = card.dataset.status;
-    const next = cycle[(cycle.indexOf(cur) + 1) % cycle.length];
-    card.dataset.status = next;
-    statusEl.className = 'ev-status ' + next;
-    const labels = { idee:'💡 Idee', skript:'📝 Skript fertig', aufnahme:'🎙 Aufgenommen' };
-    statusEl.textContent = labels[next];
-    evApplyFilters();
-  });
-});
-
-evUpdateCounts();
 </script>
 </body>
 </html>

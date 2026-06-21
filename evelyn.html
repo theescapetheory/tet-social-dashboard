@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TET · Evelyn · Aufnahme-Vorbereitung</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --navy: #010D26; --navy2: #071429; --navy3: #0d1e3a;
+  --blue: #7CA7EB; --border: rgba(124,167,235,0.14);
+  --camel: #CDB08F; --white: #fff; --dim: #6b85a8;
+  --green: #52C984; --red: #E85555; --yellow: #F5C542;
+  --pers: #E1306C; --auth: #F5C542; --trust: #69C9D0; --bc: #CDB08F; --conv: #52C984;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;min-height:100vh}
+
+/* ── Password Gate ── */
+#pw-gate{position:fixed;inset:0;background:var(--navy);z-index:999;display:flex;align-items:center;justify-content:center}
+.pw-box{background:var(--navy2);border:1px solid var(--border);border-radius:24px;padding:48px;width:360px;text-align:center}
+.pw-logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--camel);margin-bottom:8px}
+.pw-sub{color:var(--dim);font-size:13px;margin-bottom:32px}
+.pw-box input{width:100%;background:var(--navy3);border:1px solid var(--border);border-radius:12px;padding:14px 18px;color:var(--white);font-size:15px;outline:none;margin-bottom:12px;text-align:center}
+.pw-box input:focus{border-color:var(--blue)}
+.pw-btn{width:100%;background:var(--blue);color:var(--navy);font-weight:700;font-size:14px;border:none;border-radius:12px;padding:14px;cursor:pointer}
+.pw-err{color:var(--red);font-size:12px;margin-top:8px;min-height:18px}
+
+/* ── Header ── */
+header{background:rgba(1,13,38,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 32px}
+.logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:var(--camel)}
+.logo span{color:var(--dim);font-size:13px;font-weight:400;font-family:'Inter',sans-serif;margin-left:10px}
+.header-actions{display:flex;gap:10px;align-items:center}
+.btn-print{background:rgba(124,167,235,.15);border:1px solid var(--border);color:var(--blue);font-size:12px;font-weight:600;padding:8px 16px;border-radius:10px;cursor:pointer}
+.btn-print:hover{background:rgba(124,167,235,.25)}
+.back-link{color:var(--dim);font-size:12px;text-decoration:none}
+.back-link:hover{color:var(--blue)}
+
+/* ── Main ── */
+main{max-width:1400px;margin:0 auto;padding:40px 32px}
+
+/* ── Filter Tabs ── */
+.tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap;align-items:center}
+.tab{background:transparent;border:1px solid var(--border);color:var(--dim);font-size:12px;font-weight:600;padding:8px 18px;border-radius:20px;cursor:pointer;transition:all .2s}
+.tab:hover,.tab.active{color:var(--white);border-color:currentColor}
+.tab[data-col="personality"].active{background:#E1306C22;border-color:var(--pers);color:var(--pers)}
+.tab[data-col="authority"].active{background:#F5C54222;border-color:var(--auth);color:var(--auth)}
+.tab[data-col="trust"].active{background:#69C9D022;border-color:var(--trust);color:var(--trust)}
+.tab[data-col="brand-culture"].active{background:#CDB08F22;border-color:var(--bc);color:var(--bc)}
+.tab[data-col="conversion"].active{background:#52C98422;border-color:var(--conv);color:var(--conv)}
+.tab[data-col="all"].active{background:rgba(124,167,235,.15);border-color:var(--blue);color:var(--blue)}
+.tab-sep{width:1px;height:24px;background:var(--border);margin:0 4px}
+.filter-status{display:flex;gap:6px}
+.filter-status .tab{font-size:11px;padding:6px 12px}
+
+/* ── Stats bar ── */
+.stats-bar{display:flex;gap:24px;margin-bottom:28px;padding:16px 20px;background:var(--navy2);border:1px solid var(--border);border-radius:14px;flex-wrap:wrap}
+.stat-item{display:flex;flex-direction:column;gap:2px}
+.stat-val{font-size:20px;font-weight:700;color:var(--white)}
+.stat-lbl{font-size:11px;color:var(--dim);font-weight:500}
+
+/* ── Card Grid ── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
+
+/* ── Idea Card ── */
+.idea-card{background:var(--navy2);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .2s}
+.idea-card:hover{border-color:rgba(124,167,235,.3)}
+.idea-card.hidden{display:none}
+.card-header{padding:16px 18px 12px;display:flex;align-items:flex-start;gap:12px;cursor:pointer}
+.card-accent{width:4px;border-radius:2px;min-height:40px;flex-shrink:0}
+.card-meta{flex:1}
+.card-id{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--dim);margin-bottom:4px}
+.card-title{font-size:14px;font-weight:700;color:var(--white);line-height:1.4}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.card-tag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px}
+.card-status{display:flex;align-items:center;gap:6px;margin-top:10px}
+.status-badge{font-size:11px;font-weight:600;padding:4px 10px;border-radius:8px;cursor:pointer;border:none;background:rgba(107,133,168,.15);color:var(--dim)}
+.status-badge.skript{background:rgba(82,201,132,.15);color:var(--green)}
+.status-badge.aufnahme{background:rgba(124,167,235,.15);color:var(--blue)}
+.toggle-btn{margin-left:auto;font-size:11px;color:var(--dim);border:1px solid var(--border);background:transparent;border-radius:8px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+.toggle-btn:hover{color:var(--blue);border-color:var(--blue)}
+
+/* ── Script Area ── */
+.script-area{border-top:1px solid var(--border);display:none;padding:16px 18px 18px}
+.script-area.open{display:block}
+.script-label{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--dim);text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.script-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.script-editor{width:100%;min-height:160px;background:var(--navy3);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--white);font-family:'Inter',sans-serif;font-size:13px;line-height:1.7;resize:vertical;outline:none}
+.script-editor:focus{border-color:rgba(124,167,235,.4)}
+.script-editor::placeholder{color:var(--dim)}
+.script-footer{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.save-hint{font-size:11px;color:var(--dim)}
+.save-hint.saved{color:var(--green)}
+.hook-label{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--dim);text-transform:uppercase;margin:14px 0 6px;display:flex;align-items:center;gap:8px}
+.hook-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.hook-editor{width:100%;min-height:60px;background:var(--navy3);border:1px solid var(--border);border-radius:10px;padding:10px 14px;color:var(--white);font-family:'Inter',sans-serif;font-size:13px;line-height:1.6;resize:vertical;outline:none}
+.hook-editor:focus{border-color:rgba(124,167,235,.4)}
+
+/* ── Print ── */
+@media print {
+  #pw-gate,header,.tabs,.stats-bar .tab{display:none}
+  .idea-card{break-inside:avoid;border:1px solid #ccc}
+  .script-area{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<!-- Password Gate -->
+<div id="pw-gate">
+  <div class="pw-box">
+    <div class="pw-logo">The Escape Theorie</div>
+    <div class="pw-sub">Evelyn · Aufnahme-Vorbereitung</div>
+    <input type="password" id="pw-input" placeholder="Passwort" onkeydown="if(event.key==='Enter')checkPw()" />
+    <button class="pw-btn" onclick="checkPw()">Einloggen</button>
+    <div class="pw-err" id="pw-err"></div>
+  </div>
+</div>
+
+<script>
+function checkPw() {
+  const v = document.getElementById('pw-input').value.trim().toLowerCase().replace(/\s+/g,'');
+  if (v === 'escape2026') {
+    sessionStorage.setItem('tet_ev_ok','1');
+    document.getElementById('pw-gate').style.display='none';
+  } else {
+    document.getElementById('pw-err').textContent = 'Falsches Passwort.';
+  }
+}
+if (sessionStorage.getItem('tet_ev_ok') === '1') {
+  document.getElementById('pw-gate').style.display='none';
+}
+</script>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      The Escape Theorie
+      <span>Evelyn · Aufnahme-Vorbereitung mit Alex</span>
+    </div>
+    <div class="header-actions">
+      <button class="btn-print" onclick="window.print()">🖨 Drucken / PDF</button>
+      <a class="back-link" href="./report.html">← Zurück zum Dashboard</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Filter Tabs -->
+  <div class="tabs">
+    <button class="tab active" data-col="all" onclick="filterCol('all',this)">Alle Säulen</button>
+    <button class="tab" data-col="personality" onclick="filterCol('personality',this)">Personality</button>
+    <button class="tab" data-col="authority" onclick="filterCol('authority',this)">Authority</button>
+    <button class="tab" data-col="trust" onclick="filterCol('trust',this)">Trust</button>
+    <button class="tab" data-col="brand-culture" onclick="filterCol('brand-culture',this)">Brand Culture</button>
+    <button class="tab" data-col="conversion" onclick="filterCol('conversion',this)">Conversion</button>
+    <div class="tab-sep"></div>
+    <div class="filter-status">
+      <button class="tab active" data-status="all" onclick="filterStatus('all',this)">Alle</button>
+      <button class="tab" data-status="idee" onclick="filterStatus('idee',this)">💡 Idee</button>
+      <button class="tab" data-status="skript" onclick="filterStatus('skript',this)">📝 Skript fertig</button>
+      <button class="tab" data-status="aufnahme" onclick="filterStatus('aufnahme',this)">🎙 Aufgenommen</button>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-val" id="stat-total">40</div><div class="stat-lbl">Ideen gesamt</div></div>
+    <div class="stat-item"><div class="stat-val" id="stat-skript" style="color:var(--green)">0</div><div class="stat-lbl">Skript fertig</div></div>
+    <div class="stat-item"><div class="stat-val" id="stat-aufnahme" style="color:var(--blue)">0</div><div class="stat-lbl">Aufgenommen</div></div>
+    <div class="stat-item"><div class="stat-val" id="stat-idee" style="color:var(--dim)">40</div><div class="stat-lbl">Noch offen</div></div>
+  </div>
+
+  <!-- Card Grid -->
+  <div class="card-grid" id="card-grid"></div>
+
+</main>
+
+<script>
+const IDEAS = [
+  // PERSONALITY
+  { id:'PERS 01', col:'personality', title:'Vorher/Nachher: vom Chaos zur Architektin', tag:'Positionierung', tagColor:'var(--pers)' },
+  { id:'PERS 02', col:'personality', title:'Der Waffelstand mit 8 – meine erste "Firma"', tag:'Positionierung', tagColor:'var(--pers)' },
+  { id:'PERS 03', col:'personality', title:'Die Idee, die ich nie umgesetzt habe', tag:'Positionierung', tagColor:'var(--pers)' },
+  { id:'PERS 04', col:'personality', title:'Der Moment, in dem ich Hilfe brauchte', tag:'Positionierung', tagColor:'var(--pers)' },
+  // AUTHORITY
+  { id:'AUTH 01', col:'authority', title:'Die 4 Phasen des Unternehmenswachstums', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  { id:'AUTH 02', col:'authority', title:'Warum du kein Produkt-Problem hast – du hast ein Positioning-Problem', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  { id:'AUTH 03', col:'authority', title:'Die 5 Leaks in deinem Funnel', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  { id:'AUTH 04', col:'authority', title:'Pricing-Psychologie: Warum der Preis nie das echte Problem ist', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  { id:'AUTH 05', col:'authority', title:'Content-Säulen: warum die meisten falsch denken', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  { id:'AUTH 06', col:'authority', title:'Die 3 Phasen vom Offer zum Umsatz', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  { id:'AUTH 07', col:'authority', title:'Evergreen vs. Trend-Content: was wirklich konvertiert', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  { id:'AUTH 08', col:'authority', title:'Skalierung ohne Team: die Grenzen und was danach kommt', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  { id:'AUTH 09', col:'authority', title:'Warum "mit Wasser kochen" alle Top-Player verbindet', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  { id:'AUTH 10', col:'authority', title:'Business Röntgenblick: was die meisten Analysen übersehen', tag:'Framework / Case Study', tagColor:'var(--auth)' },
+  // TRUST
+  { id:'TRUST 01', col:'trust', title:'Das erste Gespräch, das alles verändert hat', tag:'Proof / Success Stories', tagColor:'var(--trust)' },
+  { id:'TRUST 02', col:'trust', title:'"Von 5K Chaos zu 20K System"', tag:'Proof / Success Stories', tagColor:'var(--trust)' },
+  { id:'TRUST 03', col:'trust', title:'Warum Kunden nicht kaufen – und was sich wirklich geändert hat', tag:'Proof / Success Stories', tagColor:'var(--trust)' },
+  { id:'TRUST 04', col:'trust', title:'Der Sparring-Call, der den eigentlichen Hebel zeigte', tag:'Proof / Success Stories', tagColor:'var(--trust)' },
+  { id:'TRUST 05', col:'trust', title:'Was Mentorin-Arbeit wirklich bedeutet – hinter den Kulissen', tag:'Proof / Success Stories', tagColor:'var(--trust)' },
+  { id:'TRUST 06', col:'trust', title:'Drei Monate, drei Durchbrüche – ein Rückblick', tag:'Proof / Success Stories', tagColor:'var(--trust)' },
+  { id:'TRUST 07', col:'trust', title:'Von kleinem Nebenprojekt zur skalierten Organisation', tag:'Proof / Success Stories', tagColor:'var(--trust)' },
+  { id:'TRUST 08', col:'trust', title:'Community statt Coach-Rolle – warum das den Unterschied macht', tag:'Proof / Success Stories', tagColor:'var(--trust)' },
+  { id:'TRUST 09', col:'trust', title:'Das Feedback, das mich überrascht hat', tag:'Proof / Success Stories', tagColor:'var(--trust)' },
+  // BRAND CULTURE
+  { id:'BC 01', col:'brand-culture', title:'Warum wir keinen "normalen" Coaching-Stil haben', tag:'Behind the Scenes', tagColor:'var(--bc)' },
+  { id:'BC 02', col:'brand-culture', title:'Ein Tag mit Sam (Behind the Scenes)', tag:'Behind the Scenes', tagColor:'var(--bc)' },
+  { id:'BC 03', col:'brand-culture', title:'Whiteboard-Session: "Diese Diskussion hatten wir im Team"', tag:'Behind the Scenes', tagColor:'var(--bc)' },
+  { id:'BC 04', col:'brand-culture', title:'Wie wir Entscheidungen im Team treffen', tag:'Behind the Scenes', tagColor:'var(--bc)' },
+  { id:'BC 05', col:'brand-culture', title:'Was "Qualität über Quantität" bei TET wirklich bedeutet', tag:'Behind the Scenes', tagColor:'var(--bc)' },
+  { id:'BC 06', col:'brand-culture', title:'Unser Onboarding-Prozess: was neue Mentees als erstes erleben', tag:'Behind the Scenes', tagColor:'var(--bc)' },
+  { id:'BC 07', col:'brand-culture', title:'Architecture Sessions: ein Blick in die Live-Session', tag:'Behind the Scenes', tagColor:'var(--bc)' },
+  { id:'BC 08', col:'brand-culture', title:'Premium statt Palmen: warum wir uns bewusst absetzen', tag:'Behind the Scenes', tagColor:'var(--bc)' },
+  // CONVERSION
+  { id:'CONV 01', col:'conversion', title:'Mehr Reichweite, weniger Umsatz? Der Fehler dahinter', tag:'Authority / CTA', tagColor:'var(--conv)' },
+  { id:'CONV 02', col:'conversion', title:'Warum dein nächstes Angebot nicht das Problem löst', tag:'Authority / CTA', tagColor:'var(--conv)' },
+  { id:'CONV 03', col:'conversion', title:'10k/Monat und trotzdem kein System – was fehlt', tag:'Authority / CTA', tagColor:'var(--conv)' },
+  { id:'CONV 04', col:'conversion', title:'Der Unterschied zwischen "interessiert" und "kaufbereit"', tag:'Authority / CTA', tagColor:'var(--conv)' },
+  { id:'CONV 05', col:'conversion', title:'Umsatz verdoppeln mit weniger Aufwand (Case Study)', tag:'Authority / CTA', tagColor:'var(--conv)' },
+  { id:'CONV 06', col:'conversion', title:'Was echte Premium-Positionierung in der DM verändert', tag:'Authority / CTA', tagColor:'var(--conv)' },
+  { id:'CONV 07', col:'conversion', title:'Freebie → Offer: die Lücke, die Geld kostet', tag:'Authority / CTA', tagColor:'var(--conv)' },
+  { id:'CONV 08', col:'conversion', title:'Launch vs. Evergreen: was für dich gerade das Richtige ist', tag:'Authority / CTA', tagColor:'var(--conv)' },
+  { id:'CONV 09', col:'conversion', title:'Business das Fühl-Argument – warum Fakten allein nicht konvertieren', tag:'Authority / CTA', tagColor:'var(--conv)' },
+];
+
+const colColors = { personality:'var(--pers)', authority:'var(--auth)', trust:'var(--trust)', 'brand-culture':'var(--bc)', conversion:'var(--conv)' };
+
+function getStorage(key) { try { return localStorage.getItem('tet_ev_' + key) || ''; } catch(e) { return ''; } }
+function setStorage(key, val) { try { localStorage.setItem('tet_ev_' + key, val); } catch(e) {} }
+
+let activeCol = 'all';
+let activeStatus = 'all';
+
+function buildCards() {
+  const grid = document.getElementById('card-grid');
+  grid.innerHTML = '';
+  IDEAS.forEach(idea => {
+    const savedStatus = getStorage('status_' + idea.id) || 'idee';
+    const savedHook   = getStorage('hook_' + idea.id);
+    const savedScript = getStorage('script_' + idea.id);
+
+    const statusLabel = { idee:'💡 Idee', skript:'📝 Skript fertig', aufnahme:'🎙 Aufgenommen' };
+    const statusClass = { idee:'', skript:' skript', aufnahme:' aufnahme' };
+
+    const card = document.createElement('div');
+    card.className = 'idea-card';
+    card.dataset.col = idea.col;
+    card.dataset.status = savedStatus;
+    card.dataset.id = idea.id;
+
+    card.innerHTML = `
+      <div class="card-header" onclick="toggleScript('${idea.id}')">
+        <div class="card-accent" style="background:${colColors[idea.col]}"></div>
+        <div class="card-meta">
+          <div class="card-id">${idea.id}</div>
+          <div class="card-title">${idea.title}</div>
+          <div class="card-tags">
+            <span class="card-tag" style="background:${colColors[idea.col]}22;color:${colColors[idea.col]}">${idea.tag}</span>
+          </div>
+          <div class="card-status">
+            <button class="status-badge${statusClass[savedStatus]}" id="sb_${idea.id.replace(' ','_')}"
+              onclick="event.stopPropagation();cycleStatus('${idea.id}',this)">${statusLabel[savedStatus]}</button>
+            <button class="toggle-btn" id="tb_${idea.id.replace(' ','_')}">Skript öffnen ↓</button>
+          </div>
+        </div>
+      </div>
+      <div class="script-area" id="sa_${idea.id.replace(' ','_')}">
+        <div class="hook-label">Hook (erster Satz / Einstieg)</div>
+        <textarea class="hook-editor" id="hook_${idea.id.replace(' ','_')}"
+          placeholder="z. B.: Wenn du das weißt, sparst du dir die nächsten 6 Monate Umwege…"
+          oninput="autoSave('hook','${idea.id}',this)">${savedHook}</textarea>
+        <div class="script-label">Vollständiges Skript</div>
+        <textarea class="script-editor" id="sc_${idea.id.replace(' ','_')}"
+          placeholder="Skript hier eintragen — wird automatisch gespeichert…${'\n\n'}Tipp: Struktur\n• Hook (5 Sek)\n• Problem benennen\n• Story / Beweis\n• Lösung / Framework\n• CTA"
+          oninput="autoSave('script','${idea.id}',this)">${savedScript}</textarea>
+        <div class="script-footer">
+          <span class="save-hint" id="hint_${idea.id.replace(' ','_')}">Wird automatisch gespeichert</span>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+  applyFilters();
+  updateStats();
+}
+
+function toggleScript(id) {
+  const key = id.replace(' ','_');
+  const area = document.getElementById('sa_' + key);
+  const btn  = document.getElementById('tb_' + key);
+  const open = area.classList.toggle('open');
+  btn.textContent = open ? 'Skript schließen ↑' : 'Skript öffnen ↓';
+}
+
+function cycleStatus(id, btn) {
+  const card = document.querySelector(`.idea-card[data-id="${id}"]`);
+  const cycle = ['idee','skript','aufnahme'];
+  const cur   = card.dataset.status;
+  const next  = cycle[(cycle.indexOf(cur)+1) % cycle.length];
+  const labels = { idee:'💡 Idee', skript:'📝 Skript fertig', aufnahme:'🎙 Aufgenommen' };
+  card.dataset.status = next;
+  setStorage('status_' + id, next);
+  btn.textContent = labels[next];
+  btn.className = 'status-badge' + (next === 'idee' ? '' : ' ' + next);
+  applyFilters();
+  updateStats();
+}
+
+let saveTimer = {};
+function autoSave(type, id, el) {
+  const key = id.replace(' ','_');
+  clearTimeout(saveTimer[key]);
+  saveTimer[key] = setTimeout(() => {
+    setStorage(type + '_' + id, el.value);
+    const hint = document.getElementById('hint_' + key);
+    if (hint) { hint.textContent = '✓ Gespeichert'; hint.className = 'save-hint saved'; setTimeout(()=>{ hint.textContent='Wird automatisch gespeichert'; hint.className='save-hint'; }, 2000); }
+  }, 800);
+}
+
+function applyFilters() {
+  document.querySelectorAll('.idea-card').forEach(card => {
+    const colMatch    = activeCol    === 'all' || card.dataset.col    === activeCol;
+    const statusMatch = activeStatus === 'all' || card.dataset.status === activeStatus;
+    card.classList.toggle('hidden', !(colMatch && statusMatch));
+  });
+}
+
+function filterCol(col, btn) {
+  activeCol = col;
+  document.querySelectorAll('.tab[data-col]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function filterStatus(status, btn) {
+  activeStatus = status;
+  document.querySelectorAll('.tab[data-status]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function updateStats() {
+  const all     = document.querySelectorAll('.idea-card');
+  const skript  = [...all].filter(c => c.dataset.status === 'skript').length;
+  const aufnahme= [...all].filter(c => c.dataset.status === 'aufnahme').length;
+  const idee    = [...all].filter(c => c.dataset.status === 'idee').length;
+  document.getElementById('stat-total').textContent    = all.length;
+  document.getElementById('stat-skript').textContent   = skript;
+  document.getElementById('stat-aufnahme').textContent = aufnahme;
+  document.getElementById('stat-idee').textContent     = idee;
+}
+
+buildCards();
+</script>
+</body>
+</html>
