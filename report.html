@@ -659,146 +659,164 @@ const days = [
   { name: 'So', date: '22. Jun', today: false },
 ];
 
-// Integrated plan: Reels from Asana + produced carousels from pipeline
-// Fixer Wochenrhythmus: Di = SM-News (Anne), Mi = High-Performer-Reel (Sam), Fr = Themen-Reel (Evelyn)
-// Max. 2 Podcast-Reels/Woche (erkennbar am # · hier: Do + Sa)
-// 1 Reel + 2 Karussells pro Tag
-const ASANA_PROJECT = '1205383636722371';
+// ── Asana Live-Kalender ──
+// Regeln: 1 Reel/Tag aus "Ready to Post", max. 2 Podcasts/Woche,
+// Fallback auf "In Bearbeitung" | 2 Karussells/Tag aus "Planned"
+const ASANA_PROJECT   = '1205383636722371';
+const SECTION_READY   = '1209242190370411'; // READY TO POST 🤝🏽
+const SECTION_WIP     = '1209242190504301'; // IN BEARBEITUNG ⚙️
+const SECTION_PLANNED = '1213876841748225'; // Planned (Karussells)
+const STORY_SECTION   = '1215695447009362'; // Storyplanung
 const asanaLink = id => `https://app.asana.com/0/${ASANA_PROJECT}/${id}/f`;
+const ASANA_PAT = '%%ASANA_PAT%%';
 
-const feedPlan = [
-  // Mo 16.06 – Thema: Produkt & Preis
-  [
-    { type:'reel',     tag:'✅ Reel · fertig',              asanaId:'1215158818133838', text:'Warum dein Produkt nicht verkauft wird\n(04 AW · Alex W. · eigener Reel)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708448974723', text:'Pricing & Anchor-Pricing – Premium-Positionierung\nVideovorlage A · <a href="https://www.canva.com/d/TxC3z1kiCUa06Sj" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420582912', text:'CAC – Was dich ein Neukunde wirklich kostet\nA-Zahlenfolie · <a href="https://www.canva.com/d/_aQH4TzHFrlTvYB" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-  ],
-  // Di 17.06 – FIX: SM-News Karussell (Anne) + Thema: Community & LTV
-  [
-    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Claudio',   asanaId:'1203553368670457', text:'Social Media hat zwei Aufgaben – und die meisten wissen den Grund nicht\n(bereits aufgenommen · bei Claudio in Bearbeitung)' },
-    { type:'carousel', tag:'📌 Fix · Anne · Karussell',     asanaId:'1215708441334814', text:'SM-News KW25: Was dich als SM-Unternehmerin diese Woche bewegt\n(jede Woche Dienstag · von Anne)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708448974625', text:'LTV – Was dein Kunde wirklich wert ist\nc-Tribe · <a href="https://www.canva.com/d/Ry6BsDajknXAm0p" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-  ],
-  // Mi 18.06 – FIX: High-Performer-Reel (Sam) + Thema: Erfolg & Transformation
-  [
-    { type:'reel',     tag:'📌 Fix · Sam · High-Performer', asanaId:'1215710321829115', text:'High-Performer-Reel: Kundencase KW25\n(jede Woche Mittwoch · Sam erstellt)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708190920630', text:'Funnel-Conversion-Rate verbessern\nC-Texthook · <a href="https://www.canva.com/d/iwVuclCmD9DeUA-" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708190929659', text:'Positionierungs-Framework: 3 Säulen, die unterscheiden\n(Evergreen · gut speicherbar)' },
-  ],
-  // Do 19.06 – Thema: Zahlen & ROI · PODCAST-SLOT 1
-  [
-    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast', asanaId:'1215759320763058', text:'Umsatz ist nicht Gewinn – was deine Zahlen wirklich sagen\n(#58 Reel 03 · Tayler · max. 2 Podcast/Woche)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420582816', text:'ROAS – Was Werbung wirklich kostet & bringt\nB-Tribe · <a href="https://www.canva.com/d/3ICH0Zf4N_pPwwx" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708190929723', text:'5 Zahlen, die du als Unternehmerin kennen musst\n(Zahlen-Evergreen · sehr gut speicherbar)' },
-  ],
-  // Fr 20.06 – FIX: Themen-Reel (Evelyn) + Thema: Wachstum & Sichtbarkeit
-  [
-    { type:'reel',     tag:'📌 Fix · Evelyn · Themen-Reel', asanaId:'1215710315551445', text:'Themen-Reel KW25\n(jede Woche Freitag · Evelyn erstellt)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708299583444', text:'Wissen ist Gratis – Umsetzung kostet\nVideovorlage B · <a href="https://www.canva.com/d/5TxE7BYxMkI_a1i" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708299595133', text:'Wie ich meine Reichweite systematisch aufgebaut habe\n(How-To · passend zum Freitags-Thema)' },
-  ],
-  // Sa 21.06 – Thema: Systeme & Skalierung · PODCAST-SLOT 2
-  [
-    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast', asanaId:'1215759320830896', text:'Systeme schaffen, die ohne dich laufen\n(#57 Reel 18 · Alex · max. 2 Podcast/Woche)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215707745828491', text:'Die 3 Skalierungshebel\nA-Zahlenfolie · <a href="https://www.canva.com/d/netpPVbK-psbsLD" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708420582752', text:'TET Circle: Warum die Community dein nächster Schritt ist\n(Tribe-CTA-Format)' },
-  ],
-  // So 22.06 – Thema: Brand & Beziehung
-  [
-    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Claudio',  asanaId:'1215759320830960', text:'Business automatisieren – aber die Beziehung zu Menschen behalten\n(Alex W. · bereits aufgenommen · bei Claudio in Bearbeitung)' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708448927252', text:'KW25-Wrap-Up: Das nehmen wir mit\n(leichtes persönliches Format · Sonntag)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420535406', text:'Skalierungshebel – Wiederholung als Evergreen\nA-Zahlenfolie · <a href="https://www.canva.com/d/netpPVbK-psbsLD" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-  ],
-];
+// ── Hilfsfunktion: aktuelle KW-Daten berechnen ──
+function getCurrentWeekDates() {
+  const now = new Date();
+  const dow = now.getDay(); // 0=So, 1=Mo...
+  const diffToMon = (dow === 0 ? -6 : 1 - dow);
+  const mon = new Date(now); mon.setDate(now.getDate() + diffToMon);
+  return Array.from({length:7}, (_, i) => {
+    const d = new Date(mon); d.setDate(mon.getDate() + i);
+    return d.toISOString().split('T')[0]; // YYYY-MM-DD
+  });
+}
 
-// ── Asana Story-Kalender ──
-// Token hier eintragen sobald vorhanden:
-const ASANA_PAT = ''; // Token wird lokal über den Server geladen
-const STORY_SECTION = '1215695447009362';
+// ── Live Feed-Kalender aus Asana ──
+async function loadFeedCalendar() {
+  const feedCal = document.getElementById('feed-calendar');
+  const kwDates = getCurrentWeekDates(); // Mo–So der aktuellen KW
 
-async function loadStoryCalendar() {
-  const storyCal = document.getElementById('story-calendar');
-  if (!ASANA_PAT) {
-    // Kein Token: leere Slots pro Tag + Link zur Asana-Section
-    days.forEach(d => {
-      storyCal.innerHTML += `
-        <div class="story-day">
-          <div class="story-day-header">
-            <div class="cal-day-name">${d.name}</div>
-            <div class="cal-day-date" style="font-size:15px;font-weight:700;color:var(--white)">${d.date}</div>
-          </div>
-          <div class="story-slots">
-            <div class="story-slot" style="color:var(--dim);font-style:italic;grid-column:1/-1">Noch keine Stories geplant</div>
-          </div>
-        </div>`;
-    });
+  // Wochentitel aktualisieren
+  const fmt = d => { const [,m,day] = d.split('-'); return `${parseInt(day)}.${parseInt(m)}.`; };
+  const kwLabel = `KW${getISOWeek(new Date(kwDates[0]))} (${fmt(kwDates[0])}–${fmt(kwDates[6])} ${new Date(kwDates[0]).getFullYear()})`;
+  const titleEl = document.querySelector('.section-title');
+  if (titleEl && titleEl.textContent.includes('Redaktionsplan')) titleEl.childNodes[0].textContent = `Redaktionsplan Feed · ${kwLabel}`;
+
+  if (!ASANA_PAT || ASANA_PAT === '%%ASANA_PAT%%') {
+    feedCal.innerHTML = `<div style="color:var(--dim);padding:24px;grid-column:1/-1">Asana-Verbindung wird eingerichtet…</div>`;
     return;
   }
 
+  const headers = { Authorization: `Bearer ${ASANA_PAT}`, Accept: 'application/json' };
+
   try {
-    const res = await fetch(
-      `https://app.asana.com/api/1.0/sections/${STORY_SECTION}/tasks?opt_fields=name,due_on,notes,gid&limit=50`,
-      { headers: { Authorization: `Bearer ${ASANA_PAT}`, Accept: 'application/json' } }
-    );
-    const json = await res.json();
-    const tasks = json.data || [];
+    // Parallel: Ready-to-Post Reels + In-Bearbeitung Reels + Karussells (Planned)
+    const [readyRes, wipRes, carouselRes, storyRes] = await Promise.all([
+      fetch(`https://app.asana.com/api/1.0/sections/${SECTION_READY}/tasks?opt_fields=name,due_on,gid,notes,completed&limit=50`, {headers}),
+      fetch(`https://app.asana.com/api/1.0/sections/${SECTION_WIP}/tasks?opt_fields=name,due_on,gid,notes,completed&limit=50`, {headers}),
+      fetch(`https://app.asana.com/api/1.0/sections/${SECTION_PLANNED}/tasks?opt_fields=name,due_on,gid,notes,completed&limit=100`, {headers}),
+      fetch(`https://app.asana.com/api/1.0/sections/${STORY_SECTION}/tasks?opt_fields=name,due_on,gid&limit=50`, {headers}),
+    ]);
+    const [readyData, wipData, carouselData, storyData] = await Promise.all([
+      readyRes.json(), wipRes.json(), carouselRes.json(), storyRes.json()
+    ]);
 
-    // Gruppe Tasks nach due_on
-    const byDate = {};
-    tasks.forEach(t => { if (t.due_on) { (byDate[t.due_on] = byDate[t.due_on] || []).push(t); } });
+    const readyReels  = (readyData.data   || []).filter(t => !t.completed);
+    const wipReels    = (wipData.data     || []).filter(t => !t.completed);
+    const carousels   = (carouselData.data|| []).filter(t => !t.completed);
 
-    // Datums-Map für die KW-Tage (Mo=15.06 … So=21.06 2026)
-    const kwDates = ['2026-06-15','2026-06-16','2026-06-17','2026-06-18','2026-06-19','2026-06-20','2026-06-21'];
+    // Karussells nach Datum gruppieren (für aktuelle KW filtern)
+    const carouselByDate = {};
+    carousels.forEach(t => { if (t.due_on) (carouselByDate[t.due_on] = carouselByDate[t.due_on]||[]).push(t); });
 
-    days.forEach((d, i) => {
-      const dayTasks = byDate[kwDates[i]] || [];
-      const slotsHTML = dayTasks.length
-        ? dayTasks.map(t => `
-            <div class="story-slot-num">Story</div>
-            <a href="${asanaLink(t.gid)}" target="_blank" style="text-decoration:none">
-              <div class="story-slot filled" title="In Asana öffnen" style="cursor:pointer">${t.name}</div>
-            </a>`).join('')
-        : `<div class="story-slot" style="color:var(--dim);font-style:italic;grid-column:1/-1">Noch keine Stories geplant</div>`;
+    // Stories nach Datum gruppieren
+    const storyByDate = {};
+    (storyData.data||[]).forEach(t => { if (t.due_on) (storyByDate[t.due_on]=storyByDate[t.due_on]||[]).push(t); });
 
-      storyCal.innerHTML += `
-        <div class="story-day">
-          <div class="story-day-header">
-            <div class="cal-day-name">${d.name}</div>
-            <div class="cal-day-date" style="font-size:15px;font-weight:700;color:var(--white)">${d.date}</div>
+    // Reels einplanen: max. 2 Podcast-Reels/Woche, 1 Reel/Tag
+    // Podcast-Reel = Name enthält "#" oder "Podcast"
+    const isPodcast = t => /podcast|#\d{2}/i.test(t.name);
+
+    // Zuerst Reels mit due_on in dieser KW fixieren
+    const scheduledReels = {}; // date → task
+    readyReels.forEach(t => { if (t.due_on && kwDates.includes(t.due_on)) scheduledReels[t.due_on] = t; });
+
+    // Restliche Ready-Reels (ohne due_on oder außerhalb KW) in Queue
+    const reelQueue = readyReels.filter(t => !t.due_on || !kwDates.includes(t.due_on));
+    const wipQueue  = wipReels.filter(t => !t.due_on || !kwDates.includes(t.due_on));
+
+    // Podcast-Zähler: bereits verplante Podcast-Reels in dieser KW
+    let podcastCount = Object.values(scheduledReels).filter(isPodcast).length;
+
+    // Freie Tage mit Reels füllen
+    for (const date of kwDates) {
+      if (scheduledReels[date]) continue; // bereits belegt
+      // Versuche normalen Reel (kein Podcast) einzuplanen
+      let idx = reelQueue.findIndex(t => !isPodcast(t));
+      if (idx === -1 && podcastCount < 2) { idx = reelQueue.findIndex(isPodcast); if(idx>=0) podcastCount++; }
+      if (idx >= 0) { scheduledReels[date] = reelQueue.splice(idx,1)[0]; continue; }
+      // Fallback: In Bearbeitung
+      idx = wipQueue.findIndex(t => !isPodcast(t));
+      if (idx === -1 && podcastCount < 2) { idx = wipQueue.findIndex(isPodcast); if(idx>=0) podcastCount++; }
+      if (idx >= 0) scheduledReels[date] = wipQueue.splice(idx,1)[0];
+    }
+
+    // Kalender rendern
+    const dayNames = ['MO','DI','MI','DO','FR','SA','SO'];
+    feedCal.innerHTML = '';
+    kwDates.forEach((date, i) => {
+      const reel    = scheduledReels[date];
+      const dayCarousels = (carouselByDate[date] || []).slice(0,2);
+      const stories = storyByDate[date] || [];
+      const isToday = date === new Date().toISOString().split('T')[0];
+      const [y,m,d] = date.split('-');
+      const dateLabel = `${parseInt(d)}. ${['','Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'][parseInt(m)]}`;
+
+      const reelHTML = reel ? (() => {
+        const podcast = isPodcast(reel);
+        const wip = wipReels.some(w => w.gid === reel.gid);
+        const tag  = wip ? '⚙️ In Bearbeitung' : (podcast ? '✅ Reel · 🎙 Podcast' : '✅ Reel · fertig');
+        const type = wip ? 'reel-plan' : 'reel';
+        const inner = `<div class="cal-item" data-type="${type}" style="cursor:pointer" title="In Asana öffnen">
+          <div class="cal-item-tag">${tag}</div>
+          <div>${reel.name}</div>
+        </div>`;
+        return `<a href="${asanaLink(reel.gid)}" target="_blank" style="text-decoration:none;display:block;color:inherit">${inner}</a>`;
+      })() : `<div class="cal-item" data-type="reel-plan" style="opacity:.4"><div class="cal-item-tag">Kein Reel geplant</div></div>`;
+
+      const carouselHTML = dayCarousels.length
+        ? dayCarousels.map(c => `<a href="${asanaLink(c.gid)}" target="_blank" style="text-decoration:none;display:block;color:inherit">
+            <div class="cal-item" data-type="carousel" style="cursor:pointer" title="In Asana öffnen">
+              <div class="cal-item-tag">Karussell · Asana ↗</div>
+              <div>${c.name}</div>
+            </div></a>`).join('')
+        : `<div class="cal-item" data-type="carousel" style="opacity:.4"><div class="cal-item-tag">Keine Karussells geplant</div></div>`;
+
+      const storyHTML = stories.length
+        ? stories.map(s => `<a href="${asanaLink(s.gid)}" target="_blank" style="text-decoration:none;display:block;color:inherit">
+            <div class="cal-item" data-type="story" style="cursor:pointer;background:rgba(205,176,143,.07);border-color:rgba(205,176,143,.2)" title="In Asana öffnen">
+              <div class="cal-item-tag" style="color:var(--camel)">Story · geplant</div>
+              <div>${s.name}</div>
+            </div></a>`).join('')
+        : '';
+
+      feedCal.innerHTML += `
+        <div class="cal-day ${isToday?'today':''}">
+          <div class="cal-day-header">
+            <div class="cal-day-name">${dayNames[i]}</div>
+            <div class="cal-day-date">${dateLabel}</div>
           </div>
-          <div class="story-slots">${slotsHTML}</div>
+          <div class="cal-day-body">${reelHTML}${carouselHTML}${storyHTML}</div>
         </div>`;
     });
+
   } catch(e) {
-    document.getElementById('story-calendar').innerHTML =
-      `<div style="color:var(--dim);padding:16px">Fehler beim Laden der Stories aus Asana.</div>`;
+    feedCal.innerHTML = `<div style="color:var(--red);padding:24px;grid-column:1/-1">Fehler beim Laden aus Asana: ${e.message}</div>`;
   }
 }
-loadStoryCalendar();
 
-// Render feed calendar
-const feedCal = document.getElementById('feed-calendar');
-days.forEach((d, i) => {
-  const items = feedPlan[i] || [];
-  const itemsHTML = items.map(item => {
-    const textHTML = item.text.replace(/\n/g, '<br>');
-    const inner = `<div class="cal-item" data-type="${item.type}" ${item.asanaId ? `style="cursor:pointer" title="In Asana öffnen"` : ''}>
-      ${item.tag ? `<div class="cal-item-tag">${item.tag}</div>` : ''}
-      <div>${textHTML}</div>
-    </div>`;
-    return item.asanaId
-      ? `<a href="${asanaLink(item.asanaId)}" target="_blank" style="text-decoration:none;display:block;color:inherit">${inner}</a>`
-      : inner;
-  }).join('');
-  feedCal.innerHTML += `
-    <div class="cal-day ${d.today?'today':''}">
-      <div class="cal-day-header">
-        <div class="cal-day-name">${d.name}</div>
-        <div class="cal-day-date">${d.date}</div>
-      </div>
-      <div class="cal-day-body">${itemsHTML}</div>
-    </div>`;
-});
+function getISOWeek(date) {
+  const d = new Date(date); d.setHours(0,0,0,0);
+  d.setDate(d.getDate() + 3 - (d.getDay()+6)%7);
+  const w = new Date(d.getFullYear(), 0, 4);
+  return 1 + Math.round(((d-w)/86400000 - 3 + (w.getDay()+6)%7) / 7);
+}
+
+// ── Story-Kalender (wird jetzt im Feed-Kalender mitgeladen) ──
+async function loadStoryCalendar() { /* integriert in loadFeedCalendar */ }
+
+loadFeedCalendar();
 
 
 // ── Render top posts ──
