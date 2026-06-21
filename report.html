@@ -185,7 +185,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
     </div>
     <div class="header-meta">
       <div>Instagram · TikTok · YouTube</div>
-      <div class="period-badge" id="period-label">14. Mai – 12. Juni 2026</div>
+      <div class="period-badge" id="period-label">20. Mai – 18. Juni 2026</div>
     </div>
   </div>
 </header>
@@ -324,21 +324,21 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
       <div class="insight-icon">🏆</div>
       <div class="insight-title">Bester Content-Typ: Karussell</div>
       <div class="insight-text">
-        Der Top-Post ist ein Karussell (<strong>TET Tribe-Öffnung, 1.992 Ansichten, Engagement 3,25</strong>). Die wöchentliche "Was mich als SM-Mentorin interessiert"-Serie performt konstant mit 1.000+ Ansichten und Engagement >3,5. <strong>Karussells schlagen Reels klar bei Reichweite.</strong>
+        Top-Post dieser Periode: <strong>"4 Updates live" (1.753 Ansichten, Engagement 5,87)</strong>. Die "Was mich als SM-Mentorin interessiert"-Serie liefert konstant 1.000+ Ansichten. SM-News-Karussell vom 09.06. ist klarer Ausreißer nach oben. <strong>Karussells dominieren weiterhin bei Reichweite und Engagement.</strong>
       </div>
     </div>
     <div class="insight-card">
       <div class="insight-icon">🎯</div>
-      <div class="insight-title">Reel-Formel: Erfolgsgeschichten + klare Aussage</div>
+      <div class="insight-title">Reels: Reichweite sinkt, aber starke Hooks funktionieren</div>
       <div class="insight-text">
-        Die zwei besten Reels sind: <strong>"@mindspiration_ – Erfolgsgeschichte" (Engagement 5,96)</strong> und <strong>"2K Abonnenten"-Benchmark-Reel (5,55)</strong>. Beide haben konkrete Aussagen im Hook. Allgemeine Reels ohne starke These liegen unter 2,5.
+        Bestes Reel: <strong>"Während du noch darauf wartest…" (1.009 Ansichten, 5,32)</strong>. Zweiter Platz: <strong>@mindspiration_-Erfolgsgeschichte (835 Ansichten, 5,03)</strong>. Reels mit konkretem Versprechen im Hook schlagen allgemeine Themen deutlich.
       </div>
     </div>
     <div class="insight-card">
       <div class="insight-icon">⚠️</div>
-      <div class="insight-title">TikTok: kritischer Rückgang</div>
+      <div class="insight-title">TikTok: Aktivität erhöht, aber Zielgruppen-Problem bleibt</div>
       <div class="insight-text">
-        Nur 2 Posts im Zeitraum bei 53K Followern. Videoansichten –86%, Interaktionen –97%. TikTok-Follower: <strong>68% weiblich, aber 96% aus Asien</strong> (Philippines, Cambodia, Vietnam) – nicht die Zielgruppe DACH. Kanal braucht strategische Entscheidung.
+        4 Posts im Zeitraum (vorher: 2). Videoansichten +8,38%. TikTok-Follower: <strong>Mehrheit aus Asien</strong> (Philippines, Cambodia, Vietnam) – nicht die Zielgruppe DACH. Kanal braucht strategische Entscheidung trotz leichter Erholung.
       </div>
     </div>
     <div class="insight-card">
@@ -349,17 +349,17 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
       </div>
     </div>
     <div class="insight-card">
-      <div class="insight-icon">📉</div>
-      <div class="insight-title">Reichweite fällt – trotz mehr Posts</div>
+      <div class="insight-icon">📈</div>
+      <div class="insight-title">Reichweite erholt sich – Qualität zahlt sich aus</div>
       <div class="insight-text">
-        Impressionen –21,72% obwohl Beiträge +6,67%. <strong>Mehr Posting kompensiert nicht sinkende organische Reichweite.</strong> Qualität über Quantität: Die 5 stärksten Posts machen >70% der Gesamtreichweite aus.
+        Impressionen +7,16% (vorherige Periode: –21,72%). Beiträge +21,88%. Engagement-Rate stabil bei 3,76%. <strong>Die Trendwende ist da:</strong> Mehr Posts mit gleichbleibend hoher Qualität treiben die Reichweite wieder nach oben.
       </div>
     </div>
     <div class="insight-card">
       <div class="insight-icon">🚀</div>
       <div class="insight-title">YouTube: Shorts als Wachstumshebel</div>
       <div class="insight-text">
-        <strong>72,5% des YouTube-Traffics kommt über Shorts.</strong> Der Kanal wächst trotz 0 neuer Videos (+1,27% Abonnenten). Das "Wir escapen mal kurz"-Video hat 4m 32s Ø Watchtime – YouTube long-form könnte funktionieren wenn systematisch bespielt.
+        <strong>72,5% des YouTube-Traffics kommt über Shorts.</strong> Der Kanal wächst trotz 1 neuem Video (+1,27% Abonnenten, 159 gesamt). Das "Wir escapen mal kurz"-Video hat 4m 32s Ø Watchtime – YouTube long-form könnte funktionieren wenn systematisch bespielt.
       </div>
     </div>
   </div>
@@ -390,14 +390,6 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
         </thead>
         <tbody id="top-reels-body"></tbody>
       </table>
-    </div>
-  </div>
-
-  <!-- ── Follower Trend ── -->
-  <div class="section-title">Follower-Entwicklung · Instagram</div>
-  <div class="card" style="margin-bottom:40px">
-    <div class="chart-wrap">
-      <canvas id="follower-chart"></canvas>
     </div>
   </div>
 
@@ -811,20 +803,19 @@ days.forEach((d, i) => {
 
 // ── Render top posts ──
 const posts = [
-  { date:"16.05.", text:"TET Tribe – deine Circle Community ist ab sofort für alle Unternehmer geöffnet…", views:1992, engagement:3.25 },
-  { date:"09.06.", text:"Diese Woche sind 4 Updates live gegangen, die deine Content-Strategie direkt betreffen…", views:1502, engagement:5.91 },
-  { date:"28.05.", text:"Was mich als SM-Mentorin diese Woche interessiert – deutlich zeigt…", views:1223, engagement:4.46 },
-  { date:"19.05.", text:"Was mich als SM-Mentorin interessiert – Social Media bewegt sich gerade…", views:1071, engagement:3.69 },
-  { date:"02.06.", text:"Was mich als SM-Mentorin juckt – Plattformen zeigen eine gemischte…", views:1070, engagement:3.13 },
-  { date:"05.06.", text:"Social Media war nie wirklich kostenlos. Du hast immer bezahlt…", views:775, engagement:4.81 },
-  { date:"01.06.", text:"Coaching und Dienstleistung ist strukturell stärker als jeder DAX-Konzern…", views:642, engagement:4.47 },
+  { date:"09.06.", text:"Diese Woche sind 4 Updates live gegangen, die dein Social-Media-Business direkt betreffen…", views:1753, engagement:5.87 },
+  { date:"28.05.", text:"Was mich als Social-Media-Mentorin diese Woche interessiert…", views:1231, engagement:4.42 },
+  { date:"02.06.", text:"Was mich als Social-Media-Mentorin diese Woche juckt…", views:1139, engagement:2.96 },
+  { date:"17.06.", text:"Wir feiern jeden einzelnen Schritt auf deinem Weg…", views:959, engagement:5.99 },
+  { date:"16.06.", text:"SM-News der Woche – was du als Unternehmerin jetzt wissen musst…", views:945, engagement:7.0 },
+  { date:"05.06.", text:"Social Media war nie wirklich kostenlos. Du hast immer bezahlt…", views:872, engagement:4.6 },
 ];
 const reels = [
-  { date:"03.06.", text:"Während du noch darauf wartest, dein nächstes Reel zu posten oder sichtbar zu werden…", views:967, engagement:5.55 },
-  { date:"10.06.", text:"Vor 1,5 Jahren wusste @mindspiration_ nicht mit was sie ein Business starten kann…", views:724, engagement:5.96 },
-  { date:"17.05.", text:"(Kein Text) – Talking Head Format", views:729, engagement:2.36 },
-  { date:"15.05.", text:"Kommentiere 222 und wir schicken dir den Link zu unserer kostenlosen Circle Community…", views:671, engagement:2.94 },
-  { date:"28.05.", text:"Du hast einen Funnel. Du hast eine Customer Journey. Trotzdem verkauft es sich nicht…", views:660, engagement:2.36 },
+  { date:"03.06.", text:"Während du noch darauf wartest, dein nächstes Reel zu posten oder sichtbar zu werden…", views:1009, engagement:5.32 },
+  { date:"10.06.", text:"Vor 1,5 Jahren wusste @mindspiration_ nicht mit was sie ein Business starten kann…", views:835, engagement:5.03 },
+  { date:"18.06.", text:"Deine Follower-Zahl ist nicht gleich deine Expertise…", views:672, engagement:2.35 },
+  { date:"28.05.", text:"Du hast einen Funnel. Du hast eine Customer Journey. Trotzdem verkauft es sich nicht…", views:666, engagement:2.34 },
+  { date:"22.05.", text:"Kommentiere ANALYSE und hole dir dein kostenloses Profil-Audit…", views:592, engagement:0.95 },
 ];
 
 function renderRankRows(items, bodyId, maxViews) {
