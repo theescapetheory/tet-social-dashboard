@@ -433,7 +433,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
   </div>
 
   <!-- ── Feed/Reel Redaktionsplan ── -->
-  <div class="section-title">Redaktionsplan Feed · KW25 (16.–22. Juni 2026)</div>
+  <div class="section-title">Redaktionsplan Feed · KW26 (22.–28. Juni 2026)</div>
   <div class="cal-legend">
     <span><span class="cal-legend-dot" style="background:rgba(124,167,235,.6)"></span>Karussell</span>
     <span><span class="cal-legend-dot" style="background:rgba(225,48,108,.6)"></span>Reel ✅ fertig</span>
@@ -443,7 +443,7 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
   <div class="cal-week" id="feed-calendar"></div>
 
   <!-- ── Stories Redaktionsplan ── -->
-  <div class="section-title">Redaktionsplan Stories · KW25 (16.–22. Juni 2026)</div>
+  <div class="section-title">Redaktionsplan Stories · KW26 (22.–28. Juni 2026)</div>
   <div style="margin-bottom:16px;font-size:12px;color:var(--dim)">3–5 Stories/Tag · thematisch abgestimmt auf den Feed · Klicken zum Bearbeiten</div>
   <div class="story-week" id="story-calendar"></div>
 
@@ -663,13 +663,13 @@ footer{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify
 <script>
 // ── Calendar data ──
 const days = [
-  { name: 'Mo', date: '16. Jun', today: false },
-  { name: 'Di', date: '17. Jun', today: false },
-  { name: 'Mi', date: '18. Jun', today: false },
-  { name: 'Do', date: '19. Jun', today: false },
-  { name: 'Fr', date: '20. Jun', today: false },
-  { name: 'Sa', date: '21. Jun', today: false },
-  { name: 'So', date: '22. Jun', today: false },
+  { name: 'Mo', date: '22. Jun', today: true  },
+  { name: 'Di', date: '23. Jun', today: false },
+  { name: 'Mi', date: '24. Jun', today: false },
+  { name: 'Do', date: '25. Jun', today: false },
+  { name: 'Fr', date: '26. Jun', today: false },
+  { name: 'Sa', date: '27. Jun', today: false },
+  { name: 'So', date: '28. Jun', today: false },
 ];
 
 // Integrated plan: Reels from Asana + produced carousels from pipeline
@@ -680,47 +680,47 @@ const ASANA_PROJECT = '1205383636722371';
 const asanaLink = id => `https://app.asana.com/0/${ASANA_PROJECT}/${id}/f`;
 
 const feedPlan = [
-  // Mo 16.06 – Thema: Produkt & Preis
+  // Mo 22.06 – Thema: Systeme & Skalierung
   [
-    { type:'reel',     tag:'✅ Reel · fertig',              asanaId:'1215158818133838', text:'Warum dein Produkt nicht verkauft wird\n(04 AW · Alex W. · eigener Reel)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708448974723', text:'Pricing & Anchor-Pricing – Premium-Positionierung\nVideovorlage A · <a href="https://www.canva.com/d/TxC3z1kiCUa06Sj" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420582912', text:'CAC – Was dich ein Neukunde wirklich kostet\nA-Zahlenfolie · <a href="https://www.canva.com/d/_aQH4TzHFrlTvYB" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'reel',     tag:'✅ Reel · Ready to Post',        asanaId:'1215473868940522', text:'Nicht dich, sondern Systeme skalieren\n(02 AW · Alex W. · fertig zum Posten)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Engpass-Thema: Dein Business wächst bis zu seinem Engpass\nVorlage A · <a href="https://www.canva.com/d/YfrQ51hTgmtsQHP" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Belief-Reframe: Du stagnierst nicht wegen Wissen\nVorlage C · <a href="https://www.canva.com/d/OzFGGO4kONhFPtm" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
   ],
-  // Di 17.06 – FIX: SM-News Karussell (Anne) + Thema: Community & LTV
+  // Di 23.06 – Thema: Marketing & Ads
   [
-    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Claudio',   asanaId:'1203553368670457', text:'Social Media hat zwei Aufgaben – und die meisten wissen den Grund nicht\n(bereits aufgenommen · bei Claudio in Bearbeitung)' },
-    { type:'carousel', tag:'📌 Fix · Anne · Karussell',     asanaId:'1215708441334814', text:'SM-News KW25: Was dich als SM-Unternehmerin diese Woche bewegt\n(jede Woche Dienstag · von Anne)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708448974625', text:'LTV – Was dein Kunde wirklich wert ist\nc-Tribe · <a href="https://www.canva.com/d/Ry6BsDajknXAm0p" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Feinschnitt', asanaId:'1215886327519907', text:'Ads bringen nichts? Genau das Gegenteil\n"Die Frage, ob Ads noch was bringen, finde ich geil — weil das Gegenteil der Fall ist." · Alex 05.06.' },
+    { type:'carousel', tag:'📌 Fix · Anne · Karussell',     asanaId:'', text:'SM-News KW26: Was dich als SM-Unternehmerin diese Woche bewegt\n(jede Woche Dienstag · von Anne)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Skalierungs-Formel: Planbare Umsätze = Angebot × Sichtbarkeit × Konversion\nVideovorlage A · <a href="https://www.canva.com/d/HnCqXUiU7TJmwem" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
   ],
-  // Mi 18.06 – FIX: High-Performer-Reel (Sam) + Thema: Erfolg & Transformation
+  // Mi 24.06 – Thema: Vertrauen & Beziehung
   [
-    { type:'reel',     tag:'📌 Fix · Sam · High-Performer', asanaId:'1215710321829115', text:'High-Performer-Reel: Kundencase KW25\n(jede Woche Mittwoch · Sam erstellt)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708190920630', text:'Funnel-Conversion-Rate verbessern\nC-Texthook · <a href="https://www.canva.com/d/iwVuclCmD9DeUA-" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708190929659', text:'Positionierungs-Framework: 3 Säulen, die unterscheiden\n(Evergreen · gut speicherbar)' },
+    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Feinschnitt', asanaId:'1215886344848929', text:'Marketing ist wie Dating\n"Vertrauensaufbau ist eigentlich wie Dating." · Alex 05.06.' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Pricing: Warum dein Preis nie das eigentliche Problem ist\nVorlage A · <a href="https://www.canva.com/d/TjLiZEJNyJXm8JJ" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Community-Geschwindigkeit: Das richtige Umfeld verdoppelt dein Tempo\nVorlage c · <a href="https://www.canva.com/d/9WIj8dG4bv07ZDu" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
   ],
-  // Do 19.06 – Thema: Zahlen & ROI · PODCAST-SLOT 1
+  // Do 25.06 – Thema: Umsatz & Mindset · PODCAST-SLOT 1
   [
-    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast', asanaId:'1215759320763058', text:'Umsatz ist nicht Gewinn – was deine Zahlen wirklich sagen\n(#58 Reel 03 · Tayler · max. 2 Podcast/Woche)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420582816', text:'ROAS – Was Werbung wirklich kostet & bringt\nB-Tribe · <a href="https://www.canva.com/d/3ICH0Zf4N_pPwwx" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708190929723', text:'5 Zahlen, die du als Unternehmerin kennen musst\n(Zahlen-Evergreen · sehr gut speicherbar)' },
+    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast',  asanaId:'1215317487611341', text:'Skalierung bleibt Theorie, weil du der Bottleneck bist\n(#58 Reel 05 · Alex · Podcast-Slot 1/2)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Kommentar-CTA: "Kommentiere SYSTEM für die 3 Systeme…"\nVorlage C · <a href="https://www.canva.com/d/kfe2vsGbn6fMvnf" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Funnel-Metriken: Wo du wirklich Kunden verlierst\nVorlage A · <a href="https://www.canva.com/d/dvXp6I2dfvo4Aa5" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
   ],
-  // Fr 20.06 – FIX: Themen-Reel (Evelyn) + Thema: Wachstum & Sichtbarkeit
+  // Fr 26.06 – Thema: Umsetzung & Wissen
   [
-    { type:'reel',     tag:'📌 Fix · Evelyn · Themen-Reel', asanaId:'1215710315551445', text:'Themen-Reel KW25\n(jede Woche Freitag · Evelyn erstellt)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708299583444', text:'Wissen ist Gratis – Umsetzung kostet\nVideovorlage B · <a href="https://www.canva.com/d/5TxE7BYxMkI_a1i" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708299595133', text:'Wie ich meine Reichweite systematisch aufgebaut habe\n(How-To · passend zum Freitags-Thema)' },
+    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Feinschnitt', asanaId:'1215889175437708', text:'Du musst nichts Neues lernen\n"Du hast schon alles, was du brauchst." · Alex 10.06.' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'The Circle Community: Nicht für Kurse gebaut\nVideovorlage B · <a href="https://www.canva.com/d/SIioKC1OF_p21xs" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Brand Personality Alex: Aufgeben war keine Option\nVorlage C · <a href="https://www.canva.com/d/B9xPmNeVoMcel2J" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
   ],
-  // Sa 21.06 – Thema: Systeme & Skalierung · PODCAST-SLOT 2
+  // Sa 27.06 – Thema: Entscheidungen & Führung · PODCAST-SLOT 2
   [
-    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast', asanaId:'1215759320830896', text:'Systeme schaffen, die ohne dich laufen\n(#57 Reel 18 · Alex · max. 2 Podcast/Woche)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215707745828491', text:'Die 3 Skalierungshebel\nA-Zahlenfolie · <a href="https://www.canva.com/d/netpPVbK-psbsLD" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708420582752', text:'TET Circle: Warum die Community dein nächster Schritt ist\n(Tribe-CTA-Format)' },
+    { type:'reel',     tag:'✅ Reel · fertig · 🎙 Podcast',  asanaId:'1214891831333120', text:'Entscheidungen treffen als Unternehmer\n(#57 Reel 11 · Alex · Podcast-Slot 2/2)' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Delegation: Team als Hebel — wann du aufhörst, alles selbst zu machen\nVorlage A · <a href="https://www.canva.com/d/An3H6MzT4LC5UiF" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Netzwerk als Investition: The Circle\nVorlage B · <a href="https://www.canva.com/d/xQiszFpXp1ifh0b" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
   ],
-  // So 22.06 – Thema: Brand & Beziehung
+  // So 28.06 – Thema: Hochpreis & Warum selbstständig
   [
-    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Claudio',  asanaId:'1215759320830960', text:'Business automatisieren – aber die Beziehung zu Menschen behalten\n(Alex W. · bereits aufgenommen · bei Claudio in Bearbeitung)' },
-    { type:'carousel', tag:'🎬 Zu produzieren',             asanaId:'1215708448927252', text:'KW25-Wrap-Up: Das nehmen wir mit\n(leichtes persönliches Format · Sonntag)' },
-    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'1215708420535406', text:'Skalierungshebel – Wiederholung als Evergreen\nA-Zahlenfolie · <a href="https://www.canva.com/d/netpPVbK-psbsLD" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'reel-plan',tag:'⚙️ In Bearbeitung · Feinschnitt', asanaId:'1215889172170312', text:'Setz einen Preis, der dich selbst schockiert\n"Hab etwas absolut Hochpreisiges, von dem du nicht mal die Absicht hast, es zu verkaufen." · Alex 10.06.' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Top-10%-Unternehmer: Was sie anders machen\nVorlage C · <a href="https://www.canva.com/d/iLokYThVITLKBp1" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
+    { type:'carousel', tag:'Karussell · Canva ↗',           asanaId:'', text:'Wozu hast du dich selbstständig gemacht?\nVorlage c · <a href="https://www.canva.com/d/ZxIQkIJsIR0OPeK" target="_blank" style="color:var(--blue)">Design öffnen</a>' },
   ],
 ];
 
