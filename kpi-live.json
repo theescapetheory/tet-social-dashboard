@@ -1,0 +1,23 @@
+{
+  "configured": true,
+  "updated": "2026-06-25",
+  "fetchedAt": "2026-06-25T07:00:00+02:00",
+  "source": "seed — wird täglich von tet-daily-kpi überschrieben (Apify-Profil)",
+  "instagram": {
+    "configured": true,
+    "followers": 6510,
+    "following": null,
+    "posts": null,
+    "dailyDelta": null
+  },
+  "tiktok": {
+    "configured": true,
+    "followers": 53190
+  },
+  "youtube": {
+    "configured": true,
+    "channelName": "The Escape Theory",
+    "subscribers": 159,
+    "views": 192
+  }
+}

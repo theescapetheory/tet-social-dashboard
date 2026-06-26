@@ -117,8 +117,22 @@ function fmt(n) {
 }
 
 /* ─── KPI Cards ───────────────────────────────────────────────────────── */
+// Statische Tageszahlen (vom tet-daily-kpi-Task geschrieben, funktioniert auf GitHub Pages ohne Backend).
+// WICHTIG: relativer Pfad './kpi-live.json' (GitHub-Pages-Projektpfad — absolut wäre leer).
+async function loadStaticKPIs() {
+  try {
+    const res = await fetch('./kpi-live.json', { cache: 'no-store' });
+    if (!res.ok) return null;
+    const j = await res.json();
+    return (j && j.instagram && j.instagram.followers != null) ? j : null;
+  } catch { return null; }
+}
+
 async function loadKPIs() {
-  const data = await apiFetch('/api/kpis') ?? (() => { IS_DEMO = true; return DEMO_KPIS; })();
+  // Reihenfolge: 1) echte Tageszahlen (statisch) → 2) Live-Backend → 3) Demo
+  const data = await loadStaticKPIs()
+    ?? await apiFetch('/api/kpis')
+    ?? (() => { IS_DEMO = true; return DEMO_KPIS; })();
   lastKPIs = data;
 
   const notConfigured = !data.configured || IS_DEMO;
