@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-16",
-  "kw": 25,
+  "updated": "2026-06-26",
+  "kw": 26,
   "pillars": [
     {
       "id": "brand-personality",
@@ -10,19 +10,19 @@
       "ideas": [
         {
           "id": "bp-1",
-          "title": "Alex's härteste Erkenntnis",
+          "title": "Nicht das Wissen fehlt — die Sicherheit hält dich fest",
           "format": "Reel",
-          "hook": "Ich hab 3 Jahre versucht, ein besseres Angebot zu bauen. Bis ich gemerkt habe, dass das gar nicht das Problem war.",
-          "script": "Hook (Kamera, direkter Blick): Ich hab 3 Jahre versucht, ein besseres Angebot zu bauen. Bis ich gemerkt habe, dass das gar nicht das Problem war.\n\nKurze Pause, dann:\nDas Angebot war gut. Immer schon. Was gefehlt hat: Klarheit. Darüber, für wen ich das baue. Warum genau dieser Mensch. Warum jetzt.\n\nCut:\nWenn du heute kein Angebot verkaufst — dann liegt es nicht am Angebot. Es liegt daran, dass dein Gegenüber nicht sofort versteht, dass du genau für ihn da bist.\n\nAbschluss:\nDas ist das einzige, woran ich seitdem arbeite. Und seitdem läuft es.",
-          "why": "Hormozi-Muster: persönlicher Rückschlag-Hook mit Reframe. Top-Performer-Typ im Markt (18K+ Likes). Conversion-Story verpackt als persönliches Learning."
+          "hook": "Die meisten bleiben nicht stehen, weil ihnen das Wissen fehlt. Sie bleiben stehen, weil sie genau wissen, was als Nächstes kommt — und sich daran festklammern.",
+          "script": "Hook (Kamera, direkter Blick): Die meisten bleiben nicht stehen, weil ihnen das Wissen fehlt. Sie bleiben stehen, weil sie genau wissen, was als Nächstes kommt — und sich daran festklammern.\n\nKurze Pause:\nIch war da. Lieber das mittelmäßige Angebot, das ich kenne, als das bessere, das sich unsicher anfühlt.\n\nDas Problem ist nicht dein Können. Es ist die Sicherheit, die dich klein hält.\n\nDer Moment, in dem es bei mir kippte: als ich aufgehört habe zu fragen ‚Was, wenn es schiefgeht?‘ — und angefangen habe zu fragen ‚Was kostet es mich, wenn ich bleibe, wo ich bin?‘.\n\nAbschluss: Wenn dich dieser Satz trifft — kommentiere 222, dann schicke ich dir den Zugang zu unserer Community.",
+          "why": "Belief-Reframe-Hook (Brandon Dawson, 5.407 Likes auf Image): eine innere Blockade umbenennen schlägt jeden Tipp. KW26-Top-Muster."
         },
         {
           "id": "bp-2",
-          "title": "Der Moment, der alles verändert hat",
+          "title": "Dein Business stoppt an seinem Engpass — meiner war ich selbst",
           "format": "Reel",
-          "hook": "Es gibt einen Moment, an dem du aufhörst, ein Unternehmer zu sein — und anfängst, eines zu führen.",
-          "script": "Hook: Es gibt einen Moment, an dem du aufhörst, ein Unternehmer zu sein — und anfängst, eines zu führen.\n\nAlex erzählt: Für mich war das [konkreter Moment einsetzen — erster Mitarbeiter? Erster Launch? Erste 10K?]. Davor war ich Selbstständiger mit Ambitionen. Danach war ich Gründer mit Verantwortung.\n\nWas sich ändert:\nDu entscheidest nicht mehr nur für dich. Du denkst nicht mehr in Wochen. Du hörst auf zu optimieren — und fängst an zu skalieren.\n\nCTA:\nWann war dieser Moment bei dir? Schreib es in die Kommentare.",
-          "why": "Brandon Dawson-Muster: persönliche Geschichte mit Zahl/konkretem Moment. 22.738 Likes im Markt für diesen Typ Hook."
+          "hook": "Jedes Business wächst bis zu seinem Engpass und stoppt dort. Bei mir war der Engpass lange nicht das Angebot. Es war ich.",
+          "script": "Hook: Jedes Business wächst bis zu seinem Engpass und stoppt dort. Bei mir war der Engpass lange nicht das Angebot. Es war ich.\n\nIch habe an Funnels gefeilt, an Ads, an Foliendesign. Alles, nur nicht an der einen Sache, die wirklich klemmte: Ich habe nicht losgelassen.\n\nSolange alles über meinen Tisch lief, konnte das Business nur so groß werden wie mein Kalender.\n\nDer Wendepunkt war nicht mehr Aufwand. Es war ein System, das ohne mich läuft — und in dem ich trotzdem die Kontrolle behalte.\n\nAbschluss: Frag dich ehrlich, was gerade dein echter Engpass ist. Willst du ihn mit uns anschauen — kommentiere ANALYSE.",
+          "why": "Engpass-/Constraint-Framing ist KW26 Hormozis stärkstes Business-Format. Persönlich erzählt + TET-Marker ‚System installieren / Kontrolle behalten‘."
         }
       ]
     },
@@ -34,19 +34,19 @@
       "ideas": [
         {
           "id": "au-1",
-          "title": "Die zwei Zahlen, die zählen",
+          "title": "Die Formel, die entscheidet, ob du skalierst",
           "format": "Reel",
-          "hook": "Du misst die falschen Zahlen. Ich zeig dir, welche zwei Kennzahlen entscheiden, ob dein Business wächst oder stirbt.",
-          "script": "Hook: Du misst die falschen Zahlen. Ich zeig dir, welche zwei Kennzahlen entscheiden, ob dein Business wächst oder stirbt.\n\nZahl 1: Conversion Rate — wie viele Gespräche werden zu Kunden? Unter 30%? Du hast ein Angebotsproblem, kein Traffic-Problem.\n\nZahl 2: Average Client Value (ACV) — was verdienst du pro Kunde über 12 Monate? Unter 2.000 €? Du hast ein Preis-Problem, kein Sales-Problem.\n\nAbschluss: Wer diese zwei Zahlen kennt und optimiert, braucht keinen teuren Funnel. Wer sie nicht kennt, wirft Geld in Ads und fragt sich, warum nichts funktioniert.",
-          "why": "Hormozi-Muster 'The two decisions that drive most value' (9.840 Likes). Zahlen + konkrete Schwellenwerte = Autorität ohne Blabla."
+          "hook": "Skalierung ist keine Magie. Es ist eine Formel: Angebot × Reichweite × Konversion. Schwächel an einer Stelle — und das ganze Ergebnis bricht ein.",
+          "script": "Hook: Skalierung ist keine Magie. Es ist eine Formel: Angebot × Reichweite × Konversion. Schwächel an einer Stelle — und das ganze Ergebnis bricht ein.\n\nAngebot: Wenn dein Gegenüber nicht in 10 Sekunden versteht, warum gerade du — hast du ein Angebotsproblem, kein Reichweitenproblem.\n\nReichweite: Drei Formate, konsequent, jede Woche. Nicht zehn halbherzig.\n\nKonversion: Unter 30 Prozent deiner Gespräche werden zu Kunden? Dann liegt es am Gespräch, nicht am Traffic.\n\nAbschluss: Multipliziert, nicht addiert. Eine Null an einer Stelle macht das Ergebnis null. Welche Stelle ist bei dir die Null — kommentiere 222 für die Community, in der wir genau das auseinandernehmen.",
+          "why": "Business-Formel als Hook (Hormozi ‚Volume × Leverage = Output‘, KW26). Einfach, einprägsam, shareworthy — Autorität ohne Floskel."
         },
         {
           "id": "au-2",
-          "title": "Kommentiere PLAN",
-          "format": "Reel",
-          "hook": "Hinter jedem 6-stelligen Coaching-Business steht ein System — hier sind die 7 Schritte.",
-          "script": "Hook: Hinter jedem 6-stelligen Coaching-Business steht ein System — hier sind die 7 Schritte.\n\nSchritt 1: Nische schärfen — nicht 'Coaches', sondern 'Female Coaches im deutschsprachigen Raum, die 3–10K/Monat anstreben'.\nSchritt 2: Angebot positionieren — nicht 'Ich helfe dir', sondern 'In 90 Tagen zu deinen ersten 5K — oder Geld zurück'.\nSchritt 3: Organisches Content-System — 3 Formate, 7 Tage, automatisiert.\n[...weitere Schritte als Teaser...]\n\nCTA: Kommentiere 'PLAN' in die Kommentare — ich schicke dir die komplette Checkliste.",
-          "why": "Marco Corallo + Dan Henry-Muster: Kommentiere-X-CTA erzeugt bis zu 10x mehr Kommentare = Reach-Boost durch IG-Algo."
+          "title": "Dein ROAS feiert. Dein Konto nicht.",
+          "format": "Karussell",
+          "hook": "Dein ROAS feiert. Dein Konto nicht. Wenn die Zahl im Werbekonto super aussieht, das Geld aber nicht ankommt, misst du das Falsche.",
+          "script": "Cover: Dein ROAS feiert. Dein Konto nicht.\n\nSlide 2: Eine schöne Werbe-Kennzahl ist kein Gewinn. Sie ist eine Hoffnung mit Nachkommastelle.\nSlide 3: Was wirklich zählt: Was bleibt nach allen Kosten pro Kunde übrig — über 12 Monate?\nSlide 4: Wenn ein Kunde dich mehr im Drumherum kostet, als er bringt, skalierst du ein Minus.\nSlide 5: Erst das Angebot und der Wert pro Kunde. Dann erst mehr Reichweite. Nie umgekehrt.\nSlide 6: Merksatz — Reichweite verstärkt nur das, was schon da ist. Auch das Loch.\n\nLetzte Slide: Willst du wissen, ob deine Zahlen wirklich tragen — kommentiere ANALYSE.",
+          "why": "DU-Ansprache + Spannung Wahrnehmung↔Realität (top-performer-learnings #4). Konkrete Aussage statt abstrakter Kennzahl-Lehrstunde."
         }
       ]
     },
@@ -58,19 +58,19 @@
       "ideas": [
         {
           "id": "tr-1",
-          "title": "Kundengeschichte mit Zahl",
+          "title": "8 Monate festgesteckt — dann der erste 5K-Monat",
           "format": "Reel",
-          "hook": "[Kundenname] hat 8 Monate lang alles versucht. In 6 Wochen bei uns hat sie ihren ersten 5K-Monat geknackt.",
-          "script": "Hook: [Name] hat 8 Monate lang alles versucht. In 6 Wochen bei uns hat sie ihren ersten 5K-Monat geknackt.\n\nDas war ihr Ausgangspunkt: [kurze Situation — 2 Sätze, kein Drama].\nDas erste, was wir geändert haben: [konkrete Maßnahme — 1 Satz].\nDas zweite: [konkrete Maßnahme].\nDas dritte: [konkrete Maßnahme].\n\nWoche 6: Erster Abschluss. Dann noch einer. Dann noch einer.\n\nAbschluss: Das Einzige, was sich geändert hat: Sie wusste endlich, wen sie anspricht — und mit welchen Worten.\n\nCTA: Wenn du weißt, dass du das auch kannst, aber nicht weißt wie — schreib mir 'READY' in die DM.",
-          "why": "Cardone/Dawson-Muster: Gleiche Aussage mit konkreter Person + Zahl performt 5x besser als abstrakte These. Trust-Beweis durch Story statt Behauptung."
+          "hook": "Sie hat 8 Monate alles versucht. In 6 Wochen bei uns hat sie ihren ersten 5.000-Euro-Monat geknackt. Geändert hat sich nicht ihr Fleiß.",
+          "script": "Hook: Sie hat 8 Monate alles versucht. In 6 Wochen bei uns hat sie ihren ersten 5.000-Euro-Monat geknackt. Geändert hat sich nicht ihr Fleiß.\n\nAusgangspunkt: gutes Angebot, viel Arbeit, kaum Abschlüsse. Klingt vertraut?\n\nDas Erste, was wir geändert haben: für wen genau sie da ist — in einem Satz, der sitzt.\nDas Zweite: das Angebot so benennen, dass der Wert sofort klar ist.\nDas Dritte: ein einfaches Gesprächs-System statt Bauchgefühl.\n\nWoche 6: der erste Abschluss. Dann der nächste.\n\nAbschluss: Sie wusste endlich, wen sie anspricht — und mit welchen Worten. Wenn du das auch suchst, kommentiere ANALYSE.",
+          "why": "Kundenstory mit Name/Gesicht + €-Sprung schlägt jede abstrakte Theorie (top-performer-learnings: @mindspiration 17–20 Likes vs. 1–2). KW26 Cardone/Dawson-Muster."
         },
         {
           "id": "tr-2",
-          "title": "Transparenz-Reel: Was wir wirklich tun",
+          "title": "Für wen The Escape Theory NICHT ist",
           "format": "Reel",
-          "hook": "Die meisten wissen nicht, was in unserem Programm eigentlich passiert. Ich zeig dir es — ungeschminkt.",
-          "script": "Hook: Die meisten wissen nicht, was in unserem Programm eigentlich passiert. Ich zeig dir es — ungeschminkt.\n\nWoche 1: Keine Strategie, kein Plan. Erst mal: Wer bist du wirklich, wen willst du wirklich helfen?\nWoche 2–4: Angebot, Wording, Preispunkt — alles schärfen, bis es sitzt.\nWoche 5–8: Erste Gespräche. Erste Abschlüsse. Erste echte Zahlen.\n\nWas wir NICHT tun: Kein copy-paste Funnel. Keine 47 Templates. Keine Versprechen, die wir nicht halten können.\n\nAbschluss: Wenn das klingt wie das, was du gesucht hast — du weißt wo du mich findest.",
-          "why": "Anti-Guru-Pattern von Dan Henry: Transparenz + klare Abgrenzung von 'lazy promises' baut Vertrauen bei der DACH-Zielgruppe (38–44, weiblich, skeptisch)."
+          "hook": "Ich sage dir lieber, für wen unser Programm NICHT ist. Das ist ehrlicher als jeder Verkaufstext.",
+          "script": "Hook: Ich sage dir lieber, für wen unser Programm NICHT ist. Das ist ehrlicher als jeder Verkaufstext.\n\nNicht für dich, wenn du ein fertiges System suchst, das du nur ausrollen musst — das gibt es nicht, und wer es verspricht, lügt.\nNicht für dich, wenn du nicht bereit bist, dein Angebot zu hinterfragen.\n\nFür dich, wenn du weißt, dass du echten Wert lieferst — aber noch nicht das richtige Geld dafür bekommst.\nFür dich, wenn du einen Partner willst, der dir sagt, was ist — nicht, was du hören willst. Ohne feste Laufzeit, du behältst die Kontrolle.\n\nAbschluss: Wenn du gerade nickst, weißt du, was zu tun ist — kommentiere ANALYSE.",
+          "why": "Disqualifikations-Hook + ‚du behältst die Kontrolle, ohne Laufzeit‘ — zwei Kern-Marker aus tet-sprach-container.md. Negative Selektion baut Vertrauen bei der skeptischen DACH-Zielgruppe."
         }
       ]
     },
@@ -82,19 +82,19 @@
       "ideas": [
         {
           "id": "bc-1",
-          "title": "7 Lektionen aus X Monaten TET",
-          "format": "Karussell",
-          "hook": "Wir sind [X] Monate alt. Das haben wir in dieser Zeit gelernt — und was wir uns heute wünschen, dass uns das jemand früher gesagt hätte.",
-          "script": "Cover: Wir sind [X] Monate alt. 7 Dinge, die wir gelernt haben.\n\nSlide 2: 1. Zielgruppe schlägt Angebot. Immer.\nSlide 3: 2. Weniger Formate, mehr Konsistenz.\nSlide 4: 3. Team-Kultur ist Content-Strategie.\nSlide 5: 4. Der beste Hook ist deine ehrliche Meinung.\nSlide 6: 5. Kein Funnel rettet ein unklares Angebot.\nSlide 7: 6. Community first, dann Conversion.\nSlide 8: 7. [Persönliche Lektion von Alex einsetzen]\n\nLetzte Slide: Was davon trifft dich gerade am meisten? Kommentiere unten.",
-          "why": "Marco Corallo 'Heute wird mein Sohn 2. 7 Lektionen...' — 108 Likes auf Account mit wenig Reach. Persönliche Milestone-Posts schlagen reine Tipps bei Engagement."
+          "title": "Dein Umfeld entscheidet schneller als jede Taktik",
+          "format": "Reel",
+          "hook": "Die ehrlichste Abkürzung, die ich kenne: Umgib dich mit Leuten, für die dein heutiges Ziel längst normal ist. Dann wird es auch für dich normal.",
+          "script": "Hook: Die ehrlichste Abkürzung, die ich kenne: Umgib dich mit Leuten, für die dein heutiges Ziel längst normal ist. Dann wird es auch für dich normal.\n\nIch habe jahrelang an Taktiken gefeilt und das Wichtigste übersehen: Mit wem ich jeden Tag rede, formt, was ich für möglich halte.\n\nIn einem Raum, in dem 5K-Monate Alltag sind, hörst du auf, sie für groß zu halten — und fängst an, sie zu bauen.\n\nGenau dafür gibt es The Circle: unsere kostenlose Community, in der genau diese Leute sind.\n\nAbschluss: Willst du rein — kommentiere 222, dann schicke ich dir den Zugang.",
+          "why": "Team-/Umfeld-Content ist KW26 der klare Top-Performer (Hormozi 13.391 Likes: Umfeld schlägt reine Taktik). Führt organisch zu The Circle (222)."
         },
         {
           "id": "bc-2",
-          "title": "Behind-the-Scenes: So sieht unser Montag aus",
+          "title": "So sieht ein Montag bei uns wirklich aus",
           "format": "Reel",
-          "hook": "Montag bei The Escape Theorie. Kein Bullshit, kein inszenierter Workspace.",
-          "script": "Hook (Kamera läuft, normaler Büro/Home-Office-Moment): Montag bei The Escape Theorie. Kein Bullshit, kein inszenierter Workspace.\n\nB-Roll: Team-Calls, Laptop-Screens, Kaffee, Post-its — was auch immer echt ist.\n\nAlex (oder Anne) als Voice-Over: Wir starten jeden Montag mit einer Frage: Was hat letzte Woche funktioniert, was hat nicht funktioniert — und warum?\n\nKeine langen Meetings. Keine unnötigen Entscheidungen. Nur: Was brauchen unsere Kunden diese Woche?\n\nAbschluss: Das ist unsere Routine. Langweilig? Vielleicht. Effektiv? Definitiv.",
-          "why": "Digitale Safari-Muster: authentische Einblicke ins Arbeiten performen im DACH-Markt deutlich besser als hochproduzierten 'Lifestyle'-Content."
+          "hook": "Montag bei The Escape Theory. Kein inszenierter Workspace, kein Bullshit — nur die eine Frage, mit der wir jede Woche starten.",
+          "script": "Hook (Kamera läuft, echter Büromoment): Montag bei The Escape Theory. Kein inszenierter Workspace, kein Bullshit — nur die eine Frage, mit der wir jede Woche starten.\n\nB-Roll: Team-Call, Laptops, Kaffee, Notizen.\n\nVoice-Over: Jeder Montag beginnt mit derselben Frage — was hat letzte Woche funktioniert, was nicht, und warum?\n\nKeine endlosen Meetings. Eine Entscheidung: Was brauchen unsere Leute diese Woche wirklich?\n\nAbschluss: Diese Denke teilen wir alle 14 Tage offen im Business Breakfast in unserer Community. Kommentiere 222, wenn du dabei sein willst.",
+          "why": "Authentische Einblicke performen im DACH-Markt deutlich besser als Hochglanz (Digitale Safari-Muster). Bindet Circle/Business Breakfast (222) ein."
         }
       ]
     },
@@ -106,19 +106,19 @@
       "ideas": [
         {
           "id": "co-1",
-          "title": "Was es dich kostet, es nicht zu tun",
+          "title": "Was es dich kostet, es NICHT zu tun",
           "format": "Reel",
-          "hook": "Du fragst dich, ob du dir TET leisten kannst. Ich frag dich: Was kostet dich jeder Monat, in dem du es nicht tust?",
-          "script": "Hook: Du fragst dich, ob du dir TET leisten kannst. Ich frag dich: Was kostet dich jeder Monat, in dem du es nicht tust?\n\nRechnung:\nWenn du heute 2.000 € im Monat machst und das Ziel 5.000 € sind — das sind 3.000 € Differenz. Pro Monat. Den du gerade liegenlässt.\n\n6 Monate Zögern = 18.000 €, die nicht auf deinem Konto gelandet sind.\n\nIch sag das nicht, um dich unter Druck zu setzen. Ich sag es, weil ich diesen Gedankengang selbst zu lange ignoriert habe.\n\nCTA: Wenn du bereit bist zu rechnen — Link in Bio.",
-          "why": "Dan Henry-Muster: direkte Opportunity-Cost-Rechnung. Conversion-Hook ohne manipulative Taktiken, aber mit klarer Zahlen-Logik."
+          "hook": "Du fragst dich, ob du dir Begleitung leisten kannst. Ich frage dich: Was kostet dich jeder Monat, in dem du es nicht tust?",
+          "script": "Hook: Du fragst dich, ob du dir Begleitung leisten kannst. Ich frage dich: Was kostet dich jeder Monat, in dem du es nicht tust?\n\nKurze Rechnung: Du machst heute 2.000 im Monat, dein Ziel sind 5.000. Das sind 3.000 Differenz — jeden Monat, den du liegen lässt.\n\nSechs Monate Zögern sind 18.000, die nie auf deinem Konto gelandet sind.\n\nIch sage das nicht für Druck. Ich sage es, weil ich diesen Gedanken selbst zu lange weggeschoben habe.\n\nAbschluss: Wenn du bereit bist, ehrlich zu rechnen — kommentiere ANALYSE, dann schauen wir gemeinsam auf deine Zahlen.",
+          "why": "Opportunity-Cost-Rechnung (Dan Henry-Muster): klare Zahlen-Logik statt Manipulation. Fester CTA ANALYSE → Strategiegespräch."
         },
         {
           "id": "co-2",
-          "title": "Für wen TET ist — und für wen nicht",
-          "format": "Reel",
-          "hook": "Ich sage dir gerade, für wen unser Programm NICHT ist. Weil das ehrlicher ist als jeder Sales-Call.",
-          "script": "Hook: Ich sage dir gerade, für wen unser Programm NICHT ist. Weil das ehrlicher ist als jeder Sales-Call.\n\nNicht für dich, wenn:\n— Du nach einem fertigen System suchst, das du nur noch ausrollen musst.\n— Du keine Zeit hast, wirklich zu arbeiten.\n— Du nicht bereit bist, dein Angebot zu hinterfragen.\n\nFür dich, wenn:\n— Du weißt, dass du etwas Wertvolles anbietest — aber noch nicht weißt, wie du dafür das richtige Geld bekommst.\n— Du bereit bist, 90 Tage lang konsequent an einem Ziel zu arbeiten.\n— Du einen Partner willst, der sagt, was ist — nicht, was du hören willst.\n\nWenn du jetzt nickst — du weißt, was zu tun ist.",
-          "why": "Negative Selektion als Trust-Signal: 'Ich sage dir, wer ich nicht bin' ist Anti-Guru-Pattern (Dan Henry). Filtert schlechte Leads raus + baut echtes Vertrauen bei der richtigen Zielgruppe."
+          "title": "Dein Problem ist nicht die Reichweite",
+          "format": "Karussell",
+          "hook": "Dein Problem ist nicht zu wenig Reichweite. Dein Problem ist, dass die Leute, die dich sehen, nicht sofort verstehen, dass du für genau sie da bist.",
+          "script": "Cover: Dein Problem ist nicht die Reichweite.\n\nSlide 2: Mehr Follower retten kein unklares Angebot. Sie machen die Unklarheit nur sichtbarer.\nSlide 3: Wenn ‚Ich helfe Coaches‘ dein Satz ist, hört dein Wunschkunde: ‚nicht speziell für mich‘.\nSlide 4: Klarheit heißt: ein Mensch, ein Ergebnis, ein Zeitrahmen — in einem Satz.\nSlide 5: Erst wenn der sitzt, wird aus Reichweite Umsatz.\nSlide 6: Merksatz — Reichweite verstärkt Klarheit. Oder Verwirrung.\n\nLetzte Slide: Willst du diesen einen Satz mit uns schärfen — kommentiere ANALYSE.",
+          "why": "‚Dein Problem ist nicht X, sondern Y‘-Reframe — Kern-Marker aus tet-sprach-container.md. Conversion-Logik ohne Pitch-Ton, fester CTA ANALYSE."
         }
       ]
     }
