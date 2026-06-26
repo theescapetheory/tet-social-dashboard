@@ -422,7 +422,16 @@ async function loadWeekPlan() {
   canvaLinks = await apiFetch('/api/canva-links') ?? {};
 
   // Load Asana tasks
-  const asanaData = await apiFetch(`/api/asana/tasks?week=${weekOffset}`);
+  // Zuerst statische asana-live.json (vom tet-daily-kpi geschrieben, GitHub-Pages-tauglich, relativer Pfad),
+  // dann Live-Backend, dann Demo. So spiegelt das Dashboard 1:1 den echten Asana-Redaktionsplan.
+  let asanaData = null;
+  if (weekOffset === 0) {
+    try {
+      const r = await fetch('./asana-live.json', { cache: 'no-store' });
+      if (r.ok) { const j = await r.json(); if (Array.isArray(j?.tasks)) asanaData = j; }
+    } catch {}
+  }
+  asanaData = asanaData ?? await apiFetch(`/api/asana/tasks?week=${weekOffset}`);
   let asanaTasks = asanaData?.tasks ?? [];
 
   // Demo: inject sample tasks for current week
