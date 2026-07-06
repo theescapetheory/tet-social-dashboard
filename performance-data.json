@@ -1,40 +1,38 @@
 {
-  "updated": "2026-06-21",
-  "kw": 26,
+  "updated": "2026-07-06",
+  "kw": 28,
   "account": "the_escapetheory",
-  "period": "letzte 7 Tage bis 21.06.2026",
-  "goal": { "metric": "Follower", "target": 10000, "current": 6510 },
+  "period": "Live-Scan 06.07.2026 (letzter belastbarer Stand davor: KW26, 21.06.)",
+  "goal": { "metric": "Follower", "target": 10000, "current": 6533 },
   "forecast": {
-    "weeklyGrowthNet": 12,
+    "weeklyGrowthNet": 11,
     "trend": "flat",
-    "gapToGoal": 3490,
-    "etaWeeksCurrentPace": 291,
-    "etaLabelCurrentPace": "ca. 5–6 Jahre",
-    "neededWeeklyGrowth6Months": 135,
-    "neededWeeklyGrowth12Months": 68,
-    "verdict": "Netto +12 Follower in der Woche — minimal über dem Vorwochen-Stillstand, aber weit unter Ziel-Tempo. Die Reichweite ist da, das Engagement pro Post (Ø 7 Likes) nicht. Strategie-Entscheidung: Das Volumen wird NICHT gesenkt, sondern auf 2 Wheels + 2 Karussells/Tag erhöht — der bewusste Hebel ist die Hook-Qualität auf Slide 1. Jedes Karussell soll das Niveau der eigenen Top-Beiträge treffen (z.B. der ~1.900-Views-Beitrag), statt generischer Value-Slides mit 1–2 Likes.",
-    "confidence": "mittel — Follower-Stand und Post-Engagement live via Apify bestätigt; Reichweite/Impressionen nicht frisch gemessen (letzter Metricool-Wert), Reel-Views in basicData nicht enthalten"
+    "gapToGoal": 3467,
+    "etaWeeksCurrentPace": 324,
+    "etaLabelCurrentPace": "ca. 6 Jahre",
+    "neededWeeklyGrowth6Months": 133,
+    "neededWeeklyGrowth12Months": 67,
+    "verdict": "Netto +23 Follower in 15 Tagen (Urlaubsfenster) = ~+11/Woche, praktisch unverändert zu KW26. Das Tempo trägt das 10K-Ziel weiterhin NICHT (ETA ~6 Jahre). Wichtigster Live-Befund: Die Follow-Conversion-These ist bestätigt — die 10 echten Posts der letzten Woche holen zusammen nur 33 Likes und 5 Kommentare, Reels laufen bei Ø 99 Views. Das Problem ist nicht die Kadenz, sondern dass die Hooks weder Reichweite noch Follows erzeugen. Priorität bleibt: Hook-Qualität auf Slide 1 auf Benchmark-Niveau (der ~1.900-Views-Post) heben, statt generischer Zwei-Satz-Value-Slides.",
+    "confidence": "hoch fuer Follower-Stand + Post-Engagement (Apify-Livescan 06.07., 12 letzte Posts, davon 10 real). Reichweite/Impressionen nicht frisch gemessen (kein Metricool-Report); die 2 gepinnten Alt-Posts von 2024 wurden aus der Wochen-Auswertung ausgeschlossen."
   },
   "kpis": [
-    { "label": "Follower", "value": "6.510", "delta": 0.18, "deltaAbs": "+12 / Woche", "good": false, "note": "leichter Aufwärtstrend, aber 5–6 Jahre bis 10K beim aktuellen Tempo" },
-    { "label": "Ø Likes / Post", "value": "7", "delta": -30.0, "good": false, "note": "175 Likes auf 25 Posts — die Hooks holen die vorhandene Reichweite nicht ab" },
-    { "label": "Ø Kommentare / Post", "value": "0,4", "delta": 0, "good": false, "note": "trotz 'Kommentiere 222/ANALYSE' auf fast jedem Post — CTAs zünden nicht" },
-    { "label": "Posting-Kadenz", "value": "Ziel: 4 / Tag", "delta": 0, "good": true, "note": "2 Wheels + 2 Karussells/Tag — Volumen bleibt hoch, Qualität der Hooks wird der Hebel" },
-    { "label": "Top-Format SM-News", "value": "21 Likes", "delta": 0, "good": true, "note": "SM-News der Woche ist der verlässlichste Reichweiten-Hit" },
-    { "label": "Kundenstories", "value": "17–20 Likes", "delta": 0, "good": true, "note": "@mindspiration-Stories schlagen jedes abstrakte Value-Karussell" }
+    { "label": "Follower", "value": "6.533", "delta": 0.35, "deltaAbs": "+23 seit 21.06. (~+11/Woche)", "good": false, "note": "Urlaubsfenster ueberbrueckt, Tempo unveraendert flach — ~6 Jahre bis 10K beim aktuellen Wachstum" },
+    { "label": "Ø Likes / Post", "value": "3,3", "delta": -52.9, "good": false, "note": "33 Likes auf 10 reale Posts (30.06.-04.07.) — noch niedriger als KW26 (Ø 7). Hooks holen keine Reichweite ab" },
+    { "label": "Ø Kommentare / Post", "value": "0,5", "delta": 0, "good": false, "note": "5 Kommentare auf 10 Posts trotz Keyword-CTA auf fast jedem Beitrag — CTAs zuenden weiter nicht" },
+    { "label": "Ø Reel-Views", "value": "99", "delta": 0, "good": false, "note": "5 Reels = 497 Views gesamt, Bestwert 245. Discovery-Motor springt nicht an" },
+    { "label": "Karussell vs. Reel", "value": "K 2,8 / R 3,8 Likes", "delta": 0, "good": false, "note": "Beide Formate flach; kein Format bricht diese Woche durch — kein SM-News/Kundenstory-Peak im Fenster" },
+    { "label": "Posting-Kadenz", "value": "hoch gehalten", "delta": 0, "good": true, "note": "trotz Urlaub durchgaengig gepostet (Karussells + Reels taeglich) — Volumen ist da, Qualitaet der Hooks ist der Engpass" }
   ],
   "working": [
-    { "title": "SM-News der Woche ist das Zugpferd", "detail": "Das wiederkehrende News-Format bricht als einziges Karussell verlässlich durch — Nutzwert + Aktualität erzeugen Saves und das höchste Like-Niveau im Feed.", "evidence": "SM-News 09.06. = 21 Likes, SM-News 16.06. = 17 Likes (Top 2 aller Karussells)" },
-    { "title": "Echte Kundenstories mit Gesicht schlagen abstrakte Theorie", "detail": "Social Proof mit Name und Person zieht deutlich mehr als jedes CAC/LTV/Stundenwert-Karussell. Beleg: Menschen folgen Menschen, nicht Frameworks.", "evidence": "@mindspiration Celebration 17 Likes, @mindspiration Story-Reel 20 Likes vs. 1–2 Likes bei Value-Karussells" },
-    { "title": "Starke, ehrliche Hooks tragen weit", "detail": "Beiträge mit echtem Mehrwert-Versprechen statt Lehrbuch-Hook reißen aus — genau dieses Muster gilt es jetzt auf JEDES Karussell zu übertragen.", "evidence": "Benchmark: der Beitrag 'was wir dir eigentlich sagen sollten, aber auf Social Media zu kurz kommt' mit über 1.900 Views" }
+    { "title": "Bestes Einzelstueck der Woche: Reel mit klarem Pain-Hook", "detail": "Das reichweitenstaerkste reale Stueck war ein Reel (245 Views) — deutlich ueber dem Reel-Schnitt von 99. Bewegter Pain-Hook schlaegt statische Value-Slides auch in einer insgesamt schwachen Woche.", "evidence": "Top-Reel 245 Views vs. Ø 99 Views ueber 5 Reels; bestes Karussell nur 7 Likes" },
+    { "title": "Ads-Tracking-Schmerzthema zieht das beste Karussell", "detail": "Das staerkste Karussell (7 Likes) hatte den Hook 'Bist du auch genervt vom Ads-Tracking, das dir eigentlich gar nichts sagt?' — konkretes, benanntes Alltags-Aergernis + Du-Ansprache statt abstrakter Theorie.", "evidence": "Karussell 03.07. = 7 Likes (Bestwert der Woche) vs. 0-2 Likes bei 'Umsatzproblem'/'10.000 Follower Null Anfragen'-Karussells" }
   ],
   "fixing": [
-    { "priority": 1, "title": "Slide-1-Hooks auf Top-Performer-Niveau heben", "detail": "Der zentrale Hebel: Jeder Cover-Hook muss das Niveau eurer besten Beiträge treffen (z.B. der ~1.900-Views-Post). Weg von Lehrbuch-Slides ('CONVERSION RATE', 'ROAS') hin zu Provokation + DU-Ansprache + Spannung Wahrnehmung↔Realität. Kalibrierung über outputs/escape-theorie/top-performer-learnings.md + reference/tet-hook-beispiele.md.", "impact": "hoch", "effort": "mittel" },
-    { "priority": 2, "title": "Aus den eigenen Gewinner-Formaten systematisch lernen", "detail": "SM-News (Dienstag) bleibt fix + fester Wochen-Slot 'Kundenstory mit Gesicht' (mindspiration-Niveau). Diese zwei Formate brechen aktuell als einzige durch — ihre Hook-/Aufbau-Muster auf die ganze Woche übertragen. Mind. 2 der Wochen-Karussells = Kundenstories.", "impact": "hoch", "effort": "mittel" },
-    { "priority": 3, "title": "Volumen halten/erhöhen: 2 Wheels + 2 Karussells pro Tag", "detail": "Frequenz bleibt bewusst hoch. Wheels (Reels) sind der Discovery-Motor für Nicht-Follower-Reichweite — täglich 2 Wheels (authentisch, Trending-Audio, harter 2-Sek-Hook) neben 2 Karussells. Wichtig: Qualität pro Stück hochhalten, nicht Menge gegen Qualität ausspielen.", "impact": "hoch", "effort": "mittel" },
-    { "priority": 4, "title": "Follow-Conversion am Profil reparieren", "detail": "Reichweite ist da, konvertiert aber nicht. Letzte Karussell-Slide IMMER mit 'Folge @the_escapetheory für …' + konkretem Grund. Highlights als Beweis-Wand (Kundenergebnisse) ganz vorne. Bio aktiv auf den Follow ausrichten.", "impact": "hoch", "effort": "niedrig" },
-    { "priority": 5, "title": "Die toten 'Kommentiere 222/ANALYSE'-CTAs ersetzen", "detail": "Diese Keyword-CTAs erzeugen ~0 Kommentare und wirken wie Spam. Ersetzen durch EINE echte, einfache Frage pro Post, die zum Antworten einlädt. Lieber 1 ehrlicher Kommentar-Trigger als 25 ignorierte.", "impact": "mittel", "effort": "niedrig" },
-    { "priority": 6, "title": "TikTok-Entscheidung treffen", "detail": "53K Follower, aber 96% Asien — keine DACH-Überschneidung, faktisch brach. Entweder bewusst DACH-Wheels dort spiegeln oder offiziell deprioritisieren.", "impact": "niedrig", "effort": "niedrig" }
+    { "priority": 1, "title": "Slide-1-Hooks auf Benchmark-Niveau — der Engpass ist bestaetigt", "detail": "Live belegt: 10 Posts, 33 Likes. Die generischen Zwei-Satz-Hooks ('Dein Umsatzproblem ist kein Tool-Problem', '10.000 Follower. Null Anfragen.') holen 0-2 Likes. Jeder Cover-Hook muss an Annes ~1.900-Views-Benchmark und den bestaetigten Mustern in top-performer-learnings.md kalibriert werden: das sonst Ungesagte versprechen, Aktualitaet + 'betrifft dich', benanntes Alltags-Aergernis (wie der Ads-Tracking-Hook, der diese Woche gewann).", "impact": "hoch", "effort": "mittel" },
+    { "priority": 2, "title": "Gewinner-Formate zurueckholen: SM-News + Kundenstory", "detail": "Im Live-Fenster fehlte beides — kein SM-News-Karussell, keine Kundenstory mit Gesicht. Genau diese zwei Formate waren in KW26 die einzigen verlaesslichen Durchbrueche (SM-News 21/17 Likes, @mindspiration 17-20 Likes). Mind. 2 Wochen-Karussells = Kundenstory, SM-News fix dienstags.", "impact": "hoch", "effort": "mittel" },
+    { "priority": 3, "title": "Reels als Discovery-Hebel schaerfen", "detail": "5 Reels, nur 497 Views — der Discovery-Motor laeuft nicht. Der Ausreisser (245 Views) hatte den staerksten Pain-Hook. Jedes Reel: harter 2-Sekunden-Hook, ein einziges Schmerzthema, Trending-Audio. Weg von stummen Info-Clips ohne Hook (48-61 Views).", "impact": "hoch", "effort": "mittel" },
+    { "priority": 4, "title": "Follow-Conversion am Profil reparieren (These bestaetigt)", "detail": "Reichweite in KW24/25 war da (81-92K Metricool-Reach), Follower stehen trotzdem still (+11/Woche). Letzte Karussell-Slide IMMER 'Folge @the_escapetheory fuer ...' + konkreter Grund; Highlights als Ergebnis-Beweiswand vorne; Bio auf den Follow ausrichten.", "impact": "hoch", "effort": "niedrig" },
+    { "priority": 5, "title": "Kommentar-CTAs ehrlicher machen", "detail": "5 Kommentare auf 10 Posts trotz 222/ANALYSE-Keyword fast ueberall. Die Keyword-CTAs bleiben (fest, nur 222 oder ANALYSE) — aber zusaetzlich EINE echte, einfache Frage pro Post, die zum Antworten einlaedt, statt nur des Keyword-Aufrufs.", "impact": "mittel", "effort": "niedrig" }
   ],
-  "summary": "TET wächst wieder leicht (+12/Woche auf 6.510), aber das Engagement pro Post bleibt zu niedrig. Strategie: Volumen bleibt hoch (2 Wheels + 2 Karussells/Tag) — der EINE wichtigste Hebel ist die Hook-Qualität auf Slide 1. Jeder Hook wird an den eigenen Top-Beiträgen kalibriert (Benchmark: der ~1.900-Views-Post), die zwei Gewinner-Formate (SM-News + Kundenstories) werden ausgebaut, flankiert von Wheels für Discovery und sauberen Follow-CTAs."
+  "summary": "Live-Scan 06.07.: 6.533 Follower (+23 seit 21.06., ~+11/Woche) — Tempo unveraendert flach, 10K-ETA weiter ~6 Jahre. Die Follow-Conversion-These ist durch die Zahlen bestaetigt: 10 reale Posts holen zusammen nur 33 Likes / 5 Kommentare, Reels laufen bei Ø 99 Views. Der Engpass ist nicht die Kadenz (die lief auch im Urlaub durch), sondern die Hook-Qualitaet. Bester Beleg fuer die Richtung: das Ads-Tracking-Karussell (7 Likes) und das Pain-Hook-Reel (245 Views) — benannter Alltagsschmerz + Du-Ansprache schlagen abstrakte Value-Slides. Naechste Woche: SM-News + Kundenstory zurueckholen, jeden Slide-1-Hook an den Benchmark kalibrieren, Follow-CTA auf jede letzte Slide."
 }
