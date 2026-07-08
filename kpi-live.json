@@ -1,14 +1,14 @@
 {
   "configured": true,
-  "updated": "2026-07-06",
-  "fetchedAt": "2026-07-06T09:25:53+02:00",
+  "updated": "2026-07-07",
+  "fetchedAt": "2026-07-07T07:44:34+02:00",
   "source": "apify instagram-profile-scraper",
   "instagram": {
     "configured": true,
-    "followers": 6533,
+    "followers": 6539,
     "following": 222,
-    "posts": 360,
-    "dailyDelta": 23
+    "posts": 362,
+    "dailyDelta": 6
   },
   "tiktok": {
     "configured": true,
