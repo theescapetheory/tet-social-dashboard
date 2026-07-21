@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TET · KPI Dashboard</title>
-<script src="/chart.min.js"></script>
+<script src="chart.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -160,10 +160,6 @@
       data.sort((a,b)=>a.iso.localeCompare(b.iso));
       if(data.length<1) throw new Error('Keine Daten im Sheet');
       render(data);
-      status.style.display='none';
-      document.getElementById('cmpHead').style.display='flex';
-      document.getElementById('charts').style.display='grid';
-      document.getElementById('stamp').innerHTML='Quelle: <b>Tracking-Sheet</b><br>Stand '+data[data.length-1].d.replace(/\.$/,'')+' · 30-Tage-Werte';
     }catch(e){
       status.innerHTML='⚠️ '+e.message+' — bitte im Sheet „Freigeben → Jeder mit Link" aktivieren.';
     }
@@ -191,6 +187,13 @@
       + tile('Aufrufe', last.auf, prev.auf, last.apct)
       + tile('Interaktionen', last.int, prev.int, last.ipct);
 
+    // Erfolgs-UI (unabhängig von den Charts, damit Kacheln immer sichtbar sind)
+    document.getElementById('status').style.display='none';
+    document.getElementById('cmpHead').style.display='flex';
+    document.getElementById('charts').style.display='grid';
+    document.getElementById('stamp').innerHTML='Quelle: <b>Tracking-Sheet</b><br>Stand '+last.d.replace(/\.$/,'')+' · 30-Tage-Werte';
+
+    if(typeof Chart==='undefined'){return;}
     Chart.defaults.color='rgba(232,238,247,.55)';
     Chart.defaults.font.family="'Jost',sans-serif";
     const labels=data.map(x=>x.d);
