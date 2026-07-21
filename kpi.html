@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TET · KPI Dashboard</title>
+<script src="/chart.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#010D26; --card:#08182f; --card2:#0b1f39; --border:rgba(255,255,255,.08);
+    --blue:#7CA7EB; --blue2:#bfd7e8; --camel:#cdb08f; --gelb:#FDDF5B;
+    --text:#e8eef7; --dim:rgba(232,238,247,.55); --white:#fff;
+    --green:#4ade80; --red:#f87171;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Jost',sans-serif;background:
+      radial-gradient(1200px 700px at 100% -10%, rgba(124,167,235,.10), transparent 55%),
+      radial-gradient(900px 600px at -5% 110%, rgba(205,176,143,.08), transparent 55%),
+      var(--navy);
+    color:var(--text);min-height:100vh;padding:34px clamp(16px,4vw,56px);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1240px;margin:0 auto}
+
+  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+  .brand{display:flex;align-items:center;gap:11px;color:var(--camel);letter-spacing:.22em;text-transform:uppercase;font-size:12px;font-weight:600}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--camel)}
+  h1{font-family:'Playfair Display',serif;font-size:34px;color:#fff;font-weight:700;margin-top:8px}
+  .sub{color:var(--dim);font-size:14px;margin-top:4px}
+  .stamp{color:var(--dim);font-size:12.5px;text-align:right;letter-spacing:.04em}
+  .stamp b{color:var(--blue2)}
+
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+  .tile{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:18px;padding:22px 24px;position:relative;overflow:hidden}
+  .tile .lab{color:var(--dim);text-transform:uppercase;letter-spacing:.13em;font-size:12px;font-weight:600;margin-bottom:12px}
+  .tile .big{font-size:46px;font-weight:700;color:#fff;line-height:1;letter-spacing:-.5px}
+  .tile .row{display:flex;align-items:center;gap:12px;margin-top:12px}
+  .chip{font-size:13px;font-weight:700;padding:4px 11px;border-radius:20px}
+  .chip.up{background:rgba(74,222,128,.14);color:var(--green)}
+  .chip.down{background:rgba(248,113,113,.14);color:var(--red)}
+  .chip.flat{background:rgba(255,255,255,.08);color:var(--dim)}
+  .tile .vs{color:var(--dim);font-size:12.5px}
+  .prog{height:8px;background:rgba(255,255,255,.08);border-radius:5px;margin-top:16px;overflow:hidden}
+  .prog i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:5px}
+  .goaltxt{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-top:7px}
+  .goaltxt b{color:var(--camel)}
+
+  .charts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .panel{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:18px;padding:20px 22px}
+  .panel.wide{grid-column:1 / -1}
+  .panel h2{font-size:15px;font-weight:600;color:#fff;margin-bottom:2px}
+  .panel .note{color:var(--dim);font-size:12px;margin-bottom:14px}
+  .cbox{position:relative;height:230px}
+  .panel.wide .cbox{height:250px}
+
+  footer{margin-top:26px;padding-top:18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--dim);font-size:12.5px}
+
+  @media(max-width:880px){.tiles{grid-template-columns:1fr}.charts{grid-template-columns:1fr}}
+
+  /* Gate */
+  #pw-gate{position:fixed;inset:0;background:var(--navy);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+  #pw-gate .g1{font-family:'Playfair Display',serif;font-size:28px;color:#fff}
+  #pw-gate .g2{font-size:13px;color:var(--dim);margin-top:-14px}
+  #pw-gate input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-size:14px;padding:11px 16px;outline:none;width:220px;font-family:inherit}
+  #pw-gate button{background:var(--blue);border:none;border-radius:8px;color:var(--navy);font-weight:700;font-size:14px;padding:11px 20px;cursor:pointer}
+  #pw-err{font-size:12px;color:#e1306c;min-height:16px}
+</style>
+</head>
+<body>
+
+<div id="pw-gate">
+  <div class="g1">The Escape Theory</div>
+  <div class="g2">KPI Dashboard · Intern</div>
+  <div style="display:flex;gap:8px">
+    <input id="pw-input" type="password" placeholder="Passwort" autofocus onkeydown="if(event.key==='Enter')checkPW()">
+    <button onclick="checkPW()">→</button>
+  </div>
+  <div id="pw-err"></div>
+</div>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="brand"><span class="dot"></span> The Escape Theory · Instagram</div>
+      <h1>KPI Dashboard</h1>
+      <div class="sub">Wöchentliche 30-Tage-Insights · Wachstum Richtung 10.000 Follower</div>
+    </div>
+    <div class="stamp">Quelle: <b>Metricool</b><br>Stand 21. Juli 2026</div>
+  </header>
+
+  <div class="tiles" id="tiles"></div>
+
+  <div class="charts">
+    <div class="panel wide">
+      <h2>Follower-Entwicklung</h2>
+      <div class="note">Wöchentlich · Ziel 10.000</div>
+      <div class="cbox"><canvas id="cFoll"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Aufrufe <span style="color:var(--dim);font-weight:400">(letzte 30 Tage)</span></h2>
+      <div class="note">je Stichtag, wöchentlich</div>
+      <div class="cbox"><canvas id="cAuf"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Interaktionen <span style="color:var(--dim);font-weight:400">(letzte 30 Tage)</span></h2>
+      <div class="note">Posts + Reels · je Stichtag</div>
+      <div class="cbox"><canvas id="cInt"></canvas></div>
+    </div>
+  </div>
+
+  <footer>
+    <span>📊 Momentaufnahme aus Metricool — für Live-Auto-Update kann eine wöchentliche Routine die Zahlen nachfüllen.</span>
+    <span>Ziel: 10.000 Follower</span>
+  </footer>
+</div>
+
+<script>
+  const PW='escape2026', gate=document.getElementById('pw-gate');
+  if(sessionStorage.getItem('tet_ok')==='1') gate.style.display='none';
+  window.checkPW=function(){
+    const v=document.getElementById('pw-input').value.trim().toLowerCase().replace(/\s+/g,'');
+    if(v===PW){sessionStorage.setItem('tet_ok','1');gate.style.display='none';}
+    else document.getElementById('pw-err').textContent='Falsches Passwort.';
+  };
+
+  // ===== DATEN (Metricool, rollierende 30 Tage; Stand 21.07.2026) =====
+  const DATA=[
+    {d:"22.05.",foll:6496,auf:100450,int:289},
+    {d:"29.05.",foll:6486,auf:91495,int:233},
+    {d:"05.06.",foll:6490,auf:83211,int:314},
+    {d:"12.06.",foll:6498,auf:82348,int:348},
+    {d:"19.06.",foll:6509,auf:95134,int:386},
+    {d:"26.06.",foll:6530,auf:109174,int:470},
+    {d:"03.07.",foll:6525,auf:118808,int:436},
+    {d:"10.07.",foll:6537,auf:130966,int:401},
+    {d:"17.07.",foll:6535,auf:112094,int:389},
+    {d:"21.07.",foll:6533,auf:101095,int:345},
+  ];
+  const GOAL=10000;
+  const labels=DATA.map(x=>x.d);
+  const de=n=>n.toLocaleString('de-DE');
+  const last=DATA[DATA.length-1], prev=DATA[DATA.length-2];
+  const pct=(a,b)=>b? ((a-b)/b*100):0;
+
+  // ---- Tiles ----
+  function chip(v){
+    const s=v>0?'up':(v<0?'down':'flat');
+    const a=v>0?'▲':(v<0?'▼':'–');
+    return `<span class="chip ${s}">${a} ${Math.abs(v).toFixed(1).replace('.',',')} %</span>`;
+  }
+  const prog=Math.min(100, last.foll/GOAL*100);
+  document.getElementById('tiles').innerHTML=`
+    <div class="tile">
+      <div class="lab">Follower</div>
+      <div class="big">${de(last.foll)}</div>
+      <div class="row">${chip(pct(last.foll,prev.foll))}<span class="vs">vs. Vorwoche</span></div>
+      <div class="prog"><i style="width:${prog}%"></i></div>
+      <div class="goaltxt"><span>${prog.toFixed(1).replace('.',',')} % erreicht</span><span>Ziel <b>${de(GOAL)}</b></span></div>
+    </div>
+    <div class="tile">
+      <div class="lab">Aufrufe · letzte 30 Tage</div>
+      <div class="big">${de(last.auf)}</div>
+      <div class="row">${chip(pct(last.auf,prev.auf))}<span class="vs">vs. Vorwoche</span></div>
+    </div>
+    <div class="tile">
+      <div class="lab">Interaktionen · letzte 30 Tage</div>
+      <div class="big">${de(last.int)}</div>
+      <div class="row">${chip(pct(last.int,prev.int))}<span class="vs">vs. Vorwoche</span></div>
+    </div>`;
+
+  // ---- Charts ----
+  Chart.defaults.color='rgba(232,238,247,.55)';
+  Chart.defaults.font.family="'Jost',sans-serif";
+  const grid={color:'rgba(255,255,255,.06)'};
+  const noGrid={display:false};
+  const baseOpts=(fmt)=>({
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{backgroundColor:'#0b1f39',borderColor:'rgba(255,255,255,.12)',borderWidth:1,padding:11,callbacks:{label:c=>' '+fmt(c.parsed.y)}}},
+    scales:{x:{grid:noGrid,ticks:{maxRotation:0,font:{size:11}}},y:{grid,ticks:{callback:v=>fmt(v),font:{size:11}}}}
+  });
+  function grad(ctx,c1,c2){const g=ctx.createLinearGradient(0,0,0,240);g.addColorStop(0,c1);g.addColorStop(1,c2);return g;}
+
+  // Follower line
+  const fc=document.getElementById('cFoll').getContext('2d');
+  new Chart(fc,{type:'line',data:{labels,datasets:[{data:DATA.map(x=>x.foll),borderColor:'#7CA7EB',borderWidth:3,tension:.35,fill:true,backgroundColor:grad(fc,'rgba(124,167,235,.28)','rgba(124,167,235,0)'),pointBackgroundColor:'#bfd7e8',pointRadius:4,pointHoverRadius:6}]},
+    options:{...baseOpts(v=>de(Math.round(v))),scales:{x:{grid:noGrid,ticks:{font:{size:11}}},y:{grid,suggestedMin:6450,suggestedMax:6560,ticks:{callback:v=>de(v),font:{size:11}}}}}});
+
+  // Aufrufe bar
+  const ac=document.getElementById('cAuf').getContext('2d');
+  new Chart(ac,{type:'bar',data:{labels,datasets:[{data:DATA.map(x=>x.auf),backgroundColor:grad(ac,'#cdb08f','rgba(205,176,143,.35)'),borderRadius:7,maxBarThickness:34}]},options:baseOpts(v=>v>=1000?(v/1000).toFixed(0)+'k':v)});
+
+  // Interaktionen bar
+  const ic=document.getElementById('cInt').getContext('2d');
+  new Chart(ic,{type:'bar',data:{labels,datasets:[{data:DATA.map(x=>x.int),backgroundColor:grad(ic,'#7CA7EB','rgba(124,167,235,.30)'),borderRadius:7,maxBarThickness:34}]},options:baseOpts(v=>de(Math.round(v)))});
+</script>
+</body>
+</html>
