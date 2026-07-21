@@ -21,7 +21,7 @@
     color:var(--text);min-height:100vh;padding:34px clamp(16px,4vw,56px);-webkit-font-smoothing:antialiased}
   .wrap{max-width:1240px;margin:0 auto}
 
-  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:26px}
   .brand{display:flex;align-items:center;gap:11px;color:var(--camel);letter-spacing:.22em;text-transform:uppercase;font-size:12px;font-weight:600}
   .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--camel)}
   h1{font-family:'Playfair Display',serif;font-size:34px;color:#fff;font-weight:700;margin-top:8px}
@@ -29,17 +29,24 @@
   .stamp{color:var(--dim);font-size:12.5px;text-align:right;letter-spacing:.04em}
   .stamp b{color:var(--blue2)}
 
-  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
-  .tile{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:18px;padding:22px 24px;position:relative;overflow:hidden}
+  .cmp-head{display:flex;align-items:center;gap:12px;margin:4px 0 14px}
+  .cmp-head .t{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue2)}
+  .cmp-head .l{flex:1;height:1px;background:var(--border)}
+
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+  .tile{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:18px;padding:22px 24px}
   .tile .lab{color:var(--dim);text-transform:uppercase;letter-spacing:.13em;font-size:12px;font-weight:600;margin-bottom:12px}
-  .tile .big{font-size:46px;font-weight:700;color:#fff;line-height:1;letter-spacing:-.5px}
-  .tile .row{display:flex;align-items:center;gap:12px;margin-top:12px}
-  .chip{font-size:13px;font-weight:700;padding:4px 11px;border-radius:20px}
+  .tile .big{font-size:44px;font-weight:700;color:#fff;line-height:1;letter-spacing:-.5px}
+  .tile .now-lab{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+  .cmp{display:flex;align-items:center;gap:12px;margin-top:16px;padding-top:14px;border-top:1px dashed var(--border)}
+  .cmp .prev{flex:1}
+  .cmp .prev .pl{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em}
+  .cmp .prev .pv{font-size:20px;font-weight:600;color:var(--dim)}
+  .chip{font-size:14px;font-weight:700;padding:6px 13px;border-radius:20px;white-space:nowrap}
   .chip.up{background:rgba(74,222,128,.14);color:var(--green)}
   .chip.down{background:rgba(248,113,113,.14);color:var(--red)}
   .chip.flat{background:rgba(255,255,255,.08);color:var(--dim)}
-  .tile .vs{color:var(--dim);font-size:12.5px}
-  .prog{height:8px;background:rgba(255,255,255,.08);border-radius:5px;margin-top:16px;overflow:hidden}
+  .prog{height:8px;background:rgba(255,255,255,.08);border-radius:5px;margin-top:14px;overflow:hidden}
   .prog i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:5px}
   .goaltxt{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-top:7px}
   .goaltxt b{color:var(--camel)}
@@ -53,10 +60,10 @@
   .panel.wide .cbox{height:250px}
 
   footer{margin-top:26px;padding-top:18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--dim);font-size:12.5px}
+  #status{color:var(--dim);font-size:13px;margin:10px 0}
 
   @media(max-width:880px){.tiles{grid-template-columns:1fr}.charts{grid-template-columns:1fr}}
 
-  /* Gate */
   #pw-gate{position:fixed;inset:0;background:var(--navy);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
   #pw-gate .g1{font-family:'Playfair Display',serif;font-size:28px;color:#fff}
   #pw-gate .g2{font-size:13px;color:var(--dim);margin-top:-14px}
@@ -82,17 +89,20 @@
     <div>
       <div class="brand"><span class="dot"></span> The Escape Theory · Instagram</div>
       <h1>KPI Dashboard</h1>
-      <div class="sub">Wöchentliche 30-Tage-Insights · Wachstum Richtung 10.000 Follower</div>
+      <div class="sub">30-Tage-Insights · Wachstum Richtung 10.000 Follower</div>
     </div>
-    <div class="stamp">Quelle: <b>Metricool</b><br>Stand 21. Juli 2026</div>
+    <div class="stamp" id="stamp">Quelle: <b>Tracking-Sheet</b></div>
   </header>
 
+  <div id="status">Lade Daten aus dem Sheet…</div>
+
+  <div class="cmp-head" id="cmpHead" style="display:none"><span class="t">Letzte 30 Tage · jetzt vs. Vorwoche</span><span class="l"></span></div>
   <div class="tiles" id="tiles"></div>
 
-  <div class="charts">
+  <div class="charts" id="charts" style="display:none">
     <div class="panel wide">
       <h2>Follower-Entwicklung</h2>
-      <div class="note">Wöchentlich · Ziel 10.000</div>
+      <div class="note">wöchentlich · Ziel 10.000</div>
       <div class="cbox"><canvas id="cFoll"></canvas></div>
     </div>
     <div class="panel">
@@ -102,13 +112,13 @@
     </div>
     <div class="panel">
       <h2>Interaktionen <span style="color:var(--dim);font-weight:400">(letzte 30 Tage)</span></h2>
-      <div class="note">Posts + Reels · je Stichtag</div>
+      <div class="note">je Stichtag, wöchentlich</div>
       <div class="cbox"><canvas id="cInt"></canvas></div>
     </div>
   </div>
 
   <footer>
-    <span>📊 Momentaufnahme aus Metricool — für Live-Auto-Update kann eine wöchentliche Routine die Zahlen nachfüllen.</span>
+    <span>📊 Live aus dem Google-Tracking-Sheet — jede neue Zeile erscheint hier automatisch.</span>
     <span>Ziel: 10.000 Follower</span>
   </footer>
 </div>
@@ -122,75 +132,87 @@
     else document.getElementById('pw-err').textContent='Falsches Passwort.';
   };
 
-  // ===== DATEN (Metricool, rollierende 30 Tage; Stand 21.07.2026) =====
-  const DATA=[
-    {d:"22.05.",foll:6496,auf:100450,int:289},
-    {d:"29.05.",foll:6486,auf:91495,int:233},
-    {d:"05.06.",foll:6490,auf:83211,int:314},
-    {d:"12.06.",foll:6498,auf:82348,int:348},
-    {d:"19.06.",foll:6509,auf:95134,int:386},
-    {d:"26.06.",foll:6530,auf:109174,int:470},
-    {d:"03.07.",foll:6525,auf:118808,int:436},
-    {d:"10.07.",foll:6537,auf:130966,int:401},
-    {d:"17.07.",foll:6535,auf:112094,int:389},
-    {d:"21.07.",foll:6533,auf:101095,int:345},
-  ];
+  const SHEET_CSV='https://docs.google.com/spreadsheets/d/1WScTq32DHJGFb40QDbm-1afgZqlRdJVQcBWnJfPrYQg/export?format=csv&gid=0';
   const GOAL=10000;
-  const labels=DATA.map(x=>x.d);
-  const de=n=>n.toLocaleString('de-DE');
-  const last=DATA[DATA.length-1], prev=DATA[DATA.length-2];
-  const pct=(a,b)=>b? ((a-b)/b*100):0;
+  const de=n=>n!=null?n.toLocaleString('de-DE'):'—';
+  const parseNum=s=>{ if(!s||s.trim()==='-'||s.trim()==='')return null; const n=parseInt(s.replace(/\./g,'').replace(/,/g,'').replace(/[^0-9-]/g,'')); return isNaN(n)?null:n; };
+  const parsePct=s=>{ if(!s)return null; const v=parseFloat(s.replace(/\./g,'').replace(',','.').replace('%','')); return isNaN(v)?null:v; };
+  const parseCSVRow=line=>{const c=[];let cur='',q=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"')q=!q;else if(ch===','&&!q){c.push(cur.trim());cur='';}else cur+=ch;}c.push(cur.trim());return c;};
 
-  // ---- Tiles ----
-  function chip(v){
-    const s=v>0?'up':(v<0?'down':'flat');
-    const a=v>0?'▲':(v<0?'▼':'–');
-    return `<span class="chip ${s}">${a} ${Math.abs(v).toFixed(1).replace('.',',')} %</span>`;
+  function chip(v){ if(v==null)return `<span class="chip flat">–</span>`;
+    const s=v>0?'up':(v<0?'down':'flat'), a=v>0?'▲':(v<0?'▼':'–');
+    return `<span class="chip ${s}">${a} ${Math.abs(v).toFixed(1).replace('.',',')} %</span>`; }
+  const wow=(a,b)=>(a!=null&&b)?((a-b)/b*100):null;
+
+  async function load(){
+    const status=document.getElementById('status');
+    try{
+      const res=await fetch(SHEET_CSV+'&t='+Date.now());
+      const csv=await res.text();
+      if(csv.includes('<html')||csv.includes('<!DOCTYPE')) throw new Error('Sheet nicht öffentlich freigegeben');
+      const rows=csv.split('\n').map(parseCSVRow);
+      let data=rows.filter(r=>r[1]&&/\d{2}\.\d{2}\.\d{4}/.test(r[1])).map(r=>({
+        d:r[1].slice(0,6), iso:r[1].replace(/(\d{2})\.(\d{2})\.(\d{4})/,'$3$2$1'),
+        foll:parseNum(r[2]), fpct:parsePct(r[3]),
+        auf:parseNum(r[4]), apct:parsePct(r[5]),
+        int:parseNum(r[6]), ipct:parsePct(r[7]),
+      }));
+      data.sort((a,b)=>a.iso.localeCompare(b.iso));
+      if(data.length<1) throw new Error('Keine Daten im Sheet');
+      render(data);
+      status.style.display='none';
+      document.getElementById('cmpHead').style.display='flex';
+      document.getElementById('charts').style.display='grid';
+      document.getElementById('stamp').innerHTML='Quelle: <b>Tracking-Sheet</b><br>Stand '+data[data.length-1].d.replace(/\.$/,'')+' · 30-Tage-Werte';
+    }catch(e){
+      status.innerHTML='⚠️ '+e.message+' — bitte im Sheet „Freigeben → Jeder mit Link" aktivieren.';
+    }
   }
-  const prog=Math.min(100, last.foll/GOAL*100);
-  document.getElementById('tiles').innerHTML=`
-    <div class="tile">
-      <div class="lab">Follower</div>
-      <div class="big">${de(last.foll)}</div>
-      <div class="row">${chip(pct(last.foll,prev.foll))}<span class="vs">vs. Vorwoche</span></div>
-      <div class="prog"><i style="width:${prog}%"></i></div>
-      <div class="goaltxt"><span>${prog.toFixed(1).replace('.',',')} % erreicht</span><span>Ziel <b>${de(GOAL)}</b></span></div>
-    </div>
-    <div class="tile">
-      <div class="lab">Aufrufe · letzte 30 Tage</div>
-      <div class="big">${de(last.auf)}</div>
-      <div class="row">${chip(pct(last.auf,prev.auf))}<span class="vs">vs. Vorwoche</span></div>
-    </div>
-    <div class="tile">
-      <div class="lab">Interaktionen · letzte 30 Tage</div>
-      <div class="big">${de(last.int)}</div>
-      <div class="row">${chip(pct(last.int,prev.int))}<span class="vs">vs. Vorwoche</span></div>
-    </div>`;
 
-  // ---- Charts ----
-  Chart.defaults.color='rgba(232,238,247,.55)';
-  Chart.defaults.font.family="'Jost',sans-serif";
-  const grid={color:'rgba(255,255,255,.06)'};
-  const noGrid={display:false};
-  const baseOpts=(fmt)=>({
-    responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{display:false},tooltip:{backgroundColor:'#0b1f39',borderColor:'rgba(255,255,255,.12)',borderWidth:1,padding:11,callbacks:{label:c=>' '+fmt(c.parsed.y)}}},
-    scales:{x:{grid:noGrid,ticks:{maxRotation:0,font:{size:11}}},y:{grid,ticks:{callback:v=>fmt(v),font:{size:11}}}}
-  });
-  function grad(ctx,c1,c2){const g=ctx.createLinearGradient(0,0,0,240);g.addColorStop(0,c1);g.addColorStop(1,c2);return g;}
+  function tile(lab, now, prev, pctSheet, extra=''){
+    const p = pctSheet!=null ? pctSheet : wow(now,prev);
+    return `<div class="tile">
+      <div class="lab">${lab}</div>
+      <div class="now-lab">Jetzt (letzte 30 Tage)</div>
+      <div class="big">${de(now)}</div>
+      <div class="cmp">
+        <div class="prev"><div class="pl">Vorwoche</div><div class="pv">${de(prev)}</div></div>
+        ${chip(p)}
+      </div>${extra}</div>`;
+  }
 
-  // Follower line
-  const fc=document.getElementById('cFoll').getContext('2d');
-  new Chart(fc,{type:'line',data:{labels,datasets:[{data:DATA.map(x=>x.foll),borderColor:'#7CA7EB',borderWidth:3,tension:.35,fill:true,backgroundColor:grad(fc,'rgba(124,167,235,.28)','rgba(124,167,235,0)'),pointBackgroundColor:'#bfd7e8',pointRadius:4,pointHoverRadius:6}]},
-    options:{...baseOpts(v=>de(Math.round(v))),scales:{x:{grid:noGrid,ticks:{font:{size:11}}},y:{grid,suggestedMin:6450,suggestedMax:6560,ticks:{callback:v=>de(v),font:{size:11}}}}}});
+  function render(data){
+    const last=data[data.length-1], prev=data[data.length-2]||{};
+    const progVal=Math.min(100,(last.foll/GOAL*100));
+    const follExtra=`<div class="prog"><i style="width:${progVal}%"></i></div>
+      <div class="goaltxt"><span>${progVal.toFixed(1).replace('.',',')} % erreicht</span><span>Ziel <b>${de(GOAL)}</b></span></div>`;
+    document.getElementById('tiles').innerHTML=
+      tile('Follower', last.foll, prev.foll, last.fpct, follExtra)
+      + tile('Aufrufe', last.auf, prev.auf, last.apct)
+      + tile('Interaktionen', last.int, prev.int, last.ipct);
 
-  // Aufrufe bar
-  const ac=document.getElementById('cAuf').getContext('2d');
-  new Chart(ac,{type:'bar',data:{labels,datasets:[{data:DATA.map(x=>x.auf),backgroundColor:grad(ac,'#cdb08f','rgba(205,176,143,.35)'),borderRadius:7,maxBarThickness:34}]},options:baseOpts(v=>v>=1000?(v/1000).toFixed(0)+'k':v)});
+    Chart.defaults.color='rgba(232,238,247,.55)';
+    Chart.defaults.font.family="'Jost',sans-serif";
+    const labels=data.map(x=>x.d);
+    const grid={color:'rgba(255,255,255,.06)'}, noGrid={display:false};
+    const opts=(fmt)=>({responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{backgroundColor:'#0b1f39',borderColor:'rgba(255,255,255,.12)',borderWidth:1,padding:11,callbacks:{label:c=>' '+fmt(c.parsed.y)}}},
+      scales:{x:{grid:noGrid,ticks:{maxRotation:0,font:{size:11}}},y:{grid,ticks:{callback:v=>fmt(v),font:{size:11}}}}});
+    const grad=(ctx,c1,c2)=>{const g=ctx.createLinearGradient(0,0,0,240);g.addColorStop(0,c1);g.addColorStop(1,c2);return g;};
 
-  // Interaktionen bar
-  const ic=document.getElementById('cInt').getContext('2d');
-  new Chart(ic,{type:'bar',data:{labels,datasets:[{data:DATA.map(x=>x.int),backgroundColor:grad(ic,'#7CA7EB','rgba(124,167,235,.30)'),borderRadius:7,maxBarThickness:34}]},options:baseOpts(v=>de(Math.round(v)))});
+    const fc=document.getElementById('cFoll').getContext('2d');
+    const fvals=data.map(x=>x.foll).filter(v=>v!=null);
+    const fmin=Math.min(...fvals)-30, fmax=Math.max(...fvals)+30;
+    new Chart(fc,{type:'line',data:{labels,datasets:[{data:data.map(x=>x.foll),borderColor:'#7CA7EB',borderWidth:3,tension:.35,fill:true,backgroundColor:grad(fc,'rgba(124,167,235,.28)','rgba(124,167,235,0)'),pointBackgroundColor:'#bfd7e8',pointRadius:4,pointHoverRadius:6}]},
+      options:{...opts(v=>de(Math.round(v))),scales:{x:{grid:noGrid,ticks:{font:{size:11}}},y:{grid,suggestedMin:fmin,suggestedMax:fmax,ticks:{callback:v=>de(v),font:{size:11}}}}}});
+
+    const ac=document.getElementById('cAuf').getContext('2d');
+    new Chart(ac,{type:'bar',data:{labels,datasets:[{data:data.map(x=>x.auf),backgroundColor:grad(ac,'#cdb08f','rgba(205,176,143,.35)'),borderRadius:7,maxBarThickness:36}]},options:opts(v=>v>=1000?(v/1000).toFixed(0)+'k':v)});
+
+    const ic=document.getElementById('cInt').getContext('2d');
+    new Chart(ic,{type:'bar',data:{labels,datasets:[{data:data.map(x=>x.int),backgroundColor:grad(ic,'#7CA7EB','rgba(124,167,235,.30)'),borderRadius:7,maxBarThickness:36}]},options:opts(v=>de(Math.round(v)))});
+  }
+  load();
 </script>
 </body>
 </html>
