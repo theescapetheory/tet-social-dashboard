@@ -1,666 +1,208 @@
 {
-  "updated": "2026-07-08",
-  "week": "KW28",
+  "updated": "2026-07-22",
+  "week": "KW30",
   "tasks": [
     {
-      "type": "broll",
-      "name": "B-Roll: Ein Publikum ist noch kein Business. (Mo 06.07., 18:30)",
-      "due_on": "2026-07-06",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277064225687",
-      "notes": "Ein Publikum ist noch kein Business.  Reichweite ohne System ist nur Lärm auf dem Konto. Zeit, aus Aufmerksamkeit Umsatz zu bauen.  Schreib …"
-    },
-    {
       "type": "carousel",
-      "name": "Karussell: Follower zahlen deine Miete nicht. (Mo 06.07., 11:00)",
-      "due_on": "2026-07-06",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277155705613",
-      "notes": "Follower zahlen deine Miete nicht.  Ein Publikum ist noch kein Business. Du hast Reichweite auf dem Papier – und Panik auf dem Konto. Das is…"
+      "name": "Karussell: Dein Umsatz hat einen unsichtbaren Deckel (20.07.)",
+      "due_on": "2026-07-20",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095158726480",
+      "notes": "CTA ANALYSE · Dropbox Karusell/karussell-Deckel-2026-07-20"
     },
     {
       "type": "reel",
-      "name": "Reel: KI ist deine größte Chance – und deine größte Gefahr. — Alex (Mo 06.07., 12:30)",
-      "due_on": "2026-07-06",
+      "name": "Reel: Dein Deckel sitzt im Kopf — Evelyn 19.06.26 (20.07.)",
+      "due_on": "2026-07-20",
       "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216276954664939",
-      "notes": "KI ist deine größte Chance – und deine größte Gefahr.  Wer sie nutzt, hebelt alles. Wer zuschaut, wird sortiert. Wissen ist kein Vorsprung m…"
-    },
-    {
-      "type": "story",
-      "name": "Story 1/5 – 08:00: Follower & Miete (Mo 06.07.)",
-      "due_on": "2026-07-06",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277155870606",
-      "notes": "„Ich hab 8.000 Follower und trotzdem Angst vor der Miete.“ Reichweite auf dem Papier, Panik auf dem Konto. Kennst du das?  Medien (Dropbox):…"
-    },
-    {
-      "type": "story",
-      "name": "Story 4/5 – 19:00: Umfrage (Mo 06.07.)",
-      "due_on": "2026-07-06",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277064399032",
-      "notes": "UMFRAGE: Reichweite oder Umsatz – woran hakt's gerade? (nativen Umfrage-Sticker manuell setzen)  Medien (Dropbox): https://www.dropbox.com/h…"
-    },
-    {
-      "type": "story",
-      "name": "Story 2/5 – 12:00: Follower ≠ Umsatz (Mo 06.07.)",
-      "due_on": "2026-07-06",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277064334525",
-      "notes": "Follower sind kein Umsatz. Zwischen „gesehen werden“ und „gebucht werden“ liegt dein System.  Medien (Dropbox): https://www.dropbox.com/home…"
-    },
-    {
-      "type": "story",
-      "name": "Story 5/5 – 21:00: CTA ANALYSE (Mo 06.07.)",
-      "due_on": "2026-07-06",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277064397667",
-      "notes": "Willst du wissen, wo dein Sog abreißt? Schreib ANALYSE.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202026/202…"
-    },
-    {
-      "type": "story",
-      "name": "Story 3/5 – 16:00: Sog statt Push (Mo 06.07.)",
-      "due_on": "2026-07-06",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277130407288",
-      "notes": "Sog-Marketing statt Push: Du jagst keine Kunden – dein System zieht sie.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassp…"
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095159688732",
+      "notes": "CTA ANALYSE · Evelyn_19.06.26.mp4 (Dropbox)"
     },
     {
       "type": "broll",
-      "name": "B-Roll: Du bist nicht zu teuer. Du bist zu billig. (Di 07.07., 18:30)",
-      "due_on": "2026-07-07",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277157900972",
-      "notes": "Du bist nicht zu teuer. Du bist zu billig.  Und dein Kontostand ist der Beweis.  Schreib ANALYSE.  #the_escapetheory #100stepsto100k #online…"
+      "name": "B-Roll: Dein Deckel sitzt im Kopf — Strategie-Call (20.07.)",
+      "due_on": "2026-07-20",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095933696228",
+      "notes": "CTA ANALYSE · TET_BRoll_2026-07-20-deckel.mp4"
+    },
+    {
+      "type": "story",
+      "name": "Story: Der unsichtbare Deckel (20.07.)",
+      "due_on": "2026-07-20",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095189800973",
+      "notes": "CTA ANALYSE · 5-Story-Arc · TET_Stories_2026-07-20-deckel"
     },
     {
       "type": "carousel",
-      "name": "Karussell: Du bist nicht zu teuer. Du bist zu billig. (Di 07.07., 11:00)",
-      "due_on": "2026-07-07",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277383628839",
-      "notes": "Du bist nicht zu teuer. Du bist zu billig.  Und dein Kontostand ist der Beweis. Wer zu günstig verkauft, zieht die Falschen an und arbeitet …"
+      "name": "Karussell: Guter Content, der nicht verkauft, ist nur Unterhaltung (21.07.)",
+      "due_on": "2026-07-21",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095027078676",
+      "notes": "CTA 222 · Dropbox Karusell/karussell-ContentVerkauft-2026-07-21"
     },
     {
       "type": "reel",
-      "name": "Reel: Dein Umsatzproblem ist kein Umsatzproblem. — Alex (Di 07.07., 12:30)",
-      "due_on": "2026-07-07",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277066496530",
-      "notes": "Dein Umsatzproblem ist kein Umsatzproblem.  Es ist ein Positionierungs- und Preis-Problem. Solange du dich unter Wert verkaufst, rennst du s…"
-    },
-    {
-      "type": "story",
-      "name": "Story 3/5 – 16:00: Haltungsfrage (Di 07.07.)",
-      "due_on": "2026-07-07",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277066411752",
-      "notes": "Dein Preis ist eine Haltungsfrage. Geschäftsführer-Haltung statt Bittsteller.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLife…"
-    },
-    {
-      "type": "story",
-      "name": "Story 1/5 – 08:00: Preis-Angst (Di 07.07.)",
-      "due_on": "2026-07-07",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277066433474",
-      "notes": "„Ich trau mich einfach nicht, mehr zu verlangen.“ Fast nie ist der Preis das Problem – sondern was er über dich sagt.  Medien (Dropbox): htt…"
-    },
-    {
-      "type": "story",
-      "name": "Story 2/5 – 12:00: Zu billig (Di 07.07.)",
-      "due_on": "2026-07-07",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277240795254",
-      "notes": "Zu billig verkaufen zieht die Falschen an. Der Preis filtert – oder er kostet dich.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20Lo…"
-    },
-    {
-      "type": "story",
-      "name": "Story 5/5 – 21:00: CTA ANALYSE (Di 07.07.)",
-      "due_on": "2026-07-07",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277383533401",
-      "notes": "Willst du wissen, was dein Angebot wirklich wert ist? Schreib ANALYSE.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePasspor…"
-    },
-    {
-      "type": "story",
-      "name": "Story 4/5 – 19:00: Umfrage (Di 07.07.)",
-      "due_on": "2026-07-07",
-      "completed": true,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277240832240",
-      "notes": "UMFRAGE: Wann hast du deinen Preis zuletzt erhöht? (nativen Umfrage-Sticker manuell setzen)  Medien (Dropbox): https://www.dropbox.com/home/…"
+      "name": "Reel: Marketing ist wie Dating — Alex 05.06.26 (21.07.)",
+      "due_on": "2026-07-21",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095189971310",
+      "notes": "CTA 222 · 03_Marketing_Dating.mp4 (Dropbox)"
     },
     {
       "type": "broll",
-      "name": "B-Roll: Posten ist noch kein Marketing. (Mi 08.07., 18:30)",
-      "due_on": "2026-07-08",
+      "name": "B-Roll: Content ohne Verkauf ist Unterhaltung — Circle (21.07.)",
+      "due_on": "2026-07-21",
       "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277066656053",
-      "notes": "Posten ist noch kein Marketing.  Ohne System ist Content nur Beschäftigung.  Kommentiere 222.  #the_escapetheory #100stepsto100k #onlinebusi…"
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216096099119959",
+      "notes": "CTA 222 · TET_BRoll_2026-07-21-content-verkauft.mp4"
+    },
+    {
+      "type": "story",
+      "name": "Story: Content, der verkauft (21.07.)",
+      "due_on": "2026-07-21",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095003835695",
+      "notes": "CTA 222 · 5-Story-Arc · TET_Stories_2026-07-21-content-verkauft"
     },
     {
       "type": "carousel",
-      "name": "Karussell: Du hast kein Content-Problem. Du hast kein System. (Mi 08.07., 11:00)",
-      "due_on": "2026-07-08",
+      "name": "Karussell: Von 3K, nichts lief, auf planbar 5-stellig (22.07.)",
+      "due_on": "2026-07-22",
       "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277158039951",
-      "notes": "Du hast kein Content-Problem. Du hast kein System.  Posten ist noch kein Marketing. Du produzierst jeden Tag – aber ohne Prozess, der aus Co…"
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095003156570",
+      "notes": "CTA ANALYSE · Dropbox Karusell/karussell-Transformation-2026-07-22"
     },
     {
       "type": "reel",
-      "name": "Reel: 10x mehr Aufwand bringt dir nicht 10x mehr Umsatz. — Alex (Mi 08.07., 12:30)",
-      "due_on": "2026-07-08",
+      "name": "Reel: Nicht dich – deine Systeme skalieren — Alex (22.07.)",
+      "due_on": "2026-07-22",
       "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277240933854",
-      "notes": "10x mehr Aufwand bringt dir nicht 10x mehr Umsatz.  Ohne System skalierst du nur dein Hamsterrad. Der Hebel ist nicht mehr tun – sondern das…"
-    },
-    {
-      "type": "story",
-      "name": "Story 3/5 – 16:00: System statt Posts (Mi 08.07.)",
-      "due_on": "2026-07-08",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277066617451",
-      "notes": "Sog-Marketing braucht ein System – nicht mehr Posts.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202026/2026%2…"
-    },
-    {
-      "type": "story",
-      "name": "Story 5/5 – 21:00: CTA 222 (Mi 08.07.)",
-      "due_on": "2026-07-08",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277158050888",
-      "notes": "Im Circle bauen wir dein System. Kommentiere 222.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202026/2026%20-%…"
-    },
-    {
-      "type": "story",
-      "name": "Story 2/5 – 12:00: Content=Lärm (Mi 08.07.)",
-      "due_on": "2026-07-08",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277158053450",
-      "notes": "Content ohne System ist Lärm. Ein Prozess macht aus 1 Gedanken planbar Kunden.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLif…"
-    },
-    {
-      "type": "story",
-      "name": "Story 4/5 – 19:00: Umfrage (Mi 08.07.)",
-      "due_on": "2026-07-08",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277240933758",
-      "notes": "UMFRAGE: Wie planbar sind deine Anfragen aus Content? (nativen Umfrage-Sticker manuell setzen)  Medien (Dropbox): https://www.dropbox.com/ho…"
-    },
-    {
-      "type": "story",
-      "name": "Story 1/5 – 08:00: Kein System (Mi 08.07.)",
-      "due_on": "2026-07-08",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277157984013",
-      "notes": "„Ich poste jeden Tag und weiß nie, ob's was bringt.“ Kein Fleiß-Problem. Ein System-Problem. Und das lässt sich bauen.  Medien (Dropbox): ht…"
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095189944594",
+      "notes": "CTA ANALYSE · AW_nicht_dich_Systeme_skalieren.mp4"
     },
     {
       "type": "broll",
-      "name": "B-Roll: Ein voller Kalender ist kein volles Konto. (Do 09.07., 18:30)",
-      "due_on": "2026-07-09",
+      "name": "B-Roll: Nicht dich — deine Systeme skalieren — Strategie-Call (22.07.)",
+      "due_on": "2026-07-22",
       "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277066656081",
-      "notes": "Ein voller Kalender ist kein volles Konto.  Beschäftigt sein ist die faulste Art zu scheitern.  Kommentiere 222.  #the_escapetheory #100step…"
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216096011100473",
+      "notes": "CTA ANALYSE · TET_BRoll_2026-07-22-transformation.mp4"
+    },
+    {
+      "type": "story",
+      "name": "Story: Von 3K auf planbar 5-stellig (22.07.)",
+      "due_on": "2026-07-22",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095159548647",
+      "notes": "CTA ANALYSE · 5-Story-Arc · TET_Stories_2026-07-22-transformation"
     },
     {
       "type": "carousel",
-      "name": "Karussell: Ein voller Kalender ist kein volles Konto. (Do 09.07., 11:00)",
-      "due_on": "2026-07-09",
+      "name": "Karussell: Die meisten stellen Sicherheit über Wachstum (23.07.)",
+      "due_on": "2026-07-23",
       "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277241025645",
-      "notes": "Ein voller Kalender ist kein volles Konto.  Beschäftigt sein ist die faulste Art zu scheitern. Du bist ausgelastet, aber nicht ausgerichtet …"
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095003158627",
+      "notes": "CTA 222 · Dropbox Karusell/karussell-Sicherheit-2026-07-23"
     },
     {
       "type": "reel",
-      "name": "Reel: Verdopple deinen Preis (50% gehen = halbe Arbeit) — Alex 16.06.26",
-      "due_on": "2026-07-09",
+      "name": "Reel: Kalt vs. warm – an wen du verkaufst — Alex 05.06.26 (23.07.)",
+      "due_on": "2026-07-23",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095159878450",
+      "notes": "CTA 222 · 04_kalt_vs_warm.mp4 (Dropbox)"
+    },
+    {
+      "type": "broll",
+      "name": "B-Roll: Sicherheit ist oft nur Stillstand — Circle (23.07.)",
+      "due_on": "2026-07-23",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216096011077099",
+      "notes": "CTA 222 · TET_BRoll_2026-07-23-sicherheit.mp4"
+    },
+    {
+      "type": "story",
+      "name": "Story: Sicherheit über Wachstum (23.07.)",
+      "due_on": "2026-07-23",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095164242423",
+      "notes": "CTA 222 · 5-Story-Arc · TET_Stories_2026-07-23-sicherheit"
+    },
+    {
+      "type": "carousel",
+      "name": "Karussell: Die zweite Jahreshälfte entscheidet sich jetzt (24.07.)",
+      "due_on": "2026-07-24",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095188680438",
+      "notes": "CTA ANALYSE · Dropbox Karusell/karussell-JahreshaelfteClose-2026-07-24"
+    },
+    {
+      "type": "reel",
+      "name": "Reel: Omnipräsenz – überall sein, wo dein Kunde ist — Alex 10.06.26 (24.07.)",
+      "due_on": "2026-07-24",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095004272765",
+      "notes": "CTA ANALYSE · reel-02-omnipraesenz-FINAL.mp4"
+    },
+    {
+      "type": "broll",
+      "name": "B-Roll: Die zweite Jahreshälfte entscheidet sich jetzt — Strategie-Call (24.07.)",
+      "due_on": "2026-07-24",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216096156709460",
+      "notes": "CTA ANALYSE · TET_BRoll_2026-07-24-jahreshaelfte.mp4"
+    },
+    {
+      "type": "story",
+      "name": "Story: Zweite Jahreshälfte entscheidet sich jetzt (24.07.)",
+      "due_on": "2026-07-24",
+      "completed": false,
+      "assignee": null,
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216095189787427",
+      "notes": "CTA ANALYSE · 5-Story-Arc · TET_Stories_2026-07-24-jahreshaelfte"
+    },
+    {
+      "type": "reel",
+      "name": "Reel: Der schnellste Hebel für mehr Gewinn ist dein Preis (Hand-Craft) — Alex 25.07.",
+      "due_on": "2026-07-25",
       "completed": false,
       "assignee": {
         "name": "Anne Siebenkees"
       },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216378943736294",
-      "notes": "FERTIGES REEL (Stufe 2, kein Cutter) — poste-bereit, yuv420p, ~36 s.  CAPTION: Verdopple deinen Preis. Selbst wenn die Hälfte geht: gleicher…"
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216289489161376",
+      "notes": "CTA ANALYSE · reel-19-schnellster-hebel-preis-FINAL.mp4"
     },
     {
       "type": "reel",
-      "name": "Reel: Niemand glaubt deinen Versprechen. Alle glauben deinen Beweisen. — Alex (Do 09.07., 12:30)",
-      "due_on": "2026-07-09",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277240965356",
-      "notes": "Niemand glaubt deinen Versprechen. Alle glauben deinen Beweisen.  Ergebnisse verkaufen, nicht Aussagen. Zeig, was dein System liefert – dann…"
-    },
-    {
-      "type": "story",
-      "name": "Story 2/5 – 12:00: Ausgerichtet (Do 09.07.)",
-      "due_on": "2026-07-09",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277383989185",
-      "notes": "Ausgelastet ≠ ausgerichtet. Frag nicht „mehr tun“, frag „das Richtige tun“.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePa…"
-    },
-    {
-      "type": "story",
-      "name": "Story 3/5 – 16:00: Fokus-Hebel (Do 09.07.)",
-      "due_on": "2026-07-09",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277416966556",
-      "notes": "Fokus ist der Hebel. Weniger Termine, mehr Wirkung.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202026/2026%20…"
-    },
-    {
-      "type": "story",
-      "name": "Story 5/5 – 21:00: CTA 222 (Do 09.07.)",
-      "due_on": "2026-07-09",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277416996799",
-      "notes": "Raus aus dem Hamsterrad – rein in den Circle. Kommentiere 222.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202…"
-    },
-    {
-      "type": "story",
-      "name": "Story 4/5 – 19:00: Umfrage (Do 09.07.)",
-      "due_on": "2026-07-09",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277241033160",
-      "notes": "UMFRAGE: Wie viele deiner Termine bringen dich näher ans Ziel? (nativen Umfrage-Sticker manuell setzen)  Medien (Dropbox): https://www.dropb…"
-    },
-    {
-      "type": "story",
-      "name": "Story 1/5 – 08:00: Non-stop (Do 09.07.)",
-      "due_on": "2026-07-09",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277241033228",
-      "notes": "„Ich arbeite non-stop und komme trotzdem nicht vom Fleck.“ Ein voller Kalender fühlt sich nach Fortschritt an. Ist er oft nicht.  Medien (Dr…"
-    },
-    {
-      "type": "story",
-      "name": "Story über Life Analyse",
-      "due_on": "2026-07-09",
-      "completed": false,
-      "assignee": {
-        "name": "Simge Güzel"
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1215828323314564",
-      "notes": ""
-    },
-    {
-      "type": "broll",
-      "name": "B-Roll: Interesse zahlt keine Rechnungen. (Fr 10.07., 18:30)",
-      "due_on": "2026-07-10",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277311126143",
-      "notes": "Interesse zahlt keine Rechnungen.  Zwischen „klingt spannend“ und „gebucht“ verlierst du dein Geld.  Schreib ANALYSE.  #the_escapetheory #10…"
-    },
-    {
-      "type": "carousel",
-      "name": "KI-News der Woche — KW 28 (Fr 10.07., 14:00) · in Metricool geplant",
-      "due_on": "2026-07-10",
+      "name": "Reel: Dein Preis = Wert minus Risiko (Hand-Craft) — Alex 26.07.",
+      "due_on": "2026-07-26",
       "completed": false,
       "assignee": {
         "name": "Anne Siebenkees"
       },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216288698195781",
-      "notes": "📂 Dropbox (Slides 1–6 + caption.md): 0.1 LoveLifePassport/9. 2026/2026 - MEDIA WORKING HUB/2. Video - Medien/07. Content Social Media/KI-New…"
-    },
-    {
-      "type": "carousel",
-      "name": "Karussell: Interesse zahlt keine Rechnungen. (Fr 10.07., 11:00)",
-      "due_on": "2026-07-10",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277417125675",
-      "notes": "Interesse zahlt keine Rechnungen.  Zwischen „klingt spannend“ und „gebucht“ verlierst du dein Geld – immer am selben Punkt. Viele Leads, wen…"
-    },
-    {
-      "type": "reel",
-      "name": "Reel: Zwei Zahlen entscheiden über dein Wachstum (CAC + CLV) — Alex 16.06.26",
-      "due_on": "2026-07-10",
-      "completed": false,
-      "assignee": {
-        "name": "Anne Siebenkees"
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216378736885655",
-      "notes": "FERTIGES REEL (Stufe 2, kein Cutter) — poste-bereit, yuv420p, ~35 s.  CAPTION: Vergiss komplizierte BWL. Zwei Zahlen entscheiden alles: Was …"
-    },
-    {
-      "type": "reel",
-      "name": "Reel: Du brauchst keine neuen Kunden. Du brauchst ein System, das aus Interesse Kunden macht. — Alex (Fr 10.07., 12:30)",
-      "due_on": "2026-07-10",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277384146478",
-      "notes": "Du brauchst keine neuen Kunden. Du brauchst ein System, das aus Interesse Kunden macht.  Die meisten Anfragen sterben zwischen „spannend“ un…"
-    },
-    {
-      "type": "story",
-      "name": "Story 2/5 – 12:00: Follow-up (Fr 10.07.)",
-      "due_on": "2026-07-10",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277301781158",
-      "notes": "Interesse ist keine Kaufentscheidung. Dein Follow-up-System entscheidet.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassp…"
-    },
-    {
-      "type": "story",
-      "name": "Story 3/5 – 16:00: Spannend→gebucht (Fr 10.07.)",
-      "due_on": "2026-07-10",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277301782092",
-      "notes": "Aus „spannend“ wird „gebucht“ – mit Prozess, nicht mit Zufall.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202…"
-    },
-    {
-      "type": "story",
-      "name": "Story 4/5 – 19:00: Umfrage (Fr 10.07.)",
-      "due_on": "2026-07-10",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277311117530",
-      "notes": "UMFRAGE: Wo verlierst du die meisten Anfragen? (nativen Umfrage-Sticker manuell setzen)  Medien (Dropbox): https://www.dropbox.com/home/0.1%…"
-    },
-    {
-      "type": "story",
-      "name": "Story 5/5 – 21:00: CTA ANALYSE (Fr 10.07.)",
-      "due_on": "2026-07-10",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277417125548",
-      "notes": "Willst du wissen, wo deine Anfragen versickern? Schreib ANALYSE.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%2…"
-    },
-    {
-      "type": "story",
-      "name": "Story 1/5 – 08:00: Klingt spannend (Fr 10.07.)",
-      "due_on": "2026-07-10",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277384146542",
-      "notes": "„Die Leute sagen 'klingt spannend' – und dann kommt nichts.“ Zwischen Interesse und Buchung verlierst du das meiste Geld. Immer am selben Pu…"
-    },
-    {
-      "type": "broll",
-      "name": "B-Roll: Reichweite ohne Haltung ist nur Lärm. (Sa 11.07., 18:30)",
-      "due_on": "2026-07-11",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277311137511",
-      "notes": "Reichweite ohne Haltung ist nur Lärm.  Man folgt dir. Aber man glaubt dir nicht.  Kommentiere 222.  #the_escapetheory #100stepsto100k #onlin…"
-    },
-    {
-      "type": "carousel",
-      "name": "Karussell: Reichweite ohne Haltung ist nur Lärm. (Sa 11.07., 11:00)",
-      "due_on": "2026-07-11",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277311166380",
-      "notes": "Reichweite ohne Haltung ist nur Lärm.  Man folgt dir. Aber man glaubt dir nicht. Sichtbar sein ist nicht dasselbe wie gefragt sein – ohne kl…"
-    },
-    {
-      "type": "reel",
-      "name": "Reel: Der schnellste Hebel für mehr Gewinn ist dein Preis. — Alex (Sa 11.07., 12:30)",
-      "due_on": "2026-07-11",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277301845822",
-      "notes": "Der schnellste Hebel für mehr Gewinn ist dein Preis.  Hochpreis ist kein Aufschlag, sondern eine Haltung. Wer nur billiger wird, verkauft si…"
-    },
-    {
-      "type": "story",
-      "name": "Story 3/5 – 16:00: Klartext (Sa 11.07.)",
-      "due_on": "2026-07-11",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277301779802",
-      "notes": "Sog entsteht durch Klartext, nicht durch mehr Posts.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202026/2026%2…"
-    },
-    {
-      "type": "story",
-      "name": "Story 5/5 – 21:00: CTA 222 (Sa 11.07.)",
-      "due_on": "2026-07-11",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277417151137",
-      "notes": "Bau eine Marke, die zieht – im Circle. Kommentiere 222.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202026/202…"
-    },
-    {
-      "type": "story",
-      "name": "Story 2/5 – 12:00: Haltung (Sa 11.07.)",
-      "due_on": "2026-07-11",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277301825818",
-      "notes": "Reichweite ohne Haltung ist Lärm. Eine Marke, die zieht, hat eine Meinung.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePas…"
-    },
-    {
-      "type": "story",
-      "name": "Story 1/5 – 08:00: Sehen≠buchen (Sa 11.07.)",
-      "due_on": "2026-07-11",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277417150885",
-      "notes": "„Viele sehen mich. Aber kaum jemand bucht.“ Sichtbar sein ist nicht dasselbe wie gefragt sein. Der Unterschied heißt Haltung.  Medien (Dropb…"
-    },
-    {
-      "type": "story",
-      "name": "Story 4/5 – 19:00: Umfrage (Sa 11.07.)",
-      "due_on": "2026-07-11",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277417196868",
-      "notes": "UMFRAGE: Traust du dich, klar Position zu beziehen? (nativen Umfrage-Sticker manuell setzen)  Medien (Dropbox): https://www.dropbox.com/home…"
-    },
-    {
-      "type": "broll",
-      "name": "B-Roll: 6-stellig wird man nicht mit mehr. Sondern mit weniger. (So 12.07., 18:30)",
-      "due_on": "2026-07-12",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277301887046",
-      "notes": "6-stellig wird man nicht mit mehr. Sondern mit weniger.  Alles selbst machen ist der teuerste Fehler.  Schreib ANALYSE.  #the_escapetheory #…"
-    },
-    {
-      "type": "carousel",
-      "name": "Karussell: 6-stellig wird man nicht mit mehr. Sondern mit weniger. (So 12.07., 11:00)",
-      "due_on": "2026-07-12",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277241350589",
-      "notes": "6-stellig wird man nicht mit mehr. Sondern mit weniger.  Alles selbst machen ist der teuerste Fehler. Mehr Angebote, mehr Kanäle, mehr Aufga…"
-    },
-    {
-      "type": "reel",
-      "name": "Reel: Mehr Komplexität ist nicht die Antwort. Ein simples Business ist es. — Alex (So 12.07., 12:30)",
-      "due_on": "2026-07-12",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216278709208726",
-      "notes": "Mehr Komplexität ist nicht die Antwort. Ein simples Business ist es.  Ich hab jahrelang gedacht, mehr Angebote bringen mehr Umsatz. Das Gege…"
-    },
-    {
-      "type": "story",
-      "name": "Story 1/5 – 08:00: So viel & nichts (So 12.07.)",
-      "due_on": "2026-07-12",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277241350647",
-      "notes": "„Ich mache so viel und es wird trotzdem nicht mehr.“ Fast alle glauben, 6-stellig kommt durch mehr. Es kommt durch weniger – aber richtig.  …"
-    },
-    {
-      "type": "story",
-      "name": "Story 4/5 – 19:00: Umfrage (So 12.07.)",
-      "due_on": "2026-07-12",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277241378623",
-      "notes": "UMFRAGE: Was müsstest du diese Woche weglassen? (nativen Umfrage-Sticker manuell setzen)  Medien (Dropbox): https://www.dropbox.com/home/0.1…"
-    },
-    {
-      "type": "story",
-      "name": "Story 5/5 – 21:00: CTA ANALYSE (So 12.07.)",
-      "due_on": "2026-07-12",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277301792063",
-      "notes": "Willst du wissen, was du weglassen solltest? Schreib ANALYSE.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%2020…"
-    },
-    {
-      "type": "story",
-      "name": "Story 3/5 – 16:00: 1/1/1 (So 12.07.)",
-      "due_on": "2026-07-12",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277384230492",
-      "notes": "Weniger, aber richtig: 1 Angebot, 1 Avatar, 1 System.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202026/2026%…"
-    },
-    {
-      "type": "story",
-      "name": "Story 2/5 – 12:00: Weniger (So 12.07.)",
-      "due_on": "2026-07-12",
-      "completed": false,
-      "assignee": {
-        "name": null
-      },
-      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216277417262870",
-      "notes": "Mehr verwässert. Fokus auf das Eine, das zieht.  Medien (Dropbox): https://www.dropbox.com/home/0.1%20LoveLifePassport/9.%202026/2026%20-%20…"
+      "permalink_url": "https://app.asana.com/1/1179180095450712/project/1205383636722371/task/1216289634172097",
+      "notes": "CTA 222 · reel-18-kostenlos-starten-FINAL.mp4"
     }
   ]
 }
